@@ -38,11 +38,11 @@ themeButtons.forEach((button) => {
 });
 
 const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        revealObserver.unobserve(entry.target);
+  (observedItems) => {
+    observedItems.forEach((item) => {
+      if (item.isIntersecting) {
+        item.target.classList.add("visible");
+        revealObserver.unobserve(item.target);
       }
     });
   },

@@ -16,7 +16,7 @@
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
   --radius: 8px;
   --max: 1180px;
-  --section: clamp(72px, 10vw, 136px);
+  --section: clamp(96px, 12vw, 168px);
 }
 
 body[data-theme="cosmic"] {
@@ -49,16 +49,16 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    linear-gradient(rgba(var(--gold-rgb), 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(var(--gold-rgb), 0.02) 1px, transparent 1px),
-    radial-gradient(circle at 12% 8%, rgba(var(--gold-rgb), 0.12), transparent 30%),
+    linear-gradient(rgba(var(--gold-rgb), 0.014) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--gold-rgb), 0.012) 1px, transparent 1px),
+    radial-gradient(circle at 12% 8%, rgba(var(--gold-rgb), 0.1), transparent 30%),
     radial-gradient(circle at 86% 18%, rgba(255, 255, 255, 0.05), transparent 26%),
     var(--bg);
   background-size: 64px 64px, 64px 64px, auto, auto, auto;
   color: var(--text);
   font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.5;
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.55;
 }
 
 body::before {
@@ -137,19 +137,35 @@ h3 {
 
 .brand {
   color: var(--text);
-  font-size: 0.84rem;
-  font-weight: 650;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 620;
+  letter-spacing: 0;
 }
 
 .brand-mark {
-  width: 11px;
-  height: 11px;
-  border: 1px solid var(--gold-light);
-  background: var(--gold);
-  box-shadow: 0 0 28px rgba(var(--gold-rgb), 0.75);
-  transform: rotate(45deg);
+  width: 17px;
+  height: 17px;
+  overflow: visible;
+  filter: drop-shadow(0 0 16px rgba(var(--gold-rgb), 0.58));
+  flex: 0 0 auto;
+}
+
+.brand-mark path:first-child {
+  fill: rgba(255, 255, 255, 0.02);
+  stroke: var(--gold-light);
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.brand-mark path:nth-child(2) {
+  fill: none;
+  stroke: var(--gold);
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.brand-mark circle {
+  fill: var(--gold-light);
 }
 
 .header-actions {
@@ -158,8 +174,9 @@ h3 {
 
 .nav {
   gap: clamp(14px, 3vw, 30px);
+  flex-wrap: wrap;
   color: var(--text-soft);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
 }
 
 .nav a {
@@ -222,7 +239,7 @@ main {
 
 .hero {
   min-height: calc(100vh - 82px);
-  padding: clamp(58px, 8vw, 104px) 0 var(--section);
+  padding: clamp(72px, 9vw, 124px) 0 var(--section);
 }
 
 .eyebrow {
@@ -234,26 +251,27 @@ main {
 }
 
 h1 {
-  max-width: 820px;
+  max-width: 900px;
   margin-top: 18px;
-  font-size: clamp(3.25rem, 7.2vw, 7.35rem);
-  font-weight: 650;
-  line-height: 0.91;
+  font-size: clamp(3.7rem, 8.4vw, 8.5rem);
+  font-weight: 620;
+  letter-spacing: -0.02em;
+  line-height: 0.94;
 }
 
 .tagline {
-  max-width: 760px;
-  margin-top: 28px;
+  max-width: 780px;
+  margin-top: 32px;
   color: var(--gold-light);
-  font-size: clamp(1.35rem, 2.4vw, 2.15rem);
+  font-size: clamp(1.35rem, 2.15vw, 2rem);
   line-height: 1.2;
 }
 
 .support {
-  max-width: 650px;
-  margin-top: 22px;
+  max-width: 610px;
+  margin-top: 24px;
   color: var(--text-soft);
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
 }
 
 .actions,
@@ -449,15 +467,15 @@ body[data-theme="cosmic"] .button-primary {
 
 .positioning {
   max-width: 930px;
-  padding: clamp(34px, 6vw, 56px);
+  padding: clamp(42px, 7vw, 72px) clamp(22px, 4vw, 46px);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   margin: 0 auto var(--section);
   color: var(--text);
   text-align: center;
-  font-size: clamp(1.45rem, 3vw, 2.55rem);
-  font-weight: 520;
-  line-height: 1.18;
+  font-size: clamp(1.5rem, 3.15vw, 2.75rem);
+  font-weight: 560;
+  line-height: 1.16;
 }
 
 .positioning-tags {
@@ -485,11 +503,12 @@ body[data-theme="cosmic"] .button-primary {
 }
 
 .section-heading h2 {
-  max-width: 720px;
-  margin-top: 12px;
-  font-size: clamp(2rem, 4vw, 4rem);
+  max-width: 800px;
+  margin-top: 14px;
+  font-size: clamp(2.25rem, 4.8vw, 5rem);
   font-weight: 600;
-  line-height: 1.02;
+  letter-spacing: -0.018em;
+  line-height: 1;
 }
 
 .centered {
@@ -547,6 +566,11 @@ body[data-theme="cosmic"] .button-primary {
   background: var(--gold);
   box-shadow: 0 0 24px rgba(var(--gold-rgb), 0.58);
   content: "";
+}
+
+.trajectory-flow span::before {
+  outline: 1px solid rgba(var(--gold-light-rgb), 0.16);
+  outline-offset: 5px;
 }
 
 .trajectory-flow span::after {
@@ -725,13 +749,13 @@ body[data-theme="cosmic"] .button-primary {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 46px;
+  gap: 16px;
+  margin-top: 52px;
 }
 
 .capability-card {
-  min-height: 190px;
-  padding: 24px;
+  min-height: 172px;
+  padding: 28px;
   border: 1px solid var(--line-soft);
   border-radius: var(--radius);
   background:
@@ -752,12 +776,13 @@ body[data-theme="cosmic"] .button-primary {
 }
 
 .capability-card h3 {
-  font-size: 1.04rem;
-  font-weight: 700;
+  font-size: 1.12rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
 }
 
 .capability-card p {
-  margin-top: 16px;
+  margin-top: 18px;
   color: var(--text-soft);
   font-size: 0.94rem;
 }
@@ -784,11 +809,12 @@ body[data-theme="cosmic"] .button-primary {
 .flow span {
   position: relative;
   display: grid;
-  min-height: 88px;
+  min-height: 84px;
   place-items: center;
   background: rgba(12, 12, 11, 0.9);
   color: var(--text);
-  font-weight: 700;
+  font-weight: 650;
+  padding: 14px 10px;
 }
 
 .flow span::after {
@@ -826,7 +852,11 @@ body[data-theme="cosmic"] .button-primary {
 }
 
 .ai-workflow {
-  align-items: start;
+  align-items: center;
+}
+
+.ai-workflow .large-copy {
+  padding-top: clamp(18px, 3vw, 42px);
 }
 
 .principle-grid {
@@ -1056,6 +1086,10 @@ body[data-theme="cosmic"] .button-primary {
     grid-column: 1;
   }
 
+  .ai-workflow .large-copy {
+    padding-top: 0;
+  }
+
   .principle-grid {
     grid-template-columns: 1fr;
   }
@@ -1126,7 +1160,7 @@ body[data-theme="cosmic"] .button-primary {
   }
 
   .flow span {
-    min-height: 66px;
+    min-height: 76px;
   }
 
   .flow span::after {

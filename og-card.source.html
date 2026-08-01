@@ -1,62 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<style>
-  /* Espeja la jerarquia del propio sitio: manda el rol, el nombre va chico al pie.
-     Bru rechazo la version con el nombre grande (Telegram 2026-08-01). */
-  :root {
-    --bg:#101317; --fg:#e6e9ee; --dim:#8994a3;
-    --hair:#242a33; --signal:#5b9dff;
-    --sans: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-    --mono: ui-monospace, "SF Mono", Menlo, monospace;
-  }
-  * { box-sizing:border-box; margin:0; }
-  body {
-    width:1200px; height:630px; background:var(--bg); color:var(--fg);
-    font-family:var(--sans); display:flex; flex-direction:column;
-    justify-content:space-between; padding:70px 76px;
-    background-image:
-      radial-gradient(900px 400px at 88% 12%, rgba(91,157,255,.10), transparent 60%);
-  }
-  .top { display:flex; align-items:center; gap:14px; }
-  .dot { width:9px; height:9px; border-radius:50%; background:var(--signal); }
-  .kicker {
-    font-family:var(--mono); font-size:16px; color:var(--signal);
-    letter-spacing:.16em; text-transform:uppercase;
-  }
-  h1 { font-size:62px; line-height:1.05; letter-spacing:-.035em; font-weight:700; margin:26px 0 16px; }
-  .disciplines {
-    font-family:var(--mono); font-size:17px; color:var(--dim);
-    letter-spacing:.03em;
-  }
-  .figs { display:flex; gap:56px; padding-top:26px; border-top:1px solid var(--hair); }
-  .fig { font-family:var(--mono); }
-  .fig b { display:block; font-size:27px; color:var(--signal); font-variant-numeric:tabular-nums; font-weight:600; }
-  .fig span { display:block; font-size:14px; color:var(--dim); letter-spacing:.05em; margin-top:5px; }
-  .foot {
-    display:flex; justify-content:space-between; align-items:flex-end;
-    font-family:var(--mono); font-size:16px; color:var(--dim);
-  }
-  .foot .url { color:var(--fg); }
-</style>
-</head>
-<body>
-  <div>
-    <div class="top"><span class="dot"></span><span class="kicker">Alexandria · the full chain</span></div>
-    <h1>Trading Systems Developer</h1>
-    <p class="disciplines">Systematic and algorithmic trading · Quant research · AI-assisted engineering</p>
-  </div>
-
-  <div class="figs">
-    <div class="fig"><b>792,230,976</b><span>SIMULATED RESULTS</span></div>
-    <div class="fig"><b>466</b><span>AUTOMATED TEST FILES</span></div>
-    <div class="fig"><b>110</b><span>SERVICE ENDPOINTS</span></div>
-  </div>
-
-  <div class="foot">
-    <span class="url">ibuildsystems.work</span>
-    <span>Bruno Saldivar · Berlin</span>
-  </div>
-</body>
-</html>
+<!-- Fuente de og-card.png (1200x630). Elegida por Bru entre 10 borradores,
+     Telegram 2026-08-01. Texto = lo canonico compartido con LinkedIn y el CV.
+     Regenerar: Chrome --headless --window-size=1200,630 --screenshot=og-card.png -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+:root{--bg:#101317;--panel:#171b21;--fg:#e6e9ee;--dim:#8994a3;--hair:#242a33;--signal:#5b9dff;
+--sans:system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+--mono:ui-monospace,"SF Mono",Menlo,monospace}
+*{box-sizing:border-box;margin:0}
+body{width:1200px;height:630px;background:var(--bg);color:var(--fg);font-family:var(--sans);
+ display:flex;flex-direction:column;padding:66px 76px;
+ background-image:radial-gradient(900px 420px at 85% 8%,rgba(91,157,255,.09),transparent 62%)}
+.kick{font-family:var(--mono);font-size:15px;color:var(--signal);letter-spacing:.18em;text-transform:uppercase}
+.name{font-size:52px;font-weight:500;letter-spacing:-.025em}
+.role{font-size:23px;color:#c3cad4;font-weight:400}
+.fig{font-family:var(--mono)}
+.fig b{display:block;font-size:25px;color:var(--signal);font-variant-numeric:tabular-nums;font-weight:600}
+.fig span{display:block;font-size:12.5px;color:var(--dim);letter-spacing:.06em;margin-top:6px}
+.foot{font-family:var(--mono);font-size:15px;color:var(--dim);letter-spacing:.03em}
+.foot b{color:var(--fg);font-weight:500}
+body{justify-content:space-between;padding-left:0}
+.bar{position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--signal)}
+.pad{padding-left:76px}</style></head><body style="position:relative">
+<div class="bar"></div>
+<div class="pad"><p class="kick">AI-Native Architecture</p><p class="name" style="margin:24px 0 12px">Bruno Saldivar</p><p class="role">Quantitative Researcher &amp; Trading Systems Developer</p></div>
+<div class="pad" style="padding-top:26px;border-top:1px solid var(--hair)"><div style="display:flex;gap:60px"><div class="fig"><b>792,230,976</b><span>SIMULATED RESULTS</span></div><div class="fig"><b>466</b><span>AUTOMATED TEST FILES</span></div><div class="fig"><b>110</b><span>SERVICE ENDPOINTS</span></div></div></div>
+<div class="pad foot" style="display:flex;justify-content:space-between"><b>ibuildsystems.work</b><span>Berlin, Germany</span></div></body></html>

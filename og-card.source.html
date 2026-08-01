@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  /* Mismos tokens que index.html del sitio: la tarjeta social no inventa marca nueva */
+  :root {
+    --bg:#101317; --panel:#171b21; --fg:#e6e9ee; --dim:#8994a3;
+    --hair:#242a33; --signal:#5b9dff;
+    --sans: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing:border-box; margin:0; }
+  body {
+    width:1200px; height:630px; background:var(--bg); color:var(--fg);
+    font-family:var(--sans); display:flex; flex-direction:column;
+    justify-content:space-between; padding:70px 76px;
+    background-image:
+      radial-gradient(900px 400px at 88% 12%, rgba(91,157,255,.10), transparent 60%);
+  }
+  .top { display:flex; align-items:center; gap:14px; }
+  .dot { width:9px; height:9px; border-radius:50%; background:var(--signal); }
+  .kicker {
+    font-family:var(--mono); font-size:17px; color:var(--signal);
+    letter-spacing:.16em; text-transform:uppercase;
+  }
+  h1 { font-size:82px; line-height:1.02; letter-spacing:-.035em; font-weight:700; margin:26px 0 18px; }
+  .role { font-size:31px; line-height:1.35; color:#c3cad4; font-weight:500; max-width:24ch; }
+  .figs { display:flex; gap:56px; padding-top:26px; border-top:1px solid var(--hair); }
+  .fig { font-family:var(--mono); }
+  .fig b { display:block; font-size:27px; color:var(--signal); font-variant-numeric:tabular-nums; font-weight:600; }
+  .fig span { display:block; font-size:14px; color:var(--dim); letter-spacing:.05em; margin-top:5px; }
+  .foot {
+    display:flex; justify-content:space-between; align-items:flex-end;
+    font-family:var(--mono); font-size:17px; color:var(--dim);
+  }
+  .foot .url { color:var(--fg); }
+</style>
+</head>
+<body>
+  <div>
+    <div class="top"><span class="dot"></span><span class="kicker">Quantitative research · Trading systems</span></div>
+    <h1>Bruno Saldivar</h1>
+    <p class="role">Quantitative Researcher &amp; Trading Systems Developer</p>
+  </div>
+
+  <div class="figs">
+    <div class="fig"><b>792,230,976</b><span>SIMULATED RESULTS</span></div>
+    <div class="fig"><b>466</b><span>AUTOMATED TEST FILES</span></div>
+    <div class="fig"><b>110</b><span>SERVICE ENDPOINTS</span></div>
+  </div>
+
+  <div class="foot">
+    <span class="url">ibuildsystems.work</span>
+    <span>Berlin, Germany</span>
+  </div>
+</body>
+</html>

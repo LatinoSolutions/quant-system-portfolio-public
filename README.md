@@ -1,4 +1,4 @@
-# Portfolio — Quant Research & Trading Systems Architect
+# Portfolio: Quant Research & Trading Systems Architect
 
 Personal portfolio site for a professional profile focused on market research systems, trading-system architecture, automation workflows, governance, traceability and AI-assisted decision infrastructure.
 

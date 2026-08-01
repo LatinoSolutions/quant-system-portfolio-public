@@ -233,7 +233,7 @@
      (dark, surface #101317): #3987e5 / #b8862f / #2f9d6d -> 5 checks PASS.
      El WARN de CVD 7.0 en protan obliga codificacion secundaria: etiqueta directa por barra.
      Clases g-* para no chocar con la cronologia .tl-* de abajo. ---- */
-  .gantt { --s-sys:#3987e5; --s-job:#b8862f; --s-base:#2f9d6d; --lab:270px; margin:0 0 40px }
+  .gantt { --s-sys:#3987e5; --s-job:#b8862f; --s-base:#2f9d6d; --s-stu:#8b7bd8; --lab:270px; margin:0 0 40px }
   .g-legend { display:flex; flex-wrap:wrap; gap:22px; margin:0 0 22px; font-size:14px; color:var(--dim) }
   .g-legend span { display:flex; align-items:center; gap:9px }
   .g-legend i { width:11px; height:11px; border-radius:2px; display:block }
@@ -283,6 +283,7 @@
   .g-bar[data-k="sys"]  { background:var(--s-sys) }
   .g-bar[data-k="job"]  { background:var(--s-job) }
   .g-bar[data-k="base"] { background:var(--s-base) }
+  .g-bar[data-k="stu"]  { background:var(--s-stu) }
   .g-lab { font-size:13px; color:#c3cad4; padding-right:16px; line-height:1.35 }
   .g-tip {
     position:absolute; z-index:5; background:#1d232b; border:1px solid #303845; border-radius:4px;
@@ -537,15 +538,21 @@
     <div class="gantt">
       <div class="g-legend">
         <span><i style="background:#2f9d6d"></i>Independent practice</span>
+        <span><i style="background:#8b7bd8"></i>Strategy study</span>
         <span><i style="background:#b8862f"></i>Employment &amp; training</span>
         <span><i style="background:#3987e5"></i>Systems built</span>
       </div>
       <div class="g-head"><span></span><div class="g-axis" style="position:relative"><span class="g-now-lab" style="left:91.67%">NOW</span><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div></div>
       <div class="g-rows" id="gRows">
         <div class="g-row"><span class="g-lab">Independent quantitative research</span><div class="g-track"><div class="g-now" style="left:91.67%"></div><div class="g-hit" style="left:1.39%;width:90.28%" data-t="Independent quantitative research" data-d="Feb 2021 - present"><div class="g-bar" data-k="base"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Trading-strategy training</span><div class="g-track"><div class="g-now" style="left:91.67%"></div><div class="g-hit" style="left:1.39%;width:90.28%" data-t="Trading-strategy training" data-d="Feb 2021 - present · 7 private mentorship programmes · 564 archived sessions"><div class="g-bar" data-k="job"></div></div></div></div>
+        <div class="g-group"><span>Strategy study</span><div></div></div>
+        <div class="g-row"><span class="g-lab">Technical indicators</span><div class="g-track"><div class="g-now" style="left:91.67%"></div><div class="g-hit" style="left:1.39%;width:30.56%" data-t="Technical indicators" data-d="2021 - 2022"><div class="g-bar" data-k="stu"></div></div></div></div>
+        <div class="g-row"><span class="g-lab">Price action structure &amp; ranges</span><div class="g-track"><div class="g-now" style="left:91.67%"></div><div class="g-hit" style="left:16.67%;width:33.33%" data-t="Price action structure and trading ranges" data-d="2022 - 2023"><div class="g-bar" data-k="stu"></div></div></div></div>
+        <div class="g-row"><span class="g-lab">Liquidity &amp; key levels</span><div class="g-track"><div class="g-now" style="left:91.67%"></div><div class="g-hit" style="left:33.33%;width:50.0%" data-t="Liquidity taxonomy and key price levels" data-d="2023 - 2025"><div class="g-bar" data-k="stu"></div></div></div></div>
+        <div class="g-row"><span class="g-lab">Systematic &amp; algorithmic execution</span><div class="g-track"><div class="g-now" style="left:91.67%"></div><div class="g-hit" style="left:50.0%;width:41.67%" data-t="Systematic and algorithmic execution" data-d="2024 - present"><div class="g-bar" data-k="stu"></div></div></div></div>
         <div class="g-row"><span class="g-lab">SPICED Academy · bootcamp</span><div class="g-track"><div class="g-now" style="left:91.67%"></div><div class="g-hit" style="left:18.06%;width:4.17%" data-t="SPICED Academy · Data Science bootcamp" data-d="Feb - May 2022 · 480+ hours"><div class="g-bar" data-k="job"></div></div></div></div>
         <div class="g-row"><span class="g-lab">Rabot Crypto · quant research</span><div class="g-track"><div class="g-now" style="left:91.67%"></div><div class="g-hit" style="left:27.78%;width:31.94%" data-t="Rabot Crypto · quant research" data-d="Sep 2022 - Aug 2024"><div class="g-bar" data-k="job"></div></div></div></div>
+        <div class="g-row"><span class="g-lab">Indicator scripting · Pine Script / MQL5</span><div class="g-track"><div class="g-now" style="left:91.67%"></div><div class="g-hit" style="left:50.0%;width:23.61%" data-t="Indicator scripting in Pine Script and MQL5" data-d="2024 - mid 2025 · TradingView scripts ported to MQL5"><div class="g-bar" data-k="sys"></div></div></div></div>
         <div class="g-group"><span>The four systems</span><div></div></div>
         <div class="g-row"><span class="g-lab">First · multi-timeframe research</span><div class="g-track"><div class="g-now" style="left:91.67%"></div><div class="g-hit" style="left:73.61%;width:1.39%" data-t="Multi-timeframe strategy research" data-d="Jun 2025 · first system"><div class="g-bar" data-k="sys"></div></div></div></div>
         <div class="g-row"><span class="g-lab">Second · Python / Streamlit</span><div class="g-track"><div class="g-now" style="left:91.67%"></div><div class="g-hit" style="left:76.39%;width:1.39%" data-t="Python / Streamlit application" data-d="Aug - Sep 2025 · second system"><div class="g-bar" data-k="sys"></div></div></div></div>

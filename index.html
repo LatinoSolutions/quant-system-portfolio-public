@@ -403,7 +403,7 @@
 
   <section class="intro">
     <h1>Trading Systems Developer</h1>
-    <p class="disciplines">Systematic and algorithmic trading · Quant research · AI-assisted engineering</p>
+    <p class="disciplines">Systematic and algorithmic trading · Quant research · Reinforcement-learning decision systems · AI-assisted engineering</p>
     <p class="craft">Backtesting · Monte Carlo · Risk systems · Execution diagnostics</p>
     <p class="pitch">
       Five years of independent quantitative research and applied market study, since February
@@ -449,21 +449,21 @@
         <div class="i">05</div>
         <h3>Execution</h3>
         <p>Broker preflight, MT5 order submission, persisted lifecycle state, restart recovery, end-of-day controls, and post-trade P&amp;L reconciliation against broker truth to the cent.</p>
-        <div class="fig">929<small>executed order records</small></div>
+        <div class="fig">1,066<small>executed order records</small></div>
       </div>
 
       <div class="stage">
         <div class="i">06</div>
         <h3>Operations</h3>
         <p>REST APIs, health and readiness telemetry, automated daily, weekly and monthly reporting, signal to order to fill diagnostics, and silent-failure detection: the business ledger is cross-checked against an independent process heartbeat, so a channel that is alive but not writing is never reported as a normal day.</p>
-        <div class="fig">240<small>service endpoints</small></div>
+        <div class="fig">239<small>service endpoints</small></div>
       </div>
 
       <div class="stage">
         <div class="i">07</div>
         <h3>Quality</h3>
         <p>Regression, integration, golden-case and failure-path tests, git-hook automation on every commit, automated deployment through GitHub Actions.</p>
-        <div class="fig">716<small>automated test files</small></div>
+        <div class="fig">736<small>automated test files</small></div>
       </div>
 
     </div>
@@ -473,9 +473,10 @@
       <div>
         <h3>Decision layer</h3>
         <p>
-          A versioned layer above the chain: it weighs evidence of different quality and publishes
-          what the execution layer is allowed to run. A hybrid decision model, integrating
-          artificial intelligence with code.
+          A sequential decision engine above the chain, designed for reinforcement learning over
+          recurrent sequence models, that learns from the platform's own trading experience. Every
+          candidate policy must beat simpler baselines, pass counterfactual evaluation and
+          statistical promotion gates, and stays under a hard safety veto before anything goes live.
         </p>
       </div>
     </div>
@@ -526,6 +527,10 @@
       <div class="row">
         <div class="k">Simulation and risk</div>
         <div class="v">Execution-aware backtesting, Monte Carlo stress analysis, sizing, exposure and drawdown controls.</div>
+      </div>
+      <div class="row">
+        <div class="k">Decision systems</div>
+        <div class="v">Sequential decision engines, reinforcement learning with recurrent memory, counterfactual evaluation, statistical promotion gates, hard safety veto.</div>
       </div>
       <div class="row">
         <div class="k">Evaluation</div>

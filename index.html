@@ -430,7 +430,7 @@
         <div class="i">01</div>
         <h3>Market data</h3>
         <p>MT5 tick and candle export, live and historical ingestion, gap and conflict checks, feed-freshness monitoring.</p>
-        <div class="fig">10 × 10<small>instruments × timeframes</small></div>
+        <div class="fig">96<small>series · 10 instruments, up to 10 timeframes</small></div>
       </div>
 
       <div class="stage">
@@ -458,21 +458,21 @@
         <div class="i">05</div>
         <h3>Execution</h3>
         <p>Broker preflight, MT5 order submission, persisted lifecycle state, restart recovery, end-of-day controls, and post-trade P&amp;L reconciliation against broker truth to the cent.</p>
-        <div class="fig">1,164<small>executed order records</small></div>
+        <div class="fig">1,217<small>executed order records</small></div>
       </div>
 
       <div class="stage">
         <div class="i">06</div>
         <h3>Operations</h3>
         <p>REST APIs, health and readiness telemetry, automated daily, weekly and monthly reporting, signal to order to fill diagnostics, and silent-failure detection: the business ledger is cross-checked against an independent process heartbeat, so a channel that is alive but not writing is never reported as a normal day.</p>
-        <div class="fig">240<small>service endpoints</small></div>
+        <div class="fig">243<small>service endpoints</small></div>
       </div>
 
       <div class="stage">
         <div class="i">07</div>
         <h3>Quality</h3>
-        <p>Regression, integration, golden-case and failure-path tests, git-hook automation on every commit, automated deployment through GitHub Actions.</p>
-        <div class="fig">760<small>automated test files</small></div>
+        <p>Regression, integration, golden-case and failure-path tests, and a pre-commit hook that blocks a commit when the architecture documentation is out of sync with the code.</p>
+        <div class="fig">857<small>automated test files</small></div>
       </div>
 
     </div>
@@ -486,9 +486,9 @@
           The platform is evolving from deterministic rules into a decision engine above the chain. The
           data picks the model family, with reinforcement learning among the candidates. Every
           candidate policy must beat simpler baselines and pass statistical promotion gates under a
-          hard safety veto before it can reach capital. The foundation so far: 96 TypeScript modules,
-          25 typed contract modules and 32 JSON schemas, verified by 3,516 passing tests, with 50 of
-          70 planned tasks delivered.
+          hard safety veto before it can reach capital. The foundation so far: 121 TypeScript modules,
+          27 typed contract modules and 30 JSON schemas, verified by a validation suite of 5,695
+          passing tests, none failing, with 105 of 120 planned tasks delivered.
         </p>
       </div>
     </div>
@@ -580,6 +580,7 @@
         <div class="g-row"><span class="g-lab">Rabot Crypto · quant research</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:27.78%;width:31.94%" data-t="Rabot Crypto · quant research" data-d="Sep 2022 - Aug 2024"><div class="g-bar" data-k="job"></div></div></div></div>
         <div class="g-row"><span class="g-lab">Power procurement · Oxford</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:94.44%;width:2.78%" data-t="Quantitative research, power procurement" data-d="Sep 2026 - Oct 2026 · Confidential early-stage energy company · Oxford, UK (on-site)"><div class="g-bar" data-k="job"></div></div></div></div>
         <div class="g-row"><span class="g-lab">Agentic AI platform</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:94.44%;width:2.78%" data-t="Agentic Workflow Orchestration Platform" data-d="Sep 2026 - present · Augmented Intelligence Workspace"><div class="g-bar" data-k="sys"></div></div></div></div>
+        <div class="g-row"><span class="g-lab">The Hand · execution copilot</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:95.83%;width:1.39%" data-t="The Hand · execution copilot for MT5" data-d="Oct 2026 - present · own product, in development"><div class="g-bar" data-k="sys"></div></div></div></div>
         <div class="g-row"><span class="g-lab">Indicator scripting · Pine Script / MQL5</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:50.0%;width:23.61%" data-t="Indicator scripting in Pine Script and MQL5" data-d="2024 - mid 2025 · TradingView scripts ported to MQL5"><div class="g-bar" data-k="sys"></div></div></div></div>
         <div class="g-group"><span>The four systems</span><div></div></div>
         <div class="g-row"><span class="g-lab">First · multi-timeframe research</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:73.61%;width:1.39%" data-t="Multi-timeframe strategy research" data-d="Jun 2025 · first system"><div class="g-bar" data-k="sys"></div></div></div></div>
@@ -602,7 +603,14 @@
         <div class="tl-when">Sep 2026 to now</div>
         <div class="tl-what">
           <h4>Agentic AI Systems Developer · Agentic Workflow Orchestration Platform</h4>
-          <p>Berlin, remote. My own augmented intelligence workspace: AI agents work in parallel across 6 provider accounts and 4 model families under one shared engineering standard, with independent review and a test-regression gate on every merge. 144 merged tasks in 3 codebases from 2,500+ agent runs, 95 of them merged autonomously, and 776 commits in 15 days with 1,953 tests passing. I measure every agent run by model and role: 2,764 runs tracked, with first-pass approval, rework rate, review rounds to acceptance and tokens per accepted task, each rate with its sample size.</p>
+          <p>Berlin, remote. My own augmented intelligence workspace: AI agents work in parallel across 6 provider accounts and 4 model families under one shared engineering standard, with a test-regression gate on every merge and independent review on every autopilot merge. 245 merged tasks in 4 codebases from 3,700+ agent runs, 194 of them merged by the autopilot without a human merge decision, and 927 commits in 23 days with 2,383 tests passing. I measure every agent run by model and role: 3,780 runs tracked, with first-pass approval, rework rate, review rounds to acceptance and tokens per accepted task, each rate with its sample size.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Oct 2026 to now</div>
+        <div class="tl-what">
+          <h4>The Hand · execution copilot for MT5 · own product</h4>
+          <p>In development. A second product built through the same agentic platform: designed so that an order a discretionary trader dictates becomes a validated, risk-sized ticket, and nothing reaches the broker without explicit confirmation and a reconciled broker acknowledgement. Tested on synthetic sources; voice capture and broker demo verification are pending. 42 of 45 planned tasks accepted and 776 automated tests passing in its first 4 days.</p>
         </div>
       </div>
       <div class="tl-row">
@@ -619,7 +627,7 @@
           <p>Seven successive private mentorship programmes in discretionary market-structure trading:
             liquidity, order flow, session timing and entry-model design. 564 archived sessions, and
             15,000+ of those hours in chart study. Those rules were then formalised into deterministic, testable
-            logic, and the ones that did not survive out-of-sample measurement were dropped.</p>
+            logic, and the ones that did not survive measurement were dropped.</p>
         </div>
       </div>
       <div class="tl-row">

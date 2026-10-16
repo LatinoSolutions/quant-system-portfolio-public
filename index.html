@@ -125,7 +125,7 @@
 
         <svg class="flow-svg" id="flow-svg" viewBox="0 0 520 556" role="group" aria-labelledby="flow-title" aria-describedby="flow-desc">
           <title id="flow-title">How one task moves through the platform</title>
-          <desc id="flow-desc">A scoped task is split across several AI agents working in parallel, each in its own isolated workspace and git branch. Each change must pass a test gate that compares it with main; a failing change goes back for rework. A different agent then reviews the exact change. A human decides where the route requires it, while agreed autopilot routes merge after review. Every outcome is traceable: merge, run log, metrics and alerts.</desc>
+          <desc id="flow-desc">A scoped task is split across several AI agents working in parallel, each in its own isolated workspace and git branch. Each change must pass a test gate that compares it with main; a failing change goes back for rework. On autopilot routes, a different agent then reviews the exact change. A human decides where the route requires it, while agreed autopilot routes merge after review. Every outcome is traceable: merge, run log, metrics and alerts.</desc>
           <defs>
             <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
               <path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/>
@@ -216,7 +216,7 @@
           <!-- 4 · human decision where required -->
           <path class="c" data-s="4" d="M260 356 L260 390" marker-end="url(#ah)"/>
           <g class="n human" data-s="4" tabindex="0" role="button" aria-label="Step 5, human decision"
-             data-title="Human decision" data-text="A person approves where the route requires it, for example anything touching payments or customer data.">
+             data-title="Human decision" data-text="A person approves where the route requires it: the decisions the owner keeps for themselves.">
             <rect class="box" x="140" y="392" width="240" height="56" rx="10"/>
             <text class="t" x="260" y="416">Human decision</text>
             <text class="s" x="260" y="434">where the route requires it</text>
@@ -254,7 +254,7 @@
   <section class="section reveal" aria-labelledby="work-title">
     <div class="section-head">
       <p class="kicker">Selected work</p>
-      <h2 class="h2" id="work-title">Two more systems, built the same way.</h2>
+      <h2 class="h2" id="work-title">Two more systems, built with the same discipline.</h2>
     </div>
     <div class="cards">
       <article class="card">

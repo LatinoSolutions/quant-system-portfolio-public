@@ -6,27 +6,28 @@
 
 <!-- El nombre va en el title porque la busqueda que importa es "Bruno Saldivar",
      y hasta 2026-08-01 no aparecia en ningun metadato. -->
-<title>Trading Systems, Quantitative Research &amp; Energy Procurement | Portfolio</title>
-<meta name="description" content="Explore documented trading systems development, systematic trading research, MT5 execution, backtesting, energy procurement analysis and agentic AI engineering case studies.">
+<title>Portfolio · Bruno Saldivar · Quantitative Developer · Agentic AI Engineer</title>
+<meta name="description" content="Bruno Saldivar, Quantitative Developer & Trading Systems Engineer | Agentic AI Engineer | Energy Trading. Four systems designed and built by me: trading systems development with MT5 execution and backtesting, a trading execution copilot, energy procurement research and agentic AI engineering. What each one solves, how it works, and the evidence.">
 <meta name="author" content="Bruno Saldivar">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://ibuildsystems.work/portfolio/">
 <link rel="icon" href="../favicon.svg?v=2" type="image/svg+xml">
+<meta name="theme-color" content="#101317">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bruno Saldivar">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://ibuildsystems.work/portfolio/">
-<meta property="og:title" content="Bruno Saldivar · Trading Systems Developer · Systematic Trading Decision Engine">
-<meta property="og:description" content="Private Trading Research &amp; Execution Platform, live on MT5 for FX, indices and crypto, designed, built and operated solo, evolving into a Systematic Trading Decision Engine. Quantitative research for energy and power procurement, agentic AI systems. Every figure on the page traces back to the file it came from.">
+<meta property="og:title" content="Portfolio · Bruno Saldivar · Quantitative Developer · Agentic AI Engineer">
+<meta property="og:description" content="Private Trading Research &amp; Execution Platform live on MT5, Trading Execution Copilot, Energy Procurement Research &amp; Backtesting Platform and Agentic Workflow Orchestration Platform (AWOP): what each one solves, how it works, and the evidence behind it.">
 <meta property="og:image" content="https://ibuildsystems.work/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Bruno Saldivar, trading systems developer and quantitative researcher">
+<meta property="og:image:alt" content="Bruno Saldivar, Quantitative Developer · Agentic AI Engineer">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bruno Saldivar · Trading Systems Developer · Systematic Trading Decision Engine">
-<meta name="twitter:description" content="Private Trading Research &amp; Execution Platform, live on MT5 for FX, indices and crypto, designed, built and operated solo, evolving into a Systematic Trading Decision Engine.">
+<meta name="twitter:title" content="Portfolio · Bruno Saldivar · Quantitative Developer · Agentic AI Engineer">
+<meta name="twitter:description" content="Four systems designed and built by me: trading research and execution live on MT5, a voice execution copilot, energy procurement research and an AI agent orchestration platform.">
 <meta name="twitter:image" content="https://ibuildsystems.work/og-card.png">
 
 <script type="application/ld+json">
@@ -36,7 +37,7 @@
   "name": "Bruno Saldivar",
   "url": "https://ibuildsystems.work/",
   "image": "https://ibuildsystems.work/og-card.png",
-  "jobTitle": "Trading Systems Developer and Quantitative Researcher",
+  "jobTitle": "Quantitative Developer & Trading Systems Engineer | Agentic AI Engineer | Energy Trading",
   "email": "mailto:bru.daytrader@gmail.com",
   "address": {
     "@type": "PostalAddress",
@@ -72,74 +73,48 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="../site.css">
 <style>
-  /* Paleta: graphite / panel / fg / dim / signal */
+  /* This page stays dark in both colour schemes: its Gantt palette was validated on #101317.
+     Every variable of site.css is pinned here, so its light block never half-applies. */
   :root {
-    --bg:#101317;
-    --panel:#171b21;
-    --fg:#e6e9ee;
-    --dim:#8994a3;
-    --hair:#242a33;
-    --signal:#5b9dff;
-
-    --sans: system-ui, -apple-system, "Segoe UI Variable Text", "Segoe UI", Inter, Roboto,
-            "Helvetica Neue", Arial, sans-serif;
-    --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas,
-            "Roboto Mono", monospace;
+    color-scheme: dark;
+    --bg:#101317; --bg-2:#0d1014; --panel:#171b21; --panel-2:#1b2028;
+    --fg:#e6e9ee; --soft:#c3cad4; --dim:#8994a3; --hair:#242a33; --hair-2:#2f3743;
+    --signal:#5b9dff; --signal-ink:#0b1220; --signal-glow:rgba(91,157,255,.28); --lit:#1d2a3f;
+    --ok:#3fb989; --warn:#e0a84a; --shadow:0 30px 80px rgba(0,0,0,.35);
   }
-  * { box-sizing:border-box; }
-  body {
-    margin:0; background:var(--bg); color:var(--fg);
-    font-family:var(--sans); font-size:18px; line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap { max-width:1240px; margin:0 auto; padding:0 44px; }
 
-  header {
-    display:flex; align-items:center; justify-content:space-between;
-    padding:26px 0; border-bottom:1px solid var(--hair);
-  }
-  .brand { display:flex; align-items:center; gap:12px; font-weight:650; font-size:15px; letter-spacing:.02em; }
-  nav { display:flex; align-items:center; gap:28px }
-  nav a { color:var(--dim); text-decoration:none; font-size:14px; }
-  .status {
-    font-family:var(--mono); font-size:12px; color:var(--signal);
-    letter-spacing:.1em; text-transform:uppercase;
-    display:flex; align-items:center; gap:9px;
-  }
-  .dot { width:7px; height:7px; border-radius:50%; background:var(--signal); }
-
-
-  /* ---- identidad: la pagina es sobre la persona, el sistema es la prueba ---- */
+  /* ---- identidad: la pagina es sobre la persona, los sistemas son la prueba ---- */
   .intro { padding:64px 0 8px; }
-  h1 { font-size:58px; line-height:1.05; font-weight:700; letter-spacing:-.035em; margin:0 0 14px; }
+  .intro h1 { font-size:56px; line-height:1.08; font-weight:700; letter-spacing:-.035em; margin:0 0 16px; }
   .disciplines {
     font-family:var(--mono); font-size:15px; color:var(--signal);
-    letter-spacing:.04em; margin:0 0 30px;
+    letter-spacing:.04em; margin:0 0 12px; line-height:1.7;
   }
-  .pitch { margin:0; font-size:21px; line-height:1.65; color:#c3cad4; max-width:62ch; }
+  .craft { font-family:var(--mono); font-size:14px; color:var(--dim); letter-spacing:.03em; margin:0 0 30px; line-height:1.7; }
+  .pitch { margin:0; font-size:20px; line-height:1.75; color:var(--soft); max-width:64ch; }
+  .pitch + .pitch { margin-top:16px; }
 
-  /* ---- LA FIRMA: la cadena real del sistema, como prueba ---- */
-  .chain-block { padding:52px 0 12px; }
-  .chain-label {
-    font-family:var(--mono); font-size:12px; letter-spacing:.18em;
-    text-transform:uppercase; color:var(--dim); margin-bottom:22px;
+  .systems { padding:64px 0 0; }
+  .sec {
+    font-size:13px; font-family:var(--mono); letter-spacing:.18em; text-transform:uppercase;
+    color:var(--dim); font-weight:400; margin:0 0 28px;
   }
-  .chain {
-    display:grid; grid-template-columns:repeat(7,1fr); gap:10px;
-    position:relative;
-  }
+
+  /* ---- la cadena real del sistema, dentro de la evidencia ---- */
+  .chain { display:grid; grid-template-columns:repeat(7,1fr); gap:10px; margin-top:18px; }
   .stage {
-    background:var(--panel); border:1px solid var(--hair); border-radius:3px;
+    background:var(--panel); border:1px solid var(--hair); border-radius:6px;
     padding:18px 15px 16px; position:relative; overflow:hidden;
     display:flex; flex-direction:column;
+    transition:border-color .28s ease, background-color .28s ease;
   }
   .stage::after {
     content:""; position:absolute; left:0; top:0; height:2px; width:100%;
     background:linear-gradient(90deg, transparent, var(--signal), transparent);
     transform:translateX(-100%); animation:pulse 7s linear infinite;
   }
-  .stage:nth-child(1)::after { animation-delay:0s }
   .stage:nth-child(2)::after { animation-delay:.5s }
   .stage:nth-child(3)::after { animation-delay:1s }
   .stage:nth-child(4)::after { animation-delay:1.5s }
@@ -147,91 +122,65 @@
   .stage:nth-child(6)::after { animation-delay:2.5s }
   .stage:nth-child(7)::after { animation-delay:3s }
   @keyframes pulse { 0%{transform:translateX(-100%)} 14%{transform:translateX(100%)} 100%{transform:translateX(100%)} }
-  @media (prefers-reduced-motion:reduce) { .stage::after { animation:none; opacity:.25; transform:none } }
-
+  .stage:hover { border-color:#3d5a86; background:#191e25 }
   .stage .i { font-family:var(--mono); font-size:11px; color:var(--dim); letter-spacing:.1em; }
-  .stage h3 { margin:9px 0 10px; font-size:15px; font-weight:650; letter-spacing:-.01em; line-height:1.35; }
-  .stage p { margin:0 0 14px; font-size:13.5px; line-height:1.6; color:var(--dim); }
+  .stage h5 { margin:9px 0 10px; font-size:15px; font-weight:650; letter-spacing:-.01em; line-height:1.35; }
+  .stage p { margin:0 0 14px; font-size:13.5px; line-height:1.65; color:var(--dim); }
   .stage .fig {
     font-family:var(--mono); font-size:15px; color:var(--signal);
     font-variant-numeric:tabular-nums; border-top:1px solid var(--hair); padding-top:11px;
-    margin-top:auto;
+    margin-top:auto; line-height:1.4;
   }
   .stage .fig small { display:block; font-size:11px; color:var(--dim); letter-spacing:.06em; margin-top:3px; }
 
-
-  /* capa 08: va por encima de la cadena, no dentro. Misma piel que las etapas. */
+  /* el siguiente nivel de la plataforma, dentro de la evidencia */
   .next {
-    margin-top:10px; display:grid; grid-template-columns:150px 1fr; gap:24px;
-    background:var(--panel); border:1px solid var(--hair); border-radius:3px;
+    margin-top:12px; display:grid; grid-template-columns:150px 1fr; gap:24px;
+    background:var(--panel); border:1px solid var(--hair); border-radius:6px;
     padding:18px 20px; align-items:start;
   }
-  .next-tag {
-    font-family:var(--mono); font-size:11px; letter-spacing:.1em;
-    color:var(--dim); padding-top:3px;
-  }
-  .next h3 { margin:0 0 7px; font-size:15px; font-weight:650 }
-  .next .sub { margin:0 0 9px; font-family:var(--mono); font-size:12px; color:var(--signal); letter-spacing:.04em }
-  .next p { margin:0; font-size:13.5px; line-height:1.65; color:var(--dim); max-width:88ch }
-  .ip {
-    margin:24px 0 0; font-family:var(--mono); font-size:12px; color:#6f7887;
-    letter-spacing:.02em;
-  }
+  .next-tag { font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--dim); padding-top:3px; }
+  .next h5 { margin:0 0 7px; font-size:15px; font-weight:650 }
+  .next .sub { margin:0 0 9px; font-family:var(--mono); font-size:12px; color:var(--signal); letter-spacing:.04em; line-height:1.6 }
+  .next p { margin:0; font-size:14.5px; line-height:1.75; color:var(--soft); max-width:88ch }
 
-  /* ---- tesis, debajo de la cadena ---- */
-  .thesis { padding:74px 0 78px; display:grid; grid-template-columns:1.35fr 1fr; gap:64px; align-items:start; }
-  .claim { font-size:38px; line-height:1.18; font-weight:700; letter-spacing:-.028em; margin:0 0 26px; }
+  /* ---- tesis ---- */
+  .thesis { padding:88px 0 78px; display:grid; grid-template-columns:1.35fr 1fr; gap:64px; align-items:start; }
+  .claim { font-size:38px; line-height:1.2; font-weight:700; letter-spacing:-.028em; margin:0 0 26px; }
   .claim span { color:var(--signal); }
-  .thesis p { margin:0 0 18px; color:#c3cad4; font-size:19px; max-width:56ch; }
-  .thesis p b { color:var(--fg); font-weight:600 }
-  .facts { border-left:1px solid var(--hair); padding-left:30px; font-family:var(--mono); font-size:13px; }
-  .facts dt { color:var(--dim); font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-top:20px; }
-  .facts dt:first-child { margin-top:0 }
-  .facts dd { margin:5px 0 0; color:var(--fg); line-height:1.65; }
-  .facts dd.on { color:var(--signal); }
+  .thesis p { margin:0 0 18px; color:var(--soft); font-size:19px; line-height:1.75; max-width:56ch; }
+  .pfacts { margin:0; border-left:1px solid var(--hair); padding-left:30px; font-family:var(--mono); font-size:13px; }
+  .pfacts dt { color:var(--dim); font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-top:20px; }
+  .pfacts dt:first-child { margin-top:0 }
+  .pfacts dd { margin:5px 0 0; color:var(--fg); line-height:1.7; }
+  .pfacts dd.on { color:var(--signal); }
 
-
-  .craft { font-family:var(--mono); font-size:14px; color:var(--dim); letter-spacing:.03em; margin:0 0 30px; }
-  .sec {
-    font-size:13px; font-family:var(--mono); letter-spacing:.18em; text-transform:uppercase;
-    color:var(--dim); font-weight:400; margin:0 0 28px;
-  }
-
-  /* ---- core expertise: las tres filas del CV ---- */
+  /* ---- core expertise ---- */
   .expertise { border-top:1px solid var(--hair); padding:56px 0 8px; }
   .rows .row {
     display:grid; grid-template-columns:230px 1fr; gap:36px;
     padding:20px 0; border-top:1px solid var(--hair);
   }
   .rows .row:last-child { border-bottom:1px solid var(--hair) }
-  .rows .k { font-family:var(--mono); font-size:13px; color:var(--signal); letter-spacing:.04em; }
-  .rows .v { font-size:17.5px; color:#c3cad4; line-height:1.7; }
+  .rows .k { font-family:var(--mono); font-size:13px; color:var(--signal); letter-spacing:.04em; line-height:1.7; }
+  .rows .v { font-size:17.5px; color:var(--soft); line-height:1.75; }
+  .rows .v i { font-style:normal; color:var(--dim); }
 
-  /* ---- background: cronologia real, desde 2021 ---- */
+  /* ---- background ---- */
+  .prior { border-top:1px solid var(--hair); padding:56px 0 10px; margin-top:56px; }
   .tl-row {
     display:grid; grid-template-columns:230px 1fr; gap:36px;
     padding:24px 0; border-top:1px solid var(--hair);
   }
   .tl-when { font-family:var(--mono); font-size:13px; color:var(--dim); letter-spacing:.03em; padding-top:2px; }
-  .tl-what h4 { margin:0 0 7px; font-size:17px; font-weight:650; letter-spacing:-.01em; }
-  .tl-what p { margin:0; font-size:16px; color:var(--dim); line-height:1.75; max-width:78ch; }
+  .tl-what h4 { margin:0 0 7px; font-size:17px; font-weight:650; letter-spacing:-.01em; line-height:1.45; }
+  .tl-what p { margin:0; font-size:16px; color:var(--dim); line-height:1.8; max-width:78ch; }
+  .tl-what a { color:var(--signal); }
   .earlier {
     margin:34px 0 0; padding-top:24px; border-top:1px solid var(--hair);
     font-size:16px; color:var(--dim); line-height:1.8; max-width:88ch;
   }
 
-  /* ---- background: los sistemas previos, como evidencia ---- */
-  .prior { border-top:1px solid var(--hair); padding:56px 0 10px; }
-  .prior h2 { font-size:13px; font-family:var(--mono); letter-spacing:.18em; text-transform:uppercase; color:var(--dim); font-weight:400; margin:0 0 30px; }
-  .prior-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
-  .p-item { border-top:2px solid var(--hair); padding-top:16px; }
-  .p-item.now { border-top-color:var(--signal); }
-  .p-item .when { font-family:var(--mono); font-size:12px; color:var(--dim); letter-spacing:.06em; }
-  .p-item h4 { margin:9px 0 8px; font-size:16px; font-weight:650; }
-  .p-item p { margin:0; font-size:14px; color:var(--dim); line-height:1.65; }
-  .lineage { margin:0; color:var(--dim); font-size:16.5px; max-width:92ch; line-height:1.8; }
-
-  /* firma: una cara chica dice quien te va a contestar, sin ocupar la pagina */
   .signature { display:flex; align-items:center; gap:16px; margin:0 0 30px }
   .signature img {
     width:62px; height:62px; border-radius:50%; object-fit:cover;
@@ -239,7 +188,6 @@
   }
   .signature .who { font-family:var(--mono); font-size:13px; line-height:1.7; color:var(--dim) }
   .signature .who b { display:block; color:var(--fg); font-weight:500; font-size:14px }
-
 
   /* ---- gantt de trayectoria. Paleta validada con validate_palette.js
      (dark, surface #101317): #3987e5 / #b8862f / #2f9d6d -> 5 checks PASS.
@@ -259,32 +207,17 @@
     display:grid; grid-template-columns:var(--lab) 1fr; align-items:center;
     height:36px; border-bottom:1px solid var(--hair);
   }
-  .g-row:nth-child(even) { background:rgba(255,255,255,.014) }   /* zebra apenas perceptible */
+  .g-row:nth-child(even) { background:rgba(255,255,255,.014) }
   .g-row[data-em] .g-lab { color:var(--fg); font-weight:600 }
   .g-track { position:relative; height:100%; }
-  /* el "hoy": dato real, y le da contexto al extremo derecho */
-  .g-now {
-    position:absolute; top:0; bottom:0; width:1px; background:#3d4653; z-index:0;
-  }
-  .g-now-lab {
-    position:absolute; font-family:var(--mono); font-size:10px; color:#6f7887;
-    letter-spacing:.08em; top:-1px;
-  }
-  /* fila de agrupacion: da estructura narrativa a los cuatro sistemas */
-  .g-group {
-    display:grid; grid-template-columns:var(--lab) 1fr; align-items:center;
-    padding:14px 0 6px;
-  }
-  .g-group span {
-    font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
-    color:#6f7887;
-  }
-  /* grid de años recesivo, solo detras de la pista de barras */
+  .g-now { position:absolute; top:0; bottom:0; width:1px; background:#3d4653; z-index:0; }
+  .g-now-lab { position:absolute; font-family:var(--mono); font-size:10px; color:#6f7887; letter-spacing:.08em; top:-1px; }
+  .g-group { display:grid; grid-template-columns:var(--lab) 1fr; align-items:center; padding:14px 0 6px; }
+  .g-group span { font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:#6f7887; }
   .g-track::before {
     content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
     background:repeating-linear-gradient(to right, var(--hair) 0 1px, transparent 1px calc(100%/6));
   }
-  /* la barra visible es fina; el area sensible al mouse es de 24px, como pide el spec */
   .g-hit { position:absolute; height:24px; top:calc(50% - 12px); cursor:default; z-index:1 }
   .g-bar {
     position:absolute; left:0; right:0; height:12px; border-radius:6px; top:6px;
@@ -296,208 +229,599 @@
   .g-bar[data-k="job"]  { background:var(--s-job) }
   .g-bar[data-k="base"] { background:var(--s-base) }
   .g-bar[data-k="stu"]  { background:var(--s-stu) }
-  .g-lab { font-size:13px; color:#c3cad4; padding-right:16px; line-height:1.35 }
+  .g-lab { font-size:13px; color:var(--soft); padding-right:16px; line-height:1.35 }
   .g-tip {
     position:absolute; z-index:5; background:#1d232b; border:1px solid #303845; border-radius:4px;
     padding:8px 11px; font-size:13px; color:var(--fg); pointer-events:none; opacity:0;
-    transition:opacity .15s ease; white-space:nowrap;
+    transition:opacity .15s ease; white-space:nowrap; line-height:1.6;
   }
   .g-tip b { font-family:var(--mono); color:var(--signal); font-weight:600 }
   @media (max-width:760px) { .gantt { --lab:132px } .g-lab { font-size:11.5px } .g-row { height:40px } }
-  @media (prefers-reduced-motion:reduce) { .g-bar, .g-tip { transition:none } }
 
   /* ---- cierre ---- */
-  .cta { padding:78px 0 34px; }
+  .cta { padding:78px 0 10px; }
   .cta h2 { font-size:34px; font-weight:700; letter-spacing:-.02em; margin:0 0 16px; line-height:1.2; }
   .cta p { color:var(--dim); max-width:62ch; margin:0 0 30px; }
-  .cta a {
-    font-family:var(--mono); font-size:15px; text-decoration:none; color:var(--bg);
-    background:var(--signal); padding:13px 22px; border-radius:3px; display:inline-block; margin-right:10px;
-  }
-  .cta a.ghost { background:transparent; color:var(--fg); border:1px solid var(--hair); }
-  footer {
-    border-top:1px solid var(--hair); padding:22px 0 42px;
-    font-family:var(--mono); font-size:12px; color:var(--dim);
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px 24px;
-  }
+  .cta .btns { margin-top:0; }
+
   @media (max-width:1000px) {
     .chain { grid-template-columns:repeat(2,1fr) } .thesis { grid-template-columns:1fr; gap:34px }
-    h1 { font-size:40px } .claim { font-size:29px }
+    .intro h1 { font-size:40px } .claim { font-size:29px }
     .rows .row, .tl-row { grid-template-columns:1fr; gap:8px }
   }
   @media (max-width:700px) {
-    .wrap { padding:0 22px }
     .next { grid-template-columns:1fr; gap:10px }
-    /* el header en una fila no cabe: marca arriba, navegacion abajo */
-    header { flex-direction:column; align-items:flex-start; gap:16px }
-    .brand { white-space:nowrap }
-    nav { display:flex; flex-wrap:wrap; align-items:center; gap:20px }
-    nav a, nav .status { margin-left:0 }
-    .cta h2 { font-size:27px } h1 { font-size:33px } .pitch { font-size:19px }
+    .cta h2 { font-size:27px } .intro h1 { font-size:33px } .pitch { font-size:18px }
+    .pfacts { border-left:0; padding-left:0 }
   }
 
-  /* ================= MOVIMIENTO =================
-     Un solo momento orquestado: al cargar, la identidad sube y despues la cadena
-     se dibuja de izquierda a derecha, como el flujo que representa.
-     Todo se apaga con prefers-reduced-motion. */
+  /* la identidad sube al cargar; todo se apaga con prefers-reduced-motion */
   @keyframes rise { from { opacity:0; transform:translateY(14px) } to { opacity:1; transform:none } }
-  @keyframes riseCard { from { opacity:0; transform:translateY(18px) } to { opacity:1; transform:none } }
-  @keyframes beat {
-    0%,100% { transform:scale(1); opacity:1 }
-    50%     { transform:scale(1.5); opacity:.45 }
-  }
-
   .intro > * { animation:rise .62s cubic-bezier(.16,.8,.3,1) both }
-  .intro h1          { animation-delay:.05s }
-  .intro .disciplines{ animation-delay:.15s }
-  .intro .craft      { animation-delay:.23s }
-  .intro .pitch      { animation-delay:.31s }
-
-  .chain-label { animation:rise .6s cubic-bezier(.16,.8,.3,1) .42s both }
-  .chain .stage { animation:riseCard .6s cubic-bezier(.16,.8,.3,1) both }
-  .chain .stage:nth-child(1) { animation-delay:.50s }
-  .chain .stage:nth-child(2) { animation-delay:.57s }
-  .chain .stage:nth-child(3) { animation-delay:.64s }
-  .chain .stage:nth-child(4) { animation-delay:.71s }
-  .chain .stage:nth-child(5) { animation-delay:.78s }
-  .chain .stage:nth-child(6) { animation-delay:.85s }
-  .chain .stage:nth-child(7) { animation-delay:.92s }
-  .next { animation:riseCard .6s cubic-bezier(.16,.8,.3,1) 1s both }
-  .ip   { animation:rise .6s ease 1.15s both }
-
-  /* el punto de estado late: dice que hay alguien del otro lado */
-  .dot { animation:beat 2.6s ease-in-out infinite }
-
-  /* micro-interaccion: la etapa que mirás se enciende */
-  .stage, .next { transition:border-color .28s ease, transform .28s ease, background-color .28s ease }
-  .stage:hover, .next:hover { border-color:#3d5a86; transform:translateY(-3px); background:#191e25 }
-  .stage:hover .fig { color:#8fbcff }
-
-  nav a { transition:color .2s ease }
-  .cta a, .rows .row, .tl-row { transition:background-color .25s ease, border-color .25s ease, color .2s ease }
-  .cta a:hover { filter:brightness(1.08) }
-  .rows .row:hover .v, .tl-row:hover .tl-what p { color:#dce2ea }
-  .brand svg { transition:transform .3s cubic-bezier(.16,.8,.3,1) }
-  .brand:hover svg { transform:translateY(-2px) }
-
-  /* secciones de abajo: entran al llegar al scroll */
-  .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s cubic-bezier(.16,.8,.3,1) }
-  .reveal.seen { opacity:1; transform:none }
-
+  .intro h1 { animation-delay:.05s }
+  .intro .disciplines { animation-delay:.15s }
+  .intro .craft { animation-delay:.23s }
+  .intro .pitch { animation-delay:.31s }
   @media (prefers-reduced-motion:reduce) {
-    .intro > *, .chain .stage, .chain-label, .next, .ip { animation:none }
-    .reveal { opacity:1; transform:none; transition:none }
-    .dot { animation:none }
-    .stage:hover, .next:hover { transform:none }
+    .intro > *, .stage::after { animation:none }
+    .stage::after { opacity:.25; transform:none }
+    .g-bar, .g-tip { transition:none }
   }
 </style>
 </head>
 <body>
-<div class="wrap" id="top">
+<a class="skip" href="#main">Skip to content</a>
 
-  <header>
-    <a class="brand" href="#top" aria-label="Back to top">
-      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="#5b9dff" stroke-width="2.4" stroke-linecap="round">
+<div class="wrap" id="top">
+  <header class="site-head">
+    <a class="brand" href="/" aria-label="Bruno Saldivar, home">
+      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
         <path d="M16 2 L16 8"/><rect x="11" y="8" width="10" height="16" rx="1"/><path d="M16 24 L16 30"/>
       </svg>
+      Bruno Saldivar
     </a>
-    <nav aria-label="Main">
-      <a href="/">Home</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/portfolio/" aria-current="page">Work</a>
       <a href="/services/">Services</a>
       <a href="#background">Background</a>
       <a href="#contact">Contact</a>
-      <span class="status"><span class="dot"></span>Open to remote roles</span>
+      <a class="status" href="#contact"><span class="dot" aria-hidden="true"></span>Open to remote roles</a>
     </nav>
   </header>
+</div>
+
+<main id="main" class="wrap">
 
   <section class="intro">
-    <h1>Trading Systems Developer</h1>
+    <h1>Quantitative Developer · Agentic AI Engineer</h1>
     <p class="disciplines">Systematic and algorithmic trading · Energy trading &amp; procurement · Quant research · Systematic trading decision engine · Agentic AI engineering</p>
     <p class="craft">Backtesting · Monte Carlo · Risk systems · Execution diagnostics</p>
     <p class="pitch">
-      Five years of independent quantitative research and applied market study, since February
-      2021. I build trading research systems that connect market hypotheses, reproducible
-      experiments, risk controls, live MT5 execution and post-trade diagnosis. My Private Trading Research &amp; Execution Platform,
-      live on FX, indices and crypto, is the fourth system in that progression, and the one I designed, built and operate alone. It is
-      now evolving into a Systematic Trading Decision Engine, built with my own Agentic Workspace
-      Orchestration Platform. Alongside it I own a Trading Execution Copilot, developed with the same platform, and an
-      Energy Procurement Research &amp; Backtesting Platform that was built with it. Each of them is designed to operate,
-      evaluate its own results and improve its decisions over time, built through agentic workflows and augmented intelligence.
+      Independent engineer in Berlin. Since February 2021 I have studied markets and built the
+      software to test what I found. Today I own four systems, each designed, built and operated
+      by me: a trading research and execution platform that runs live on MT5, a voice-operated
+      execution copilot, an energy procurement research and backtesting platform, and the AI agent
+      platform that develops my trading decision engine and the copilot today, and built the
+      energy platform.
+    </p>
+    <p class="pitch">
+      Each one is built to operate, evaluate its own results and improve its decisions over time,
+      with AI used as augmented intelligence: it extends my judgement, it does not replace it.
     </p>
   </section>
 
-  <section class="chain-block">
-    <div class="chain-label">Private Trading Research &amp; Execution Platform · the full chain</div>
-    <div class="chain">
+  <section class="systems" aria-labelledby="sys-title">
+    <h2 class="sec" id="sys-title">The four systems</h2>
+    <div class="syslist">
 
-      <div class="stage">
-        <div class="i">01</div>
-        <h3>Market data</h3>
-        <p>MT5 tick and candle export, live and historical ingestion, gap and conflict checks, feed-freshness monitoring.</p>
-        <div class="fig">96<small>series · 10 instruments, up to 10 timeframes</small></div>
-      </div>
+      <article class="sys reveal" id="trading" aria-labelledby="trading-h">
+        <div class="sys-text">
+    <p class="sys-tag"><span class="sys-n">01</span>Own platform · live on MT5</p>
+    <h3 id="trading-h">Private Trading Research &amp; Execution Platform</h3>
+    <dl class="pw">
+      <div><dt>The problem</dt><dd>Most trading ideas are never tested against real costs, real risk limits and a real broker before money is on the line.</dd></div>
+      <div><dt>What it does</dt><dd>It takes a market idea from data to research, backtesting, risk checks and live orders on MT5, then checks the results against the broker's records.</dd></div>
+    </dl>
+    <p class="badge">Designed and built by me</p>
+    <p class="kf"><b>1,217</b><span>order records from live execution on MT5, with profit and loss reconciled against the broker to the cent.</span></p>
+    <p class="fine">Proprietary. This describes the engineering, never the strategy.</p>
+        </div>
+<figure class="dg-card">
+  <div class="dg-top">
+    <span class="kicker">How it works · 6 steps</span>
+    <button class="dg-pp" type="button" aria-label="Pause the animation" hidden>Pause</button>
+  </div>
+  <svg class="dg" viewBox="0 0 400 446" role="img" aria-labelledby="dg-tr-t dg-tr-d" style="--n:6">
+    <title id="dg-tr-t">How the trading platform works, in six steps</title>
+    <desc id="dg-tr-d">Top to bottom. One, market data: ticks and candles from MT5, checked for gaps. Two, research: market hypotheses written as testable rules. Three, backtesting with realistic fills and broker costs. Four, risk: position sizing and drawdown limits. Five, live execution: orders sent to MT5, with order state that survives a restart. Six, reconciliation and diagnostics: profit and loss matched to the broker, to the cent. Expected versus actual results feed back into research.</desc>
+    <defs>
+      <marker id="ah-tr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/></marker>
+      <marker id="ah-tr-d" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--dim)"/></marker>
+    </defs>
 
-      <div class="stage">
-        <div class="i">02</div>
-        <h3>Research</h3>
-        <p>Deterministic strategy rules, reproducible experiments, and systematic parameter exploration.</p>
-        <div class="fig">3 years<small>of history under test</small></div>
-      </div>
+    <path class="cn" style="--i:1" d="M185 62 L185 81" marker-end="url(#ah-tr)"/>
+    <path class="cn" style="--i:2" d="M185 136 L185 155" marker-end="url(#ah-tr)"/>
+    <path class="cn" style="--i:3" d="M185 210 L185 229" marker-end="url(#ah-tr)"/>
+    <path class="cn" style="--i:4" d="M185 284 L185 303" marker-end="url(#ah-tr)"/>
+    <path class="cn" style="--i:5" d="M185 358 L185 377" marker-end="url(#ah-tr)"/>
+    <path class="cn alt" style="--i:5" d="M330 406 C380 406 380 110 334 110" marker-end="url(#ah-tr-d)"/>
+    <text class="m" transform="translate(388 258) rotate(90)" text-anchor="middle">expected vs actual</text>
 
-      <div class="stage">
-        <div class="i">03</div>
-        <h3>Simulation</h3>
-        <p>Execution-aware backtesting with explicit fill, no-fill and rejection states, intrabar ordering, broker costs.</p>
-        <div class="fig">919,520,148<small>simulated results</small></div>
-      </div>
+    <g class="st" style="--i:0">
+      <rect class="bx" x="40" y="10" width="290" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="36" r="12"/><text class="kn" x="40" y="40">1</text>
+      <text class="t" x="185" y="33">Market data</text>
+      <text class="s" x="185" y="51">MT5 ticks and candles, gap checks</text>
+    </g>
+    <g class="st" style="--i:1">
+      <rect class="bx" x="40" y="84" width="290" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="110" r="12"/><text class="kn" x="40" y="114">2</text>
+      <text class="t" x="185" y="107">Research</text>
+      <text class="s" x="185" y="125">market hypotheses as testable rules</text>
+    </g>
+    <g class="st" style="--i:2">
+      <rect class="bx" x="40" y="158" width="290" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="184" r="12"/><text class="kn" x="40" y="188">3</text>
+      <text class="t" x="185" y="181">Backtesting</text>
+      <text class="s" x="185" y="199">realistic fills and broker costs</text>
+    </g>
+    <g class="st" style="--i:3">
+      <rect class="bx" x="40" y="232" width="290" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="258" r="12"/><text class="kn" x="40" y="262">4</text>
+      <text class="t" x="185" y="255">Risk</text>
+      <text class="s" x="185" y="273">position sizing, drawdown limits</text>
+    </g>
+    <g class="st" style="--i:4">
+      <rect class="bx" x="40" y="306" width="290" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="332" r="12"/><text class="kn" x="40" y="336">5</text>
+      <text class="t" x="185" y="329">Live execution</text>
+      <text class="s" x="185" y="347">orders on MT5, state survives restarts</text>
+    </g>
+    <g class="st" style="--i:5">
+      <rect class="bx end" x="40" y="380" width="290" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="406" r="12"/><text class="kn" x="40" y="410">6</text>
+      <text class="t" x="185" y="403">Reconciliation &amp; diagnostics</text>
+      <text class="s" x="185" y="421">P&amp;L matched to the broker, to the cent</text>
+    </g>
+  </svg>
+  <figcaption>Simplified. What live trading shows, expected against actual, goes back into research.</figcaption>
+</figure>
+        <div class="terms">
+          <h4>Key terms, in plain words</h4>
+          <dl>
+            <div><dt>Execution-aware backtesting</dt><dd>Replaying past markets to see what a rule would have done, including orders that would not have filled and the broker's costs.</dd></div>
+            <div><dt>Monte Carlo stress testing</dt><dd>Thousands of reshuffled histories, to see how bad it can get before any money is at risk.</dd></div>
+            <div><dt>Position sizing and drawdown limits</dt><dd>How big each trade may be, and a hard cap on how much the account may lose in a day and in total.</dd></div>
+            <div><dt>Broker reconciliation</dt><dd>My own records matched against the broker's, down to the cent.</dd></div>
+            <div><dt>Systematic Trading Decision Engine</dt><dd>The next layer: a candidate decision rule must beat simpler baselines and pass statistical gates, under a safety veto that can always block it, before it can reach capital.</dd></div>
+            <div><dt>Silent-failure detection</dt><dd>A channel that is running but no longer writing is caught, instead of being reported as a normal day.</dd></div>
+          </dl>
+        </div>
+        <details class="evidence">
+          <summary>Evidence for technical readers</summary>
+          <div class="ev-body">
+            <p>The full chain, with the figure behind each stage. Every figure is traced to a run manifest, the git history or the test directory.</p>
+            <div class="chain">
+              <div class="stage">
+                <div class="i">01</div>
+                <h5>Market data</h5>
+                <p>MT5 tick and candle export, live and historical ingestion, gap and conflict checks, feed-freshness monitoring.</p>
+                <div class="fig">96<small>series · 10 instruments, up to 10 timeframes</small></div>
+              </div>
+              <div class="stage">
+                <div class="i">02</div>
+                <h5>Research</h5>
+                <p>Deterministic strategy rules, reproducible experiments, and systematic parameter exploration.</p>
+                <div class="fig">3 years<small>of history under test</small></div>
+              </div>
+              <div class="stage">
+                <div class="i">03</div>
+                <h5>Simulation</h5>
+                <p>Execution-aware backtesting with explicit fill, no-fill and rejection states, intrabar ordering, broker costs.</p>
+                <div class="fig">919,520,148<small>simulated results</small></div>
+              </div>
+              <div class="stage">
+                <div class="i">04</div>
+                <h5>Risk</h5>
+                <p>Monte Carlo stress analysis, position sizing, combined exposure, daily and total drawdown limits.</p>
+                <div class="fig">3,000<small>Monte Carlo runs per finalist</small></div>
+              </div>
+              <div class="stage">
+                <div class="i">05</div>
+                <h5>Execution</h5>
+                <p>Broker preflight, MT5 order submission, persisted lifecycle state, restart recovery, end-of-day controls, and post-trade P&amp;L reconciliation against broker truth to the cent.</p>
+                <div class="fig">1,217<small>executed order records</small></div>
+              </div>
+              <div class="stage">
+                <div class="i">06</div>
+                <h5>Operations</h5>
+                <p>REST APIs, health and readiness telemetry, automated daily, weekly and monthly reporting, signal to order to fill diagnostics, and silent-failure detection: the business ledger is cross-checked against an independent process heartbeat.</p>
+                <div class="fig">243<small>service endpoints</small></div>
+              </div>
+              <div class="stage">
+                <div class="i">07</div>
+                <h5>Quality</h5>
+                <p>Regression, integration, golden-case and failure-path tests, and a pre-commit hook that blocks a commit when the architecture documentation is out of sync with the code.</p>
+                <div class="fig">883<small>automated test files</small></div>
+              </div>
+            </div>
+            <p>Two research engines have produced <b>919,520,148 simulated results</b> across ten markets and three years of history, every figure traced to a run manifest. The survivors then go through Monte Carlo stress before anything reaches a live account. Live today on FX, indices and crypto.</p>
+            <div class="next">
+              <div class="next-tag">08 · NEXT</div>
+              <div>
+                <h5>Systematic Trading Decision Engine</h5>
+                <div class="sub">Offline policy learning · Off-policy evaluation · Champion-challenger governance</div>
+                <p>
+                  The platform is evolving from deterministic rules into a decision engine above the chain. The
+                  data picks the model family, with reinforcement learning among the candidates. Every
+                  candidate policy must beat simpler baselines and pass statistical promotion gates under a
+                  hard safety veto before it can reach capital. In plain words: a new decision rule is learned
+                  from recorded history and judged on past data before it risks money (offline policy learning,
+                  off-policy evaluation), and it replaces the rule in use only if it beats it (champion-challenger).
+                  The foundation so far: <b>138</b> TypeScript modules, <b>27</b> typed contract modules and <b>30</b> JSON schemas,
+                  verified by a validation suite of <b>6,340</b> passing tests, none failing, with <b>125 of 139</b> planned tasks delivered.
+                </p>
+              </div>
+            </div>
+            <p>The Private Trading Research &amp; Execution Platform is proprietary. This page describes the scope of the engineering, not the strategy logic.</p>
+          </div>
+        </details>
+      </article>
 
-      <div class="stage">
-        <div class="i">04</div>
-        <h3>Risk</h3>
-        <p>Monte Carlo stress analysis, position sizing, combined exposure, daily and total drawdown limits.</p>
-        <div class="fig">3,000<small>Monte Carlo runs per finalist</small></div>
-      </div>
+      <article class="sys reveal" id="copilot" aria-labelledby="copilot-h">
+        <div class="sys-text">
+    <p class="sys-tag"><span class="sys-n">02</span>Own product · voice execution on MT5</p>
+    <h3 id="copilot-h">Trading Execution Copilot</h3>
+    <dl class="pw">
+      <div><dt>The problem</dt><dd>When a trader places orders by hand under time pressure, one wrong size or price can cost real money.</dd></div>
+      <div><dt>What it does</dt><dd>The trader says the order out loud. The copilot turns it into a ticket, checks it, sizes the risk, reads it back and sends it to MT5 only after an explicit yes, then reconciles it with the broker.</dd></div>
+    </dl>
+    <p class="badge">Designed and built by me</p>
+    <p class="kf"><b>776</b><span>automated tests, all passing.</span></p>
+        </div>
+<figure class="dg-card">
+  <div class="dg-top">
+    <span class="kicker">How it works · 7 steps</span>
+    <button class="dg-pp" type="button" aria-label="Pause the animation" hidden>Pause</button>
+  </div>
+  <svg class="dg" viewBox="0 0 400 466" role="img" aria-labelledby="dg-co-t dg-co-d" style="--n:7">
+    <title id="dg-co-t">How the trading execution copilot works, in seven steps</title>
+    <desc id="dg-co-d">Top to bottom. One, voice order: the trader dictates the order and it becomes a ticket. Two, validation: the ticket is checked first. Three, risk sizing: the position size is set from the risk limit. Four, read back: the order is repeated back to the trader. Five, explicit confirmation: nothing moves without a clear yes; without it, nothing is sent. Six, the order is sent to MT5. Seven, broker reconciliation: the order counts as done once the broker confirms it.</desc>
+    <defs>
+      <marker id="ah-co" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/></marker>
+      <marker id="ah-co-w" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--warn)"/></marker>
+    </defs>
 
-      <div class="stage">
-        <div class="i">05</div>
-        <h3>Execution</h3>
-        <p>Broker preflight, MT5 order submission, persisted lifecycle state, restart recovery, end-of-day controls, and post-trade P&amp;L reconciliation against broker truth to the cent.</p>
-        <div class="fig">1,217<small>executed order records</small></div>
-      </div>
+    <path class="cn" style="--i:1" d="M161 58 L161 73" marker-end="url(#ah-co)"/>
+    <path class="cn" style="--i:2" d="M161 124 L161 139" marker-end="url(#ah-co)"/>
+    <path class="cn" style="--i:3" d="M161 190 L161 205" marker-end="url(#ah-co)"/>
+    <path class="cn" style="--i:4" d="M161 256 L161 271" marker-end="url(#ah-co)"/>
+    <path class="cn" style="--i:5" d="M161 322 L161 337" marker-end="url(#ah-co)"/>
+    <path class="cn" style="--i:6" d="M161 388 L161 403" marker-end="url(#ah-co)"/>
+    <path class="cn warn" style="--i:4" d="M286 298 L302 298" marker-end="url(#ah-co-w)"/>
 
-      <div class="stage">
-        <div class="i">06</div>
-        <h3>Operations</h3>
-        <p>REST APIs, health and readiness telemetry, automated daily, weekly and monthly reporting, signal to order to fill diagnostics, and silent-failure detection: the business ledger is cross-checked against an independent process heartbeat, so a channel that is alive but not writing is never reported as a normal day.</p>
-        <div class="fig">243<small>service endpoints</small></div>
-      </div>
+    <g class="st" style="--i:0">
+      <rect class="bx" x="36" y="10" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="34" r="12"/><text class="kn" x="36" y="38">1</text>
+      <text class="t" x="161" y="31">Voice order</text>
+      <text class="s" x="161" y="48">dictated, turned into a ticket</text>
+    </g>
+    <g class="st" style="--i:1">
+      <rect class="bx" x="36" y="76" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="100" r="12"/><text class="kn" x="36" y="104">2</text>
+      <text class="t" x="161" y="97">Validation</text>
+      <text class="s" x="161" y="114">the ticket is checked first</text>
+    </g>
+    <g class="st" style="--i:2">
+      <rect class="bx" x="36" y="142" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="166" r="12"/><text class="kn" x="36" y="170">3</text>
+      <text class="t" x="161" y="163">Risk sizing</text>
+      <text class="s" x="161" y="180">size set from the risk limit</text>
+    </g>
+    <g class="st" style="--i:3">
+      <rect class="bx" x="36" y="208" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="232" r="12"/><text class="kn" x="36" y="236">4</text>
+      <text class="t" x="161" y="229">Read back</text>
+      <text class="s" x="161" y="246">repeated back to the trader</text>
+    </g>
+    <g class="st" style="--i:4">
+      <rect class="bx hu" x="36" y="274" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="298" r="12"/><text class="kn" x="36" y="302">5</text>
+      <text class="t" x="161" y="295">Explicit confirmation</text>
+      <text class="s" x="161" y="312">nothing moves without a clear yes</text>
+    </g>
+    <g class="st" style="--i:4">
+      <rect class="gate re" x="304" y="284" width="92" height="28" rx="14"/>
+      <text class="gl re" x="350" y="302" style="font-size:10px">no → not sent</text>
+    </g>
+    <g class="st" style="--i:5">
+      <rect class="bx" x="36" y="340" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="364" r="12"/><text class="kn" x="36" y="368">6</text>
+      <text class="t" x="161" y="361">Sent to MT5</text>
+      <text class="s" x="161" y="378">only after the yes</text>
+    </g>
+    <g class="st" style="--i:6">
+      <rect class="bx end" x="36" y="406" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="430" r="12"/><text class="kn" x="36" y="434">7</text>
+      <text class="t" x="161" y="427">Broker reconciliation</text>
+      <text class="s" x="161" y="444">done once the broker confirms</text>
+    </g>
+  </svg>
+  <figcaption>The trader decides the trade. The copilot makes sure the order that goes out is the one that was meant.</figcaption>
+</figure>
+        <div class="terms">
+          <h4>Key terms, in plain words</h4>
+          <dl>
+            <div><dt>Discretionary execution</dt><dd>The trader decides the trade; the copilot handles the order safely.</dd></div>
+            <div><dt>Ticket</dt><dd>The spoken order, written down as a structured order that software can check.</dd></div>
+            <div><dt>Risk sizing</dt><dd>The position size is worked out from the risk limit, not typed by hand.</dd></div>
+            <div><dt>Read back</dt><dd>The order is repeated back to the trader before anything is sent.</dd></div>
+            <div><dt>Broker reconciliation</dt><dd>An order counts as executed only when the broker's own record confirms it.</dd></div>
+          </dl>
+        </div>
+        <details class="evidence">
+          <summary>Evidence for technical readers</summary>
+          <div class="ev-body">
+            <ul>
+              <li>The path from spoken order to broker is built as separate, tested parts: a dictated-order parser, a ticket validator, a lot calculator and the read-back.</li>
+              <li>Nothing is sent without explicit confirmation, and nothing counts as executed without a reconciled broker acknowledgement.</li>
+              <li><b>776</b> automated tests passing, none failing.</li>
+              <li>Built through my own agent platform (system 04).</li>
+            </ul>
+          </div>
+        </details>
+      </article>
 
-      <div class="stage">
-        <div class="i">07</div>
-        <h3>Quality</h3>
-        <p>Regression, integration, golden-case and failure-path tests, and a pre-commit hook that blocks a commit when the architecture documentation is out of sync with the code.</p>
-        <div class="fig">883<small>automated test files</small></div>
-      </div>
+      <article class="sys reveal" id="energy" aria-labelledby="energy-h">
+        <div class="sys-text">
+    <p class="sys-tag"><span class="sys-n">03</span>Own platform · European power and gas</p>
+    <h3 id="energy-h">Energy Procurement Research &amp; Backtesting Platform</h3>
+    <dl class="pw">
+      <div><dt>The problem</dt><dd>A company that buys power and gas needs evidence, not opinion, on how and when to buy.</dd></div>
+      <div><dt>What it does</dt><dd>It turns each buying question into a testable hypothesis, replays it on real European market data with costs, and compares the result with the buyer's current practice and a market benchmark.</dd></div>
+    </dl>
+    <p class="badge">Designed and built by me</p>
+    <p class="origin">The problem came from a confidential energy company in Oxford, UK, where I worked on-site in September and October 2026. The platform, the method, the hypotheses and the backtesting are mine.</p>
+    <p class="kf"><b>77 of 77</b><span>planned tasks built and accepted: the whole plan.</span></p>
+    <p class="fine">Client, data and results stay confidential.</p>
+        </div>
+<figure class="dg-card">
+  <div class="dg-top">
+    <span class="kicker">How it works · 6 steps</span>
+    <button class="dg-pp" type="button" aria-label="Pause the animation" hidden>Pause</button>
+  </div>
+  <svg class="dg" viewBox="0 0 400 446" role="img" aria-labelledby="dg-en-t dg-en-d" style="--n:6">
+    <title id="dg-en-t">How the energy procurement research platform works, in six steps</title>
+    <desc id="dg-en-d">Top to bottom. One, market data: real exchange order book and trades from European power and gas markets. Two, a buying question: what the buyer needs to decide. Three, a testable hypothesis, stated before anything is measured. Four, backtest and replay, with costs included and point-in-time data. Five, comparison against two references side by side: the buyer's current practice and a market benchmark. Six, decision: the evidence behind the buying decision.</desc>
+    <defs>
+      <marker id="ah-en" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/></marker>
+    </defs>
+
+    <path class="cn" style="--i:1" d="M200 62 L200 81" marker-end="url(#ah-en)"/>
+    <path class="cn" style="--i:2" d="M200 136 L200 155" marker-end="url(#ah-en)"/>
+    <path class="cn" style="--i:3" d="M200 210 L200 229" marker-end="url(#ah-en)"/>
+    <path class="cn" style="--i:4" d="M200 284 C200 296 108 292 108 303" marker-end="url(#ah-en)"/>
+    <path class="cn" style="--i:4" d="M200 284 C200 296 292 292 292 303" marker-end="url(#ah-en)"/>
+    <path class="cn" style="--i:5" d="M108 358 C108 370 200 366 200 377" marker-end="url(#ah-en)"/>
+    <path class="cn" style="--i:5" d="M292 358 C292 370 200 366 200 377" marker-end="url(#ah-en)"/>
+
+    <g class="st" style="--i:0">
+      <rect class="bx" x="40" y="10" width="320" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="36" r="12"/><text class="kn" x="40" y="40">1</text>
+      <text class="t" x="200" y="33">Market data</text>
+      <text class="s" x="200" y="51">real exchange order book and trades</text>
+    </g>
+    <g class="st" style="--i:1">
+      <rect class="bx" x="40" y="84" width="320" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="110" r="12"/><text class="kn" x="40" y="114">2</text>
+      <text class="t" x="200" y="107">Buying question</text>
+      <text class="s" x="200" y="125">what the buyer needs to decide</text>
+    </g>
+    <g class="st" style="--i:2">
+      <rect class="bx" x="40" y="158" width="320" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="184" r="12"/><text class="kn" x="40" y="188">3</text>
+      <text class="t" x="200" y="181">Testable hypothesis</text>
+      <text class="s" x="200" y="199">stated before anything is measured</text>
+    </g>
+    <g class="st" style="--i:3">
+      <rect class="bx" x="40" y="232" width="320" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="258" r="12"/><text class="kn" x="40" y="262">4</text>
+      <text class="t" x="200" y="255">Backtest and replay</text>
+      <text class="s" x="200" y="273">costs included, point in time</text>
+    </g>
+    <g class="st" style="--i:4">
+      <rect class="bx" x="20" y="306" width="176" height="52" rx="10"/>
+      <circle class="k" cx="20" cy="332" r="12"/><text class="kn" x="20" y="336">5</text>
+      <text class="t" x="108" y="329" style="font-size:15px">Current practice</text>
+      <text class="s" x="108" y="347">the buyer's way today</text>
+    </g>
+    <g class="st" style="--i:4">
+      <rect class="bx" x="204" y="306" width="176" height="52" rx="10"/>
+      <text class="t" x="292" y="329" style="font-size:15px">Market benchmark</text>
+      <text class="s" x="292" y="347">a market reference</text>
+    </g>
+    <g class="st" style="--i:5">
+      <rect class="bx end" x="40" y="380" width="320" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="406" r="12"/><text class="kn" x="40" y="410">6</text>
+      <text class="t" x="200" y="403">Decision</text>
+      <text class="s" x="200" y="421">evidence behind the buying decision</text>
+    </g>
+  </svg>
+  <figcaption>Simplified. Every hypothesis is compared with both references, never only with itself.</figcaption>
+</figure>
+        <div class="terms">
+          <h4>Key terms, in plain words</h4>
+          <dl>
+            <div><dt>Energy procurement</dt><dd>How a company buys the power and gas it needs, here in monthly and quarterly products.</dd></div>
+            <div><dt>Hypothesis-driven research</dt><dd>Each idea is written as a testable claim, with its acceptance criteria, before it is measured.</dd></div>
+            <div><dt>Backtest and replay</dt><dd>Running a buying rule over past market data, with trading costs, as if it had been used at the time.</dd></div>
+            <div><dt>Point-in-time data</dt><dd>Each simulated decision sees only what was known at that moment.</dd></div>
+            <div><dt>Out-of-sample period</dt><dd>Data set aside before any selection, so the result is not tuned to it.</dd></div>
+            <div><dt>Market benchmark</dt><dd>A market reference to compare against, so a result means something beyond itself.</dd></div>
+          </dl>
+        </div>
+        <details class="evidence">
+          <summary>Evidence for technical readers</summary>
+          <div class="ev-body">
+            <ul>
+              <li><b>77 of 77</b> planned tasks accepted, <b>721</b> commits and <b>198</b> test files.</li>
+              <li>Strategy research, hypothesis methods and backtesting for European power and gas procurement, with monthly and quarterly delivery.</li>
+              <li>Point-in-time decision views kept separate from evaluation views, and an out-of-sample period reserved before any selection.</li>
+              <li>Replay with cost ledgers and run receipts for reproducibility, so far demonstrated on a synthetic fixture.</li>
+              <li>An offline value and policy learning cycle that only proposes candidate versions and never activates one, tested with synthetic fixtures only.</li>
+              <li>An operator UI for campaigns, replay, backtests and research; a designed market-state observability layer; and a path toward reinforcement learning for purchase decisions.</li>
+              <li>Every hypothesis is measured against the buyer's current practice and a market benchmark. The first end-to-end test sets the starting baseline, not the final result.</li>
+              <li>Built with my own agent platform (system 04).</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+
+      <article class="sys reveal" id="awop" aria-labelledby="awop-h">
+        <div class="sys-text">
+    <p class="sys-tag"><span class="sys-n">04</span>Own platform · AI coding agents</p>
+    <h3 id="awop-h">Agentic Workflow Orchestration Platform (AWOP)</h3>
+    <p class="sys-sub">Multi-agent orchestration <i>(several AI agents working at once)</i> with MCP <i>(a standard connector that lets an outside AI assistant operate it)</i>, evals <i>(every agent run measured by model and role)</i> and model routing with failover <i>(each job goes to a chosen model, and moves to another account when one runs out of quota)</i>.</p>
+    <dl class="pw">
+      <div><dt>The problem</dt><dd>AI coding agents write code fast, but without structure nobody can say what changed, whether it was tested or who checked it.</dd></div>
+      <div><dt>What it does</dt><dd>It splits the work across several AI agents in parallel, each on its own branch, and merges a change only after it passes the tests and a review, logging every run.</dd></div>
+    </dl>
+    <p class="badge">Designed and built by me</p>
+    <p class="origin">It develops my trading decision engine and execution copilot today, and it built my energy platform.</p>
+    <p class="kf"><b>272</b><span>tasks merged into my four projects by AI agents, every one through the test gate.</span></p>
+        </div>
+<figure class="dg-card">
+  <div class="dg-top">
+    <span class="kicker">How it works · 7 steps</span>
+    <button class="dg-pp" type="button" aria-label="Pause the animation" hidden>Pause</button>
+  </div>
+  <svg class="dg" viewBox="0 0 420 496" role="img" aria-labelledby="dg-aw-t dg-aw-d" style="--n:7">
+    <title id="dg-aw-t">How the agent platform works, in seven steps</title>
+    <desc id="dg-aw-d">Top to bottom. One, a task, scoped with acceptance criteria. Two, a planner prepares the work for the agents. Three, several writer agents work in parallel, each in its own workspace and git branch. Four, each change must pass a test gate that compares it with main; a change that makes the tests worse goes back to its agent for rework. Five, independent review: a different agent checks the exact change. Six, merge into main, only after the gate and the review. Seven, record and measurement: a run log and metrics by model and role.</desc>
+    <defs>
+      <marker id="ah-aw" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/></marker>
+      <marker id="ah-aw-w" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--warn)"/></marker>
+    </defs>
+
+    <path class="cn" style="--i:1" d="M220 58 L220 75" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:2" d="M220 126 C220 138 90 134 90 143" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:2" d="M220 126 L220 143" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:2" d="M220 126 C220 138 350 134 350 143" marker-end="url(#ah-aw)"/>
+
+    <g>
+      <rect class="ws" x="28" y="146" width="124" height="126" rx="12"/>
+      <rect class="ws" x="158" y="146" width="124" height="126" rx="12"/>
+      <rect class="ws" x="288" y="146" width="124" height="126" rx="12"/>
+      <text class="m" x="46" y="162">own branch</text>
+      <text class="m" x="176" y="162">own branch</text>
+      <text class="m" x="306" y="162">own branch</text>
+    </g>
+
+    <path class="cn" style="--i:3" d="M90 210 L90 221" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:3" d="M220 210 L220 221" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:3" d="M350 210 L350 221" marker-end="url(#ah-aw)"/>
+    <path class="cn warn" style="--i:3" d="M404 239 C417 239 417 189 405 189" marker-end="url(#ah-aw-w)"/>
+
+    <path class="cn" style="--i:4" d="M90 272 C90 284 220 280 220 291" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:4" d="M220 272 L220 291" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:4" d="M350 272 C350 284 220 280 220 291" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:5" d="M220 342 L220 359" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:6" d="M220 410 L220 427" marker-end="url(#ah-aw)"/>
+
+    <g class="st" style="--i:0">
+      <rect class="bx" x="100" y="10" width="240" height="48" rx="10"/>
+      <circle class="k" cx="100" cy="34" r="12"/><text class="kn" x="100" y="38">1</text>
+      <text class="t" x="220" y="31">Task</text>
+      <text class="s" x="220" y="48">scoped, with acceptance criteria</text>
+    </g>
+    <g class="st" style="--i:1">
+      <rect class="bx" x="100" y="78" width="240" height="48" rx="10"/>
+      <circle class="k" cx="100" cy="102" r="12"/><text class="kn" x="100" y="106">2</text>
+      <text class="t" x="220" y="99">Planner</text>
+      <text class="s" x="220" y="116">plans the work for the agents</text>
+    </g>
+    <g class="st" style="--i:2">
+      <rect class="bx" x="38" y="168" width="104" height="42" rx="8"/>
+      <circle class="k" cx="28" cy="189" r="12"/><text class="kn" x="28" y="193">3</text>
+      <text class="t" x="90" y="186">Agent A</text>
+      <text class="s" x="90" y="202">writes code</text>
+    </g>
+    <g class="st" style="--i:2">
+      <rect class="bx" x="168" y="168" width="104" height="42" rx="8"/>
+      <text class="t" x="220" y="186">Agent B</text>
+      <text class="s" x="220" y="202">writes code</text>
+    </g>
+    <g class="st" style="--i:2">
+      <rect class="bx" x="298" y="168" width="104" height="42" rx="8"/>
+      <text class="t" x="350" y="186">Agent C</text>
+      <text class="s" x="350" y="202">writes code</text>
+    </g>
+    <g class="st" style="--i:3">
+      <rect class="gate" x="42" y="224" width="96" height="30" rx="15"/>
+      <circle class="k" cx="28" cy="239" r="12"/><text class="kn" x="28" y="243">4</text>
+      <text class="gl" x="90" y="243" style="font-size:10px">tests ≥ main ✓</text>
+    </g>
+    <g class="st" style="--i:3">
+      <rect class="gate" x="172" y="224" width="96" height="30" rx="15"/>
+      <text class="gl" x="220" y="243" style="font-size:10px">tests ≥ main ✓</text>
+    </g>
+    <g class="st" style="--i:3">
+      <rect class="gate re" x="300" y="224" width="104" height="30" rx="15"/>
+      <text class="gl re" x="352" y="243" style="font-size:10px">worse → rework</text>
+    </g>
+    <g class="st" style="--i:4">
+      <rect class="bx" x="90" y="294" width="260" height="48" rx="10"/>
+      <circle class="k" cx="90" cy="318" r="12"/><text class="kn" x="90" y="322">5</text>
+      <text class="t" x="220" y="315">Independent review</text>
+      <text class="s" x="220" y="332">a different agent checks the diff</text>
+    </g>
+    <g class="st" style="--i:5">
+      <rect class="bx" x="120" y="362" width="200" height="48" rx="10"/>
+      <circle class="k" cx="120" cy="386" r="12"/><text class="kn" x="120" y="390">6</text>
+      <text class="t" x="220" y="383">Merge into main</text>
+      <text class="s" x="220" y="400">only after gate and review</text>
+    </g>
+    <g class="st" style="--i:6">
+      <rect class="bx end" x="90" y="430" width="260" height="54" rx="10"/>
+      <circle class="k" cx="90" cy="457" r="12"/><text class="kn" x="90" y="461">7</text>
+      <text class="t" x="220" y="453">Record and measurement</text>
+      <text class="s" x="220" y="472">run log, metrics by model and role</text>
+    </g>
+  </svg>
+  <figcaption>Simplified. Independent review is mandatory on every autopilot merge; on the other routes a person decides.</figcaption>
+</figure>
+        <div class="terms">
+          <h4>Key terms, in plain words</h4>
+          <dl>
+            <div><dt>Multi-agent orchestration</dt><dd>Several AI agents working on the same codebase at once, each on its own task.</dd></div>
+            <div><dt>MCP (Model Context Protocol)</dt><dd>A standard connector that lets an outside AI assistant see and operate the platform, through the same interface a person uses.</dd></div>
+            <div><dt>Evals</dt><dd>Every agent run is measured by model and role, so the choice of model rests on numbers, not impressions.</dd></div>
+            <div><dt>Model routing and failover</dt><dd>Each kind of job goes to a chosen account and model; when an account runs low on quota, the work moves to another one.</dd></div>
+            <div><dt>Isolated branch</dt><dd>Each agent writes in its own copy of the code, so parallel work cannot collide.</dd></div>
+            <div><dt>Test-regression gate</dt><dd>Nothing merges if the tests get worse than main.</dd></div>
+            <div><dt>Independent review</dt><dd>A different agent, not the one that wrote the change, checks the exact diff.</dd></div>
+            <div><dt>Autopilot merge</dt><dd>On routes agreed in advance, a change merges without a person once it has passed the gate and the independent review.</dd></div>
+            <div><dt>First-pass approval and rework rate</dt><dd>How often a change is accepted at once, and how often it goes back to be redone.</dd></div>
+          </dl>
+        </div>
+        <details class="evidence">
+          <summary>Evidence for technical readers</summary>
+          <div class="ev-body">
+            <ul>
+              <li><b>272</b> tasks merged in 4 codebases (my trading decision engine, the execution copilot, the energy platform and the platform itself), from <b>4,187</b> agent runs; <b>220</b> of them merged by the autopilot without a human merge decision.</li>
+              <li>AI agents work in parallel across <b>6</b> provider accounts and <b>4</b> model families, under one shared engineering standard.</li>
+              <li><b>1,209</b> commits in <b>28</b> days, with <b>3,278</b> tests passing, none failing.</li>
+              <li>An MCP server lets an outside AI assistant read the platform's state and operate it through the same API as the user interface.</li>
+              <li>Model routing by role and account, with a quota reserve per account and a handoff to another account when one runs low.</li>
+              <li>Every run is measured by model and role: first-pass approval, rework rate, review rounds to acceptance and tokens per accepted task, each rate with its sample size.</li>
+              <li>Limits, stated up front: agents work in isolated branches and working copies, which is not a security sandbox; independent review is mandatory on autopilot merges, not on every merge.</li>
+              <li>Private: it is not licensed or installed for clients. What I offer is the method, built on the client's own tools (<a href="/services/">Services</a>).</li>
+            </ul>
+          </div>
+        </details>
+      </article>
 
     </div>
-
-    <div class="next">
-      <div class="next-tag">08</div>
-      <div>
-        <h3>Systematic Trading Decision Engine</h3>
-        <div class="sub">Offline policy learning · Off-policy evaluation · Champion-challenger governance</div>
-        <p>
-          The platform is evolving from deterministic rules into a decision engine above the chain. The
-          data picks the model family, with reinforcement learning among the candidates. Every
-          candidate policy must beat simpler baselines and pass statistical promotion gates under a
-          hard safety veto before it can reach capital. The foundation so far: 138 TypeScript modules,
-          27 typed contract modules and 30 JSON schemas, verified by a validation suite of 6,340
-          passing tests, none failing, with 125 of 139 planned tasks delivered.
-        </p>
-      </div>
-    </div>
-
-    <p class="ip">The Private Trading Research &amp; Execution Platform is proprietary. This page describes the scope of the engineering, not the strategy logic.</p>
   </section>
 
   <section class="thesis reveal">
@@ -511,19 +835,14 @@
         above every day. I build systems that keep running without me.
       </p>
       <p>
-        Two research engines have produced <b>919,520,148 simulated results</b> across ten markets
-        and three years of history, every figure traced to a run manifest. The survivors then go
-        through Monte Carlo stress before anything reaches a live account.
-      </p>
-      <p>
         Independent and self-funded, end to end. Every figure on this page can be traced back to
         the file it came from.
       </p>
     </div>
-    <dl class="facts">
+    <dl class="pfacts">
       <dt>Based in</dt><dd>Berlin, Germany</dd>
       <dt>Status</dt><dd class="on">Open to remote roles worldwide</dd>
-      <dt>Looking for</dt><dd>Systematic trading · Energy trading · Quantitative development · Trading platforms · Remote</dd>
+      <dt>Looking for</dt><dd>Quantitative development · Trading systems engineering · Agentic AI engineering · Energy trading · Systematic trading · Remote</dd>
       <dt>Stack</dt><dd>JavaScript · TypeScript · Python · Node.js · Express · React · MQL5 / MT5 · Streamlit</dd>
       <dt>Languages</dt><dd>Spanish native · English professional · German A2.2, working toward B1</dd>
     </dl>
@@ -534,7 +853,7 @@
     <div class="rows">
       <div class="row">
         <div class="k">Strategy design</div>
-        <div class="v">Turning discretionary trading expertise into explicit, testable rules, with hypotheses and acceptance criteria defined before measurement.</div>
+        <div class="v">Turning discretionary trading expertise <i>(decisions a trader makes by judgement)</i> into explicit, testable rules, with hypotheses and acceptance criteria defined before measurement.</div>
       </div>
       <div class="row">
         <div class="k">Research design</div>
@@ -542,19 +861,19 @@
       </div>
       <div class="row">
         <div class="k">Simulation and risk</div>
-        <div class="v">Execution-aware backtesting, Monte Carlo stress analysis, sizing, exposure and drawdown controls.</div>
+        <div class="v">Execution-aware backtesting, Monte Carlo stress analysis <i>(thousands of reshuffled histories to see how bad it can get)</i>, sizing, exposure and drawdown controls.</div>
       </div>
       <div class="row">
         <div class="k">Decision systems</div>
-        <div class="v">Offline policy learning, off-policy evaluation, champion-challenger governance, statistical promotion gates, hard safety veto; reinforcement learning among the candidate model families.</div>
+        <div class="v">Offline policy learning, off-policy evaluation <i>(learning and judging a decision rule on recorded history before it risks money)</i>, champion-challenger governance <i>(a new version must beat the one in use)</i>, statistical promotion gates, hard safety veto; reinforcement learning among the candidate model families.</div>
       </div>
       <div class="row">
         <div class="k">Evaluation</div>
-        <div class="v">Expected-versus-actual analysis, signal-to-fill diagnostics, golden cases, regression testing.</div>
+        <div class="v">Expected-versus-actual analysis, signal-to-fill diagnostics <i>(tracing each signal to the order and the fill it produced)</i>, golden cases, regression testing.</div>
       </div>
       <div class="row">
         <div class="k">Agentic engineering</div>
-        <div class="v">Multi-agent orchestration across accounts and model families, parallel work, independent review, test-regression merge gates, one shared engineering standard.</div>
+        <div class="v">Multi-agent orchestration across accounts and model families, parallel work, independent review, test-regression merge gates <i>(nothing merges if the tests get worse than main)</i>, one shared engineering standard.</div>
       </div>
       <div class="row">
         <div class="k">Engineering</div>
@@ -582,9 +901,8 @@
         <div class="g-row"><span class="g-lab">Systematic &amp; algorithmic execution</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:50.0%;width:41.67%" data-t="Systematic and algorithmic execution" data-d="2024 - present"><div class="g-bar" data-k="stu"></div></div></div></div>
         <div class="g-row"><span class="g-lab">SPICED Academy · bootcamp</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:18.06%;width:4.17%" data-t="SPICED Academy · Data Science bootcamp" data-d="Feb - May 2022 · 480+ hours"><div class="g-bar" data-k="job"></div></div></div></div>
         <div class="g-row"><span class="g-lab">Rabot Crypto · quant research</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:27.78%;width:31.94%" data-t="Rabot Crypto · quant research" data-d="Sep 2022 - Aug 2024"><div class="g-bar" data-k="job"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Power procurement · Oxford</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:94.44%;width:2.78%" data-t="Quantitative research, power procurement" data-d="Sep 2026 - Oct 2026 · Confidential early-stage energy company · Oxford, UK (on-site)"><div class="g-bar" data-k="job"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Energy research platform</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:94.44%;width:2.78%" data-t="Energy Procurement Research &amp; Backtesting Platform" data-d="Sep 2026 - present · own platform"><div class="g-bar" data-k="sys"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Agentic AI platform</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:94.44%;width:2.78%" data-t="Agentic Workspace Orchestration Platform" data-d="Sep 2026 - present · Augmented Intelligence Workspace"><div class="g-bar" data-k="sys"></div></div></div></div>
+        <div class="g-row"><span class="g-lab">Energy research platform</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:94.44%;width:2.78%" data-t="Energy Procurement Research &amp; Backtesting Platform" data-d="Sep 2026 - present · own platform · on-site in Oxford, Sep - Oct 2026"><div class="g-bar" data-k="sys"></div></div></div></div>
+        <div class="g-row"><span class="g-lab">Agentic AI platform (AWOP)</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:94.44%;width:2.78%" data-t="Agentic Workflow Orchestration Platform (AWOP)" data-d="Sep 2026 - present · own platform"><div class="g-bar" data-k="sys"></div></div></div></div>
         <div class="g-row"><span class="g-lab">Trading Execution Copilot</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:95.83%;width:1.39%" data-t="Trading Execution Copilot · voice-operated execution on MT5" data-d="Oct 2026 - present · own product"><div class="g-bar" data-k="sys"></div></div></div></div>
         <div class="g-row"><span class="g-lab">Indicator scripting · Pine Script / MQL5</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:50.0%;width:23.61%" data-t="Indicator scripting in Pine Script and MQL5" data-d="2024 - mid 2025 · TradingView scripts ported to MQL5"><div class="g-bar" data-k="sys"></div></div></div></div>
         <div class="g-group"><span>The four trading systems</span><div></div></div>
@@ -598,31 +916,24 @@
 
     <div class="tl">
       <div class="tl-row">
-        <div class="tl-when">Sep 2026 to Oct 2026</div>
-        <div class="tl-what">
-          <h4>Quantitative research, power procurement · Confidential early-stage energy company</h4>
-          <p>Oxford, UK (on-site). I used my own Energy Procurement Research &amp; Backtesting Platform for the company's power and gas procurement research, as technical lead directing an AI engineering team. Every hypothesis is measured against the client's current buying practice and a market benchmark; the first end-to-end test sets the starting baseline, not the final result.</p>
-        </div>
-      </div>
-      <div class="tl-row">
         <div class="tl-when">Sep 2026 to now</div>
         <div class="tl-what">
           <h4>Energy Procurement Research &amp; Backtesting Platform · own platform</h4>
-          <p>My own platform for strategy research, hypothesis methods and backtesting in power and gas procurement for European markets, with monthly and quarterly delivery. Hypothesis-driven research measured against the buyer's current practice and a market benchmark, a designed market-state observability layer, and a path toward reinforcement learning for purchase decisions. 77 of 77 planned tasks accepted, 721 commits and 198 test files.</p>
+          <p>My own platform for strategy research, hypothesis methods and backtesting in power and gas procurement for European markets, with monthly and quarterly delivery. The problem came from a confidential energy company in Oxford, UK, where I worked on-site in September and October 2026; the platform, the method, the hypotheses and the backtesting are mine. Every hypothesis is measured against the buyer's current practice and a market benchmark. <a href="#energy">How it works and the evidence</a>.</p>
         </div>
       </div>
       <div class="tl-row">
         <div class="tl-when">Sep 2026 to now</div>
         <div class="tl-what">
-          <h4>Agentic AI Systems Developer · Agentic Workspace Orchestration Platform</h4>
-          <p>Berlin, remote. My own augmented intelligence workspace, which today develops my trading decision engine and execution copilot, and built my energy research platform: AI agents work in parallel across 6 provider accounts and 4 model families under one shared engineering standard, with a test-regression gate on every merge and independent review on every autopilot merge. 272 merged tasks in 4 codebases from 4,000+ agent runs, 220 of them merged by the autopilot without a human merge decision, and 1,209 commits in 28 days with 3,278 tests passing, none failing. I measure every agent run by model and role: 4,187 runs tracked, with first-pass approval, rework rate, review rounds to acceptance and tokens per accepted task, each rate with its sample size.</p>
+          <h4>Agentic Workflow Orchestration Platform (AWOP) · own platform</h4>
+          <p>Berlin, remote. My own platform for AI coding agents, which today develops my trading decision engine and execution copilot, and built my energy research platform. Several AI agents work in parallel under one shared engineering standard, with a test-regression gate on every merge and independent review on every autopilot merge. <a href="#awop">How it works and the evidence</a>.</p>
         </div>
       </div>
       <div class="tl-row">
         <div class="tl-when">Oct 2026 to now</div>
         <div class="tl-what">
-          <h4>Trading Execution Copilot · discretionary execution on MT5 · own product</h4>
-          <p>A voice-operated execution copilot for discretionary trading on MT5, built through the same agentic platform. Every order is validated, risk-sized and read back; nothing is sent without explicit confirmation, and every execution is reconciled with the broker. 776 automated tests passing.</p>
+          <h4>Trading Execution Copilot · voice execution on MT5 · own product</h4>
+          <p>A voice-operated execution copilot for discretionary trading on MT5, built through the same agentic platform. Every order is validated, risk-sized and read back; nothing is sent without explicit confirmation, and every execution is reconciled with the broker. <a href="#copilot">How it works and the evidence</a>.</p>
         </div>
       </div>
       <div class="tl-row">
@@ -681,35 +992,28 @@
       <img src="../portrait.jpg" alt="Bruno Saldivar">
       <div class="who"><b>Bruno Saldivar</b>Berlin, Germany</div>
     </div>
-    <a href="mailto:bru.daytrader@gmail.com">bru.daytrader@gmail.com</a>
-    <a class="ghost" href="https://www.linkedin.com/in/bru-algo-trader/">LinkedIn</a>
-    <a class="ghost" href="https://calendly.com/bru-lets-talk/30min">Book a 30-min intro</a>
+    <div class="btns">
+      <a class="btn solid" href="mailto:bru.daytrader@gmail.com">bru.daytrader@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/bru-algo-trader/">LinkedIn</a>
+      <a class="btn" href="https://calendly.com/bru-lets-talk/30min">Book a 30-min intro</a>
+    </div>
   </section>
 
-  <footer>
-    <span>Bruno Saldivar · Berlin</span>
-    <span>Every figure traceable to a run manifest or the git history</span>
-    <span><a href="/" style="color:inherit">Home</a> · <a href="/services/" style="color:inherit">Services</a></span>
-  </footer>
+</main>
 
+<div class="wrap">
+  <footer class="site-foot">
+    <span>Bruno Saldivar · Quantitative Developer · Agentic AI Engineer · Berlin</span>
+    <span>Every figure traceable to a run manifest or the git history</span>
+    <nav aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/services/">Services</a>
+      <a href="https://www.linkedin.com/in/bru-algo-trader/">LinkedIn</a>
+    </nav>
+  </footer>
 </div>
 
-<script>
-  // Un observer y nada mas: las secciones de abajo entran cuando el lector llega.
-  const seen = (els) => els.forEach((e) => e.classList.add('seen'));
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.filter((e) => e.isIntersecting).forEach((e) => {
-        e.target.classList.add('seen');
-        io.unobserve(e.target);
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-  } else {
-    seen([...document.querySelectorAll('.reveal')]);
-  }
-</script>
-
+<script src="../site.js" defer></script>
 <script>
   // tooltip por marca: el spec de interaccion lo pide por defecto en barras
   (() => {

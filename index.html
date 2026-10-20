@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<!--
-  Hero headline options (shipping option 1):
-  1. "I build systems that show their work."
-  2. "Complex problems, turned into systems you can verify."
-  3. "Agentic engineering and trading systems, built to be measured."
--->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -22,8 +16,8 @@
     window.addEventListener('hashchange', route);
   })();
 </script>
-<title>Agentic Engineering, Trading Systems &amp; Energy Research | I Build Systems</title>
-<meta name="description" content="Engineering services and case studies in AI coding-agent orchestration, trading systems and energy procurement research. Explore tested workflows, measurable results and ways to work together.">
+<title>Bruno Saldivar · Quantitative Developer · Agentic AI Engineer</title>
+<meta name="description" content="Bruno Saldivar, Quantitative Developer & Trading Systems Engineer | Agentic AI Engineer | Energy Trading. Independent engineer in Berlin, working remotely. I build trading systems, energy procurement research platforms and AI agent platforms, and measure whether they work.">
 <meta name="author" content="Bruno Saldivar">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://ibuildsystems.work/">
@@ -35,15 +29,15 @@
 <meta property="og:site_name" content="Bruno Saldivar">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://ibuildsystems.work/">
-<meta property="og:title" content="Agentic Engineering, Trading Systems &amp; Energy Research | I Build Systems">
-<meta property="og:description" content="Engineering services and case studies in AI coding-agent orchestration, trading systems and energy procurement research. Explore measurable work and services.">
+<meta property="og:title" content="Bruno Saldivar · Quantitative Developer · Agentic AI Engineer">
+<meta property="og:description" content="Four systems I designed and built: a trading research and execution platform live on MT5, a voice trading execution copilot, an energy procurement research platform and an AI agent orchestration platform.">
 <meta property="og:image" content="https://ibuildsystems.work/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Bruno Saldivar, trading systems developer and quantitative researcher">
+<meta property="og:image:alt" content="Bruno Saldivar, Quantitative Developer · Agentic AI Engineer">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Agentic Engineering, Trading Systems &amp; Energy Research | I Build Systems">
-<meta name="twitter:description" content="Engineering services and case studies in agentic AI workflows, trading systems and energy research.">
+<meta name="twitter:title" content="Bruno Saldivar · Quantitative Developer · Agentic AI Engineer">
+<meta name="twitter:description" content="Trading systems, energy procurement research and AI agent platforms, designed and built by me, with the evidence behind them.">
 <meta name="twitter:image" content="https://ibuildsystems.work/og-card.png">
 
 <script type="application/ld+json">
@@ -53,7 +47,7 @@
   "name": "Bruno Saldivar",
   "url": "https://ibuildsystems.work/",
   "image": "https://ibuildsystems.work/og-card.png",
-  "jobTitle": "Trading Systems Developer and Quantitative Researcher",
+  "jobTitle": "Quantitative Developer & Trading Systems Engineer | Agentic AI Engineer | Energy Trading",
   "email": "mailto:bru.daytrader@gmail.com",
   "address": { "@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE" },
   "sameAs": ["https://www.linkedin.com/in/bru-algo-trader/"],
@@ -100,192 +94,392 @@
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div>
       <div class="who-chip">
-        <img src="portrait.jpg" alt="Portrait of Bruno Saldivar" width="52" height="52">
-        <div class="who"><b>Bruno Saldivar</b>Independent engineer · Berlin</div>
+        <img src="portrait.jpg" alt="Portrait of Bruno Saldivar" width="56" height="56">
+        <div class="who"><b>Bruno Saldivar</b>Independent engineer · Berlin · Remote</div>
       </div>
-      <p class="eyebrow">Agentic engineering · Trading systems</p>
-      <h1 id="hero-title">I build systems that <em>show their work.</em></h1>
+      <p class="eyebrow">Quantitative Developer · Agentic AI Engineer</p>
+      <h1 id="hero-title">I build trading systems, energy research platforms and AI agent platforms, <em>and measure whether they work.</em></h1>
       <p class="line">
-        Trading systems that trade, evaluate their own results and improve their decisions over time,
-        built through agentic workflows and augmented intelligence, with test gates, independent review and numbers you can trace
-        back to their source.
+        Four systems of my own, each designed, built and operated by me. Below, each one says
+        what problem it solves and shows how it works.
       </p>
       <nav class="doors" aria-label="Where to go next">
-        <a class="door" href="/portfolio/"><b>See the work</b><span>Trading, energy research and agentic systems, in full detail.</span></a>
+        <a class="door" href="#systems"><b>See the systems</b><span>What each one solves, and how.</span></a>
         <a class="door primary" href="/services/"><b>Build with me</b><span>AI coding agents on your repo, with guardrails.</span></a>
         <a class="door" href="#hire"><b>Hire me</b><span>Open to remote roles worldwide.</span></a>
       </nav>
     </div>
 
-    <figure class="flow-fig">
-      <div class="flow-card">
-        <div class="flow-top">
-          <span class="kicker"><b>AWOP</b> · Agentic Workspace Orchestration Platform</span>
-          <button class="pp" id="flow-toggle" type="button" aria-pressed="false" aria-controls="flow-svg">Pause</button>
-        </div>
-
-        <svg class="flow-svg" id="flow-svg" viewBox="0 0 520 556" role="group" aria-labelledby="flow-title" aria-describedby="flow-desc">
-          <title id="flow-title">How one task moves through the platform</title>
-          <desc id="flow-desc">A scoped task is split across several AI agents working in parallel, each in its own isolated workspace and git branch. Each change must pass a test gate that compares it with main; a failing change goes back for rework. On autopilot routes, a different agent then reviews the exact change. A human decides where the route requires it, while agreed autopilot routes merge after review. Every outcome is traceable: merge, run log, metrics and alerts.</desc>
-          <defs>
-            <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/>
-            </marker>
-            <marker id="ah-w" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M0 0 L8 4 L0 8 z" style="fill:var(--warn)"/>
-            </marker>
-            <marker id="ah-d" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M0 0 L8 4 L0 8 z" style="fill:var(--dim)"/>
-            </marker>
-          </defs>
-
-          <!-- 0 · task -->
-          <g class="n" data-s="0" tabindex="0" role="button" aria-label="Step 1, task"
-             data-title="Task" data-text="Scoped before any agent touches it: what to change, which files, and how it will be accepted.">
-            <rect class="box" x="150" y="12" width="220" height="54" rx="10"/>
-            <text class="t" x="260" y="36">Task</text>
-            <text class="s" x="260" y="54">scoped, with acceptance criteria</text>
-          </g>
-
-          <!-- 1 · agents in parallel, each in its own workspace -->
-          <path class="c" data-s="1" d="M260 66 C260 92 90 86 90 110" marker-end="url(#ah)"/>
-          <path class="c" data-s="1" d="M260 66 L260 110" marker-end="url(#ah)"/>
-          <path class="c" data-s="1" d="M260 66 C260 92 430 86 430 110" marker-end="url(#ah)"/>
-
-          <g data-s="1">
-            <rect class="ws" x="12" y="112" width="156" height="152" rx="12"/>
-            <rect class="ws" x="182" y="112" width="156" height="152" rx="12"/>
-            <rect class="ws" x="352" y="112" width="156" height="152" rx="12"/>
-            <text class="m" x="24" y="129">workspace · branch</text>
-            <text class="m" x="194" y="129">workspace · branch</text>
-            <text class="m" x="364" y="129">workspace · branch</text>
-          </g>
-
-          <g class="n" data-s="1" tabindex="0" role="button" aria-label="Step 2, agents in parallel"
-             data-title="Agents in parallel" data-text="Each agent gets its own isolated workspace and git branch, so parallel tasks cannot overwrite each other.">
-            <rect class="box" x="28" y="138" width="124" height="46" rx="8"/>
-            <text class="t" x="90" y="158">Agent A</text>
-            <text class="s" x="90" y="175">own branch</text>
-          </g>
-          <g class="n" data-s="1"
-             data-title="Agents in parallel" data-text="Each agent gets its own isolated workspace and git branch, so parallel tasks cannot overwrite each other.">
-            <rect class="box" x="198" y="138" width="124" height="46" rx="8"/>
-            <text class="t" x="260" y="158">Agent B</text>
-            <text class="s" x="260" y="175">own branch</text>
-          </g>
-          <g class="n" data-s="1"
-             data-title="Agents in parallel" data-text="Each agent gets its own isolated workspace and git branch, so parallel tasks cannot overwrite each other.">
-            <rect class="box" x="368" y="138" width="124" height="46" rx="8"/>
-            <text class="t" x="430" y="158">Agent C</text>
-            <text class="s" x="430" y="175">own branch</text>
-          </g>
-
-          <!-- 2 · test gate per workspace -->
-          <path class="c" data-s="2" d="M90 184 L90 206" marker-end="url(#ah)"/>
-          <path class="c" data-s="2" d="M260 184 L260 206" marker-end="url(#ah)"/>
-          <path class="c" data-s="2" d="M430 184 L430 206" marker-end="url(#ah)"/>
-
-          <g class="n" data-s="2" tabindex="0" role="button" aria-label="Step 3, test gate"
-             data-title="Test gate" data-text="Nothing merges if the test suite gets worse than main. A change that fails goes back to its agent for rework.">
-            <rect class="gate" x="36" y="208" width="108" height="30" rx="15"/>
-            <text class="gl" x="90" y="227">tests ≥ main ✓</text>
-          </g>
-          <g class="n" data-s="2"
-             data-title="Test gate" data-text="Nothing merges if the test suite gets worse than main. A change that fails goes back to its agent for rework.">
-            <rect class="gate" x="206" y="208" width="108" height="30" rx="15"/>
-            <text class="gl" x="260" y="227">tests ≥ main ✓</text>
-          </g>
-          <g class="n" data-s="2"
-             data-title="Rework" data-text="This change made the tests worse than main, so it cannot merge. It goes back to the same workspace and is tested again.">
-            <rect class="gate re" x="376" y="208" width="108" height="30" rx="15"/>
-            <text class="gl re" x="430" y="227">worse → rework</text>
-          </g>
-          <path class="c loop" data-s="2" d="M484 223 C502 223 506 161 494 161" marker-end="url(#ah-w)"/>
-
-          <!-- 3 · independent review -->
-          <path class="c" data-s="3" d="M90 264 C90 288 260 278 260 298" marker-end="url(#ah)"/>
-          <path class="c" data-s="3" d="M260 264 L260 298" marker-end="url(#ah)"/>
-          <path class="c" data-s="3" d="M430 264 C430 288 260 278 260 298" marker-end="url(#ah)"/>
-
-          <g class="n" data-s="3" tabindex="0" role="button" aria-label="Step 4, independent review"
-             data-title="Independent review" data-text="A different agent, not the one that wrote the change, checks the exact diff and leaves a structured verdict.">
-            <rect class="box" x="120" y="300" width="280" height="56" rx="10"/>
-            <text class="t" x="260" y="324">Independent review</text>
-            <text class="s" x="260" y="342">a different agent checks the exact diff</text>
-          </g>
-
-          <!-- 4 · human decision where required -->
-          <path class="c" data-s="4" d="M260 356 L260 390" marker-end="url(#ah)"/>
-          <g class="n human" data-s="4" tabindex="0" role="button" aria-label="Step 5, human decision"
-             data-title="Human decision" data-text="A person approves where the route requires it: the decisions the owner keeps for themselves.">
-            <rect class="box" x="140" y="392" width="240" height="56" rx="10"/>
-            <text class="t" x="260" y="416">Human decision</text>
-            <text class="s" x="260" y="434">where the route requires it</text>
-          </g>
-
-          <!-- 5 · outcome; agreed autopilot routes merge after review -->
-          <path class="c alt" data-s="5" d="M400 328 C478 334 478 508 392 514" marker-end="url(#ah-d)"/>
-          <text class="m" data-s="5" transform="translate(484 424) rotate(90)" text-anchor="middle">autopilot route</text>
-          <path class="c" data-s="5" d="M260 448 L260 482" marker-end="url(#ah)"/>
-          <g class="n end" data-s="5" tabindex="0" role="button" aria-label="Step 6, traceable outcome"
-             data-title="Traceable outcome" data-text="Every run leaves a record: what changed, who reviewed it, how many rounds it took, and the tokens used where the provider reports them.">
-            <rect class="box" x="130" y="484" width="260" height="60" rx="10"/>
-            <text class="t" x="260" y="509">Traceable outcome</text>
-            <text class="s" x="260" y="527">merge · run log · metrics · alerts</text>
-          </g>
-        </svg>
-
-        <p class="flow-note" id="flow-note" aria-live="polite">Tap or hover a step to see what happens there.</p>
-      </div>
-      <figcaption class="flow-cap">
-        My own platform, simplified. A test-regression gate on every merge and independent review
-        on every autopilot merge. Augmented Intelligence Workspace.
-      </figcaption>
-    </figure>
+    <nav class="hero-index" aria-label="The four systems">
+      <p class="kicker">Four systems · designed and built by me</p>
+      <ol>
+        <li><a href="#trading"><span class="i" style="--i:0">01</span><b>Private Trading Research &amp; Execution Platform</b><span class="d">Trading · research to live orders on MT5</span></a></li>
+        <li><a href="#copilot"><span class="i" style="--i:1">02</span><b>Trading Execution Copilot</b><span class="d">Trading · orders by voice, confirmed before they go out</span></a></li>
+        <li><a href="#energy"><span class="i" style="--i:2">03</span><b>Energy Procurement Research &amp; Backtesting Platform</b><span class="d">Energy · evidence for buying power and gas</span></a></li>
+        <li><a href="#awop"><span class="i" style="--i:3">04</span><b>Agentic Workflow Orchestration Platform (AWOP)</b><span class="d">AI agents · parallel coding with test gates and review</span></a></li>
+      </ol>
+    </nav>
   </section>
 
-  <section class="facts reveal" aria-label="Facts">
-    <div class="fact"><div class="num">272</div><p>tasks merged across 4 codebases by AI agents working in parallel, 220 of them by the autopilot</p></div>
-    <div class="fact"><div class="num">4,187</div><p>agent runs measured by model and role, each rate with its sample size</p></div>
-    <div class="fact"><div class="num">1,217</div><p>executed order records on a trading system I run live on MT5</p></div>
-    <div class="fact"><div class="num">2021</div><p>independent quantitative research since February; my current trading platform is the fourth I have built</p></div>
-  </section>
-  <p class="facts-src">Context for every figure: <a href="/portfolio/">the full portfolio</a>.</p>
-
-  <section class="section reveal" aria-labelledby="work-title">
-    <div class="section-head">
-      <p class="kicker">Selected work</p>
-      <h2 class="h2" id="work-title">My own systems, built with the same discipline.</h2>
+  <section class="section" id="systems" aria-labelledby="sys-title">
+    <div class="section-head reveal">
+      <p class="kicker">The four systems</p>
+      <h2 class="h2" id="sys-title">What each one solves, and how it works.</h2>
     </div>
-    <div class="cards three">
-      <article class="card">
-        <p class="tag">Own platform · live on MT5</p>
-        <h3>Private Trading Research &amp; Execution Platform</h3>
-        <ol class="mini" aria-label="Pipeline stages">
-          <li>Market data</li><li>Research</li><li>Backtesting</li><li>Risk</li><li>Execution</li><li>Diagnostics</li>
-        </ol>
-        <p>A trading system from market data to diagnostics, designed, built and operated alone: order state that survives a restart and P&amp;L reconciled against the broker to the cent.</p>
-        <p class="fine">Proprietary. This describes the engineering, not the strategy.</p>
-        <a class="more" href="/portfolio/">See the full chain →</a>
+    <div class="syslist">
+      <article class="sys reveal" id="trading" aria-labelledby="trading-h">
+        <div class="sys-text">
+    <p class="sys-tag"><span class="sys-n">01</span>Own platform · live on MT5</p>
+    <h3 id="trading-h">Private Trading Research &amp; Execution Platform</h3>
+    <dl class="pw">
+      <div><dt>The problem</dt><dd>Most trading ideas are never tested against real costs, real risk limits and a real broker before money is on the line.</dd></div>
+      <div><dt>What it does</dt><dd>It takes a market idea from data to research, backtesting, risk checks and live orders on MT5, then checks the results against the broker's records.</dd></div>
+    </dl>
+    <p class="badge">Designed and built by me</p>
+    <p class="kf"><b>1,217</b><span>order records from live execution on MT5, with profit and loss reconciled against the broker to the cent.</span></p>
+    <p class="fine">Proprietary. This describes the engineering, never the strategy.</p>
+          <a class="more" href="/portfolio/#trading">Details and evidence →</a>
+        </div>
+<figure class="dg-card">
+  <div class="dg-top">
+    <span class="kicker">How it works · 6 steps</span>
+    <button class="dg-pp" type="button" aria-label="Pause the animation" hidden>Pause</button>
+  </div>
+  <svg class="dg" viewBox="0 0 400 446" role="img" aria-labelledby="dg-tr-t dg-tr-d" style="--n:6">
+    <title id="dg-tr-t">How the trading platform works, in six steps</title>
+    <desc id="dg-tr-d">Top to bottom. One, market data: ticks and candles from MT5, checked for gaps. Two, research: market hypotheses written as testable rules. Three, backtesting with realistic fills and broker costs. Four, risk: position sizing and drawdown limits. Five, live execution: orders sent to MT5, with order state that survives a restart. Six, reconciliation and diagnostics: profit and loss matched to the broker, to the cent. Expected versus actual results feed back into research.</desc>
+    <defs>
+      <marker id="ah-tr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/></marker>
+      <marker id="ah-tr-d" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--dim)"/></marker>
+    </defs>
+
+    <path class="cn" style="--i:1" d="M185 62 L185 81" marker-end="url(#ah-tr)"/>
+    <path class="cn" style="--i:2" d="M185 136 L185 155" marker-end="url(#ah-tr)"/>
+    <path class="cn" style="--i:3" d="M185 210 L185 229" marker-end="url(#ah-tr)"/>
+    <path class="cn" style="--i:4" d="M185 284 L185 303" marker-end="url(#ah-tr)"/>
+    <path class="cn" style="--i:5" d="M185 358 L185 377" marker-end="url(#ah-tr)"/>
+    <path class="cn alt" style="--i:5" d="M330 406 C380 406 380 110 334 110" marker-end="url(#ah-tr-d)"/>
+    <text class="m" transform="translate(388 258) rotate(90)" text-anchor="middle">expected vs actual</text>
+
+    <g class="st" style="--i:0">
+      <rect class="bx" x="40" y="10" width="290" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="36" r="12"/><text class="kn" x="40" y="40">1</text>
+      <text class="t" x="185" y="33">Market data</text>
+      <text class="s" x="185" y="51">MT5 ticks and candles, gap checks</text>
+    </g>
+    <g class="st" style="--i:1">
+      <rect class="bx" x="40" y="84" width="290" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="110" r="12"/><text class="kn" x="40" y="114">2</text>
+      <text class="t" x="185" y="107">Research</text>
+      <text class="s" x="185" y="125">market hypotheses as testable rules</text>
+    </g>
+    <g class="st" style="--i:2">
+      <rect class="bx" x="40" y="158" width="290" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="184" r="12"/><text class="kn" x="40" y="188">3</text>
+      <text class="t" x="185" y="181">Backtesting</text>
+      <text class="s" x="185" y="199">realistic fills and broker costs</text>
+    </g>
+    <g class="st" style="--i:3">
+      <rect class="bx" x="40" y="232" width="290" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="258" r="12"/><text class="kn" x="40" y="262">4</text>
+      <text class="t" x="185" y="255">Risk</text>
+      <text class="s" x="185" y="273">position sizing, drawdown limits</text>
+    </g>
+    <g class="st" style="--i:4">
+      <rect class="bx" x="40" y="306" width="290" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="332" r="12"/><text class="kn" x="40" y="336">5</text>
+      <text class="t" x="185" y="329">Live execution</text>
+      <text class="s" x="185" y="347">orders on MT5, state survives restarts</text>
+    </g>
+    <g class="st" style="--i:5">
+      <rect class="bx end" x="40" y="380" width="290" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="406" r="12"/><text class="kn" x="40" y="410">6</text>
+      <text class="t" x="185" y="403">Reconciliation &amp; diagnostics</text>
+      <text class="s" x="185" y="421">P&amp;L matched to the broker, to the cent</text>
+    </g>
+  </svg>
+  <figcaption>Simplified. What live trading shows, expected against actual, goes back into research.</figcaption>
+</figure>
       </article>
-      <article class="card">
-        <p class="tag">Own product</p>
-        <h3>Trading Execution Copilot</h3>
-        <ol class="mini" aria-label="Copilot stages">
-          <li>Voice order</li><li>Validation</li><li>Risk sizing</li><li>Confirmation</li><li>Reconciliation</li>
-        </ol>
-        <p>A voice-operated copilot for discretionary execution on MT5. Nothing is sent without explicit confirmation, and every execution is reconciled with the broker.</p>
-        <a class="more" href="/portfolio/#background">See the details →</a>
+
+      <article class="sys reveal" id="copilot" aria-labelledby="copilot-h">
+        <div class="sys-text">
+    <p class="sys-tag"><span class="sys-n">02</span>Own product · voice execution on MT5</p>
+    <h3 id="copilot-h">Trading Execution Copilot</h3>
+    <dl class="pw">
+      <div><dt>The problem</dt><dd>When a trader places orders by hand under time pressure, one wrong size or price can cost real money.</dd></div>
+      <div><dt>What it does</dt><dd>The trader says the order out loud. The copilot turns it into a ticket, checks it, sizes the risk, reads it back and sends it to MT5 only after an explicit yes, then reconciles it with the broker.</dd></div>
+    </dl>
+    <p class="badge">Designed and built by me</p>
+    <p class="kf"><b>776</b><span>automated tests, all passing.</span></p>
+          <a class="more" href="/portfolio/#copilot">Details and evidence →</a>
+        </div>
+<figure class="dg-card">
+  <div class="dg-top">
+    <span class="kicker">How it works · 7 steps</span>
+    <button class="dg-pp" type="button" aria-label="Pause the animation" hidden>Pause</button>
+  </div>
+  <svg class="dg" viewBox="0 0 400 466" role="img" aria-labelledby="dg-co-t dg-co-d" style="--n:7">
+    <title id="dg-co-t">How the trading execution copilot works, in seven steps</title>
+    <desc id="dg-co-d">Top to bottom. One, voice order: the trader dictates the order and it becomes a ticket. Two, validation: the ticket is checked first. Three, risk sizing: the position size is set from the risk limit. Four, read back: the order is repeated back to the trader. Five, explicit confirmation: nothing moves without a clear yes; without it, nothing is sent. Six, the order is sent to MT5. Seven, broker reconciliation: the order counts as done once the broker confirms it.</desc>
+    <defs>
+      <marker id="ah-co" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/></marker>
+      <marker id="ah-co-w" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--warn)"/></marker>
+    </defs>
+
+    <path class="cn" style="--i:1" d="M161 58 L161 73" marker-end="url(#ah-co)"/>
+    <path class="cn" style="--i:2" d="M161 124 L161 139" marker-end="url(#ah-co)"/>
+    <path class="cn" style="--i:3" d="M161 190 L161 205" marker-end="url(#ah-co)"/>
+    <path class="cn" style="--i:4" d="M161 256 L161 271" marker-end="url(#ah-co)"/>
+    <path class="cn" style="--i:5" d="M161 322 L161 337" marker-end="url(#ah-co)"/>
+    <path class="cn" style="--i:6" d="M161 388 L161 403" marker-end="url(#ah-co)"/>
+    <path class="cn warn" style="--i:4" d="M286 298 L302 298" marker-end="url(#ah-co-w)"/>
+
+    <g class="st" style="--i:0">
+      <rect class="bx" x="36" y="10" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="34" r="12"/><text class="kn" x="36" y="38">1</text>
+      <text class="t" x="161" y="31">Voice order</text>
+      <text class="s" x="161" y="48">dictated, turned into a ticket</text>
+    </g>
+    <g class="st" style="--i:1">
+      <rect class="bx" x="36" y="76" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="100" r="12"/><text class="kn" x="36" y="104">2</text>
+      <text class="t" x="161" y="97">Validation</text>
+      <text class="s" x="161" y="114">the ticket is checked first</text>
+    </g>
+    <g class="st" style="--i:2">
+      <rect class="bx" x="36" y="142" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="166" r="12"/><text class="kn" x="36" y="170">3</text>
+      <text class="t" x="161" y="163">Risk sizing</text>
+      <text class="s" x="161" y="180">size set from the risk limit</text>
+    </g>
+    <g class="st" style="--i:3">
+      <rect class="bx" x="36" y="208" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="232" r="12"/><text class="kn" x="36" y="236">4</text>
+      <text class="t" x="161" y="229">Read back</text>
+      <text class="s" x="161" y="246">repeated back to the trader</text>
+    </g>
+    <g class="st" style="--i:4">
+      <rect class="bx hu" x="36" y="274" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="298" r="12"/><text class="kn" x="36" y="302">5</text>
+      <text class="t" x="161" y="295">Explicit confirmation</text>
+      <text class="s" x="161" y="312">nothing moves without a clear yes</text>
+    </g>
+    <g class="st" style="--i:4">
+      <rect class="gate re" x="304" y="284" width="92" height="28" rx="14"/>
+      <text class="gl re" x="350" y="302" style="font-size:10px">no → not sent</text>
+    </g>
+    <g class="st" style="--i:5">
+      <rect class="bx" x="36" y="340" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="364" r="12"/><text class="kn" x="36" y="368">6</text>
+      <text class="t" x="161" y="361">Sent to MT5</text>
+      <text class="s" x="161" y="378">only after the yes</text>
+    </g>
+    <g class="st" style="--i:6">
+      <rect class="bx end" x="36" y="406" width="250" height="48" rx="10"/>
+      <circle class="k" cx="36" cy="430" r="12"/><text class="kn" x="36" y="434">7</text>
+      <text class="t" x="161" y="427">Broker reconciliation</text>
+      <text class="s" x="161" y="444">done once the broker confirms</text>
+    </g>
+  </svg>
+  <figcaption>The trader decides the trade. The copilot makes sure the order that goes out is the one that was meant.</figcaption>
+</figure>
       </article>
-      <article class="card">
-        <p class="tag">Own platform · used on-site in Oxford</p>
-        <h3>Energy Procurement Research &amp; Backtesting Platform</h3>
-        <ol class="mini" aria-label="Research stages">
-          <li>Market data</li><li>Hypothesis</li><li>Backtest</li><li>Comparison</li><li>Decision</li>
-        </ol>
-        <p>Strategy research, hypothesis methods and backtesting for European power and gas procurement. Used on-site for a confidential early-stage energy company, against its buying practice and a market benchmark.</p>
-        <p class="fine">Client, data and results stay confidential.</p>
-        <a class="more" href="/portfolio/#background">Read more →</a>
+
+      <article class="sys reveal" id="energy" aria-labelledby="energy-h">
+        <div class="sys-text">
+    <p class="sys-tag"><span class="sys-n">03</span>Own platform · European power and gas</p>
+    <h3 id="energy-h">Energy Procurement Research &amp; Backtesting Platform</h3>
+    <dl class="pw">
+      <div><dt>The problem</dt><dd>A company that buys power and gas needs evidence, not opinion, on how and when to buy.</dd></div>
+      <div><dt>What it does</dt><dd>It turns each buying question into a testable hypothesis, replays it on real European market data with costs, and compares the result with the buyer's current practice and a market benchmark.</dd></div>
+    </dl>
+    <p class="badge">Designed and built by me</p>
+    <p class="origin">The problem came from a confidential energy company in Oxford, UK, where I worked on-site in September and October 2026. The platform, the method, the hypotheses and the backtesting are mine.</p>
+    <p class="kf"><b>77 of 77</b><span>planned tasks built and accepted: the whole plan.</span></p>
+    <p class="fine">Client, data and results stay confidential.</p>
+          <a class="more" href="/portfolio/#energy">Details and evidence →</a>
+        </div>
+<figure class="dg-card">
+  <div class="dg-top">
+    <span class="kicker">How it works · 6 steps</span>
+    <button class="dg-pp" type="button" aria-label="Pause the animation" hidden>Pause</button>
+  </div>
+  <svg class="dg" viewBox="0 0 400 446" role="img" aria-labelledby="dg-en-t dg-en-d" style="--n:6">
+    <title id="dg-en-t">How the energy procurement research platform works, in six steps</title>
+    <desc id="dg-en-d">Top to bottom. One, market data: real exchange order book and trades from European power and gas markets. Two, a buying question: what the buyer needs to decide. Three, a testable hypothesis, stated before anything is measured. Four, backtest and replay, with costs included and point-in-time data. Five, comparison against two references side by side: the buyer's current practice and a market benchmark. Six, decision: the evidence behind the buying decision.</desc>
+    <defs>
+      <marker id="ah-en" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/></marker>
+    </defs>
+
+    <path class="cn" style="--i:1" d="M200 62 L200 81" marker-end="url(#ah-en)"/>
+    <path class="cn" style="--i:2" d="M200 136 L200 155" marker-end="url(#ah-en)"/>
+    <path class="cn" style="--i:3" d="M200 210 L200 229" marker-end="url(#ah-en)"/>
+    <path class="cn" style="--i:4" d="M200 284 C200 296 108 292 108 303" marker-end="url(#ah-en)"/>
+    <path class="cn" style="--i:4" d="M200 284 C200 296 292 292 292 303" marker-end="url(#ah-en)"/>
+    <path class="cn" style="--i:5" d="M108 358 C108 370 200 366 200 377" marker-end="url(#ah-en)"/>
+    <path class="cn" style="--i:5" d="M292 358 C292 370 200 366 200 377" marker-end="url(#ah-en)"/>
+
+    <g class="st" style="--i:0">
+      <rect class="bx" x="40" y="10" width="320" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="36" r="12"/><text class="kn" x="40" y="40">1</text>
+      <text class="t" x="200" y="33">Market data</text>
+      <text class="s" x="200" y="51">real exchange order book and trades</text>
+    </g>
+    <g class="st" style="--i:1">
+      <rect class="bx" x="40" y="84" width="320" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="110" r="12"/><text class="kn" x="40" y="114">2</text>
+      <text class="t" x="200" y="107">Buying question</text>
+      <text class="s" x="200" y="125">what the buyer needs to decide</text>
+    </g>
+    <g class="st" style="--i:2">
+      <rect class="bx" x="40" y="158" width="320" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="184" r="12"/><text class="kn" x="40" y="188">3</text>
+      <text class="t" x="200" y="181">Testable hypothesis</text>
+      <text class="s" x="200" y="199">stated before anything is measured</text>
+    </g>
+    <g class="st" style="--i:3">
+      <rect class="bx" x="40" y="232" width="320" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="258" r="12"/><text class="kn" x="40" y="262">4</text>
+      <text class="t" x="200" y="255">Backtest and replay</text>
+      <text class="s" x="200" y="273">costs included, point in time</text>
+    </g>
+    <g class="st" style="--i:4">
+      <rect class="bx" x="20" y="306" width="176" height="52" rx="10"/>
+      <circle class="k" cx="20" cy="332" r="12"/><text class="kn" x="20" y="336">5</text>
+      <text class="t" x="108" y="329" style="font-size:15px">Current practice</text>
+      <text class="s" x="108" y="347">the buyer's way today</text>
+    </g>
+    <g class="st" style="--i:4">
+      <rect class="bx" x="204" y="306" width="176" height="52" rx="10"/>
+      <text class="t" x="292" y="329" style="font-size:15px">Market benchmark</text>
+      <text class="s" x="292" y="347">a market reference</text>
+    </g>
+    <g class="st" style="--i:5">
+      <rect class="bx end" x="40" y="380" width="320" height="52" rx="10"/>
+      <circle class="k" cx="40" cy="406" r="12"/><text class="kn" x="40" y="410">6</text>
+      <text class="t" x="200" y="403">Decision</text>
+      <text class="s" x="200" y="421">evidence behind the buying decision</text>
+    </g>
+  </svg>
+  <figcaption>Simplified. Every hypothesis is compared with both references, never only with itself.</figcaption>
+</figure>
+      </article>
+
+      <article class="sys reveal" id="awop" aria-labelledby="awop-h">
+        <div class="sys-text">
+    <p class="sys-tag"><span class="sys-n">04</span>Own platform · AI coding agents</p>
+    <h3 id="awop-h">Agentic Workflow Orchestration Platform (AWOP)</h3>
+    <p class="sys-sub">Multi-agent orchestration <i>(several AI agents working at once)</i> with MCP <i>(a standard connector that lets an outside AI assistant operate it)</i>, evals <i>(every agent run measured by model and role)</i> and model routing with failover <i>(each job goes to a chosen model, and moves to another account when one runs out of quota)</i>.</p>
+    <dl class="pw">
+      <div><dt>The problem</dt><dd>AI coding agents write code fast, but without structure nobody can say what changed, whether it was tested or who checked it.</dd></div>
+      <div><dt>What it does</dt><dd>It splits the work across several AI agents in parallel, each on its own branch, and merges a change only after it passes the tests and a review, logging every run.</dd></div>
+    </dl>
+    <p class="badge">Designed and built by me</p>
+    <p class="origin">It develops my trading decision engine and execution copilot today, and it built my energy platform.</p>
+    <p class="kf"><b>272</b><span>tasks merged into my four projects by AI agents, every one through the test gate.</span></p>
+          <a class="more" href="/portfolio/#awop">Details and evidence →</a>
+        </div>
+<figure class="dg-card">
+  <div class="dg-top">
+    <span class="kicker">How it works · 7 steps</span>
+    <button class="dg-pp" type="button" aria-label="Pause the animation" hidden>Pause</button>
+  </div>
+  <svg class="dg" viewBox="0 0 420 496" role="img" aria-labelledby="dg-aw-t dg-aw-d" style="--n:7">
+    <title id="dg-aw-t">How the agent platform works, in seven steps</title>
+    <desc id="dg-aw-d">Top to bottom. One, a task, scoped with acceptance criteria. Two, a planner prepares the work for the agents. Three, several writer agents work in parallel, each in its own workspace and git branch. Four, each change must pass a test gate that compares it with main; a change that makes the tests worse goes back to its agent for rework. Five, independent review: a different agent checks the exact change. Six, merge into main, only after the gate and the review. Seven, record and measurement: a run log and metrics by model and role.</desc>
+    <defs>
+      <marker id="ah-aw" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/></marker>
+      <marker id="ah-aw-w" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--warn)"/></marker>
+    </defs>
+
+    <path class="cn" style="--i:1" d="M220 58 L220 75" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:2" d="M220 126 C220 138 90 134 90 143" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:2" d="M220 126 L220 143" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:2" d="M220 126 C220 138 350 134 350 143" marker-end="url(#ah-aw)"/>
+
+    <g>
+      <rect class="ws" x="28" y="146" width="124" height="126" rx="12"/>
+      <rect class="ws" x="158" y="146" width="124" height="126" rx="12"/>
+      <rect class="ws" x="288" y="146" width="124" height="126" rx="12"/>
+      <text class="m" x="46" y="162">own branch</text>
+      <text class="m" x="176" y="162">own branch</text>
+      <text class="m" x="306" y="162">own branch</text>
+    </g>
+
+    <path class="cn" style="--i:3" d="M90 210 L90 221" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:3" d="M220 210 L220 221" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:3" d="M350 210 L350 221" marker-end="url(#ah-aw)"/>
+    <path class="cn warn" style="--i:3" d="M404 239 C417 239 417 189 405 189" marker-end="url(#ah-aw-w)"/>
+
+    <path class="cn" style="--i:4" d="M90 272 C90 284 220 280 220 291" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:4" d="M220 272 L220 291" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:4" d="M350 272 C350 284 220 280 220 291" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:5" d="M220 342 L220 359" marker-end="url(#ah-aw)"/>
+    <path class="cn" style="--i:6" d="M220 410 L220 427" marker-end="url(#ah-aw)"/>
+
+    <g class="st" style="--i:0">
+      <rect class="bx" x="100" y="10" width="240" height="48" rx="10"/>
+      <circle class="k" cx="100" cy="34" r="12"/><text class="kn" x="100" y="38">1</text>
+      <text class="t" x="220" y="31">Task</text>
+      <text class="s" x="220" y="48">scoped, with acceptance criteria</text>
+    </g>
+    <g class="st" style="--i:1">
+      <rect class="bx" x="100" y="78" width="240" height="48" rx="10"/>
+      <circle class="k" cx="100" cy="102" r="12"/><text class="kn" x="100" y="106">2</text>
+      <text class="t" x="220" y="99">Planner</text>
+      <text class="s" x="220" y="116">plans the work for the agents</text>
+    </g>
+    <g class="st" style="--i:2">
+      <rect class="bx" x="38" y="168" width="104" height="42" rx="8"/>
+      <circle class="k" cx="28" cy="189" r="12"/><text class="kn" x="28" y="193">3</text>
+      <text class="t" x="90" y="186">Agent A</text>
+      <text class="s" x="90" y="202">writes code</text>
+    </g>
+    <g class="st" style="--i:2">
+      <rect class="bx" x="168" y="168" width="104" height="42" rx="8"/>
+      <text class="t" x="220" y="186">Agent B</text>
+      <text class="s" x="220" y="202">writes code</text>
+    </g>
+    <g class="st" style="--i:2">
+      <rect class="bx" x="298" y="168" width="104" height="42" rx="8"/>
+      <text class="t" x="350" y="186">Agent C</text>
+      <text class="s" x="350" y="202">writes code</text>
+    </g>
+    <g class="st" style="--i:3">
+      <rect class="gate" x="42" y="224" width="96" height="30" rx="15"/>
+      <circle class="k" cx="28" cy="239" r="12"/><text class="kn" x="28" y="243">4</text>
+      <text class="gl" x="90" y="243" style="font-size:10px">tests ≥ main ✓</text>
+    </g>
+    <g class="st" style="--i:3">
+      <rect class="gate" x="172" y="224" width="96" height="30" rx="15"/>
+      <text class="gl" x="220" y="243" style="font-size:10px">tests ≥ main ✓</text>
+    </g>
+    <g class="st" style="--i:3">
+      <rect class="gate re" x="300" y="224" width="104" height="30" rx="15"/>
+      <text class="gl re" x="352" y="243" style="font-size:10px">worse → rework</text>
+    </g>
+    <g class="st" style="--i:4">
+      <rect class="bx" x="90" y="294" width="260" height="48" rx="10"/>
+      <circle class="k" cx="90" cy="318" r="12"/><text class="kn" x="90" y="322">5</text>
+      <text class="t" x="220" y="315">Independent review</text>
+      <text class="s" x="220" y="332">a different agent checks the diff</text>
+    </g>
+    <g class="st" style="--i:5">
+      <rect class="bx" x="120" y="362" width="200" height="48" rx="10"/>
+      <circle class="k" cx="120" cy="386" r="12"/><text class="kn" x="120" y="390">6</text>
+      <text class="t" x="220" y="383">Merge into main</text>
+      <text class="s" x="220" y="400">only after gate and review</text>
+    </g>
+    <g class="st" style="--i:6">
+      <rect class="bx end" x="90" y="430" width="260" height="54" rx="10"/>
+      <circle class="k" cx="90" cy="457" r="12"/><text class="kn" x="90" y="461">7</text>
+      <text class="t" x="220" y="453">Record and measurement</text>
+      <text class="s" x="220" y="472">run log, metrics by model and role</text>
+    </g>
+  </svg>
+  <figcaption>Simplified. Independent review is mandatory on every autopilot merge; on the other routes a person decides.</figcaption>
+</figure>
       </article>
     </div>
   </section>
@@ -308,11 +502,12 @@
       <img src="portrait.jpg" alt="Bruno Saldivar" width="156" height="156" loading="lazy">
       <div>
         <p class="kicker">Hire me</p>
-        <h2 id="hire-title">Hiring for agentic engineering or trading systems?</h2>
+        <h2 id="hire-title">Hiring a quantitative developer or an agentic AI engineer?</h2>
         <p class="lead">I am open to remote roles worldwide, and to project work through my <a href="/services/">agentic engineering services</a>.</p>
         <dl>
           <dt>Based in</dt><dd>Berlin, Germany</dd>
-          <dt>Looking for</dt><dd>Agentic engineering · Systematic trading · Energy trading · Quantitative development · Trading platforms · Remote</dd>
+          <dt>Since</dt><dd>Independent quantitative research since February 2021</dd>
+          <dt>Looking for</dt><dd>Quantitative development · Trading systems engineering · Agentic AI engineering · Energy trading · Systematic trading · Remote</dd>
           <dt>Languages</dt><dd>Spanish native · English professional · German A2.2, working toward B1</dd>
         </dl>
         <div class="btns">
@@ -329,7 +524,7 @@
 
 <div class="wrap">
   <footer class="site-foot">
-    <span>Bruno Saldivar · Berlin</span>
+    <span>Bruno Saldivar · Quantitative Developer · Agentic AI Engineer · Berlin</span>
     <nav aria-label="Footer">
       <a href="/portfolio/">Portfolio</a>
       <a href="/services/">Services</a>

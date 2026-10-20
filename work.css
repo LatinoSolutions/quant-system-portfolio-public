@@ -1,0 +1,215 @@
+/* Shared by /portfolio/ and /experience/ (moved out of the Portfolio page, 2026-10-20). */
+  /* This page stays dark in both colour schemes: its Gantt palette was validated on #101317.
+     Every variable of site.css is pinned here, so its light block never half-applies. */
+  :root {
+    color-scheme: dark;
+    --bg:#101317; --bg-2:#0d1014; --panel:#171b21; --panel-2:#1b2028;
+    --fg:#e6e9ee; --soft:#c3cad4; --dim:#8994a3; --hair:#242a33; --hair-2:#2f3743;
+    --signal:#5b9dff; --signal-ink:#0b1220; --signal-glow:rgba(91,157,255,.28); --lit:#1d2a3f;
+    --ok:#3fb989; --warn:#e0a84a; --shadow:0 30px 80px rgba(0,0,0,.35);
+  }
+
+  /* ---- identidad: la pagina es sobre la persona, los sistemas son la prueba ---- */
+  .intro { padding:64px 0 8px; }
+  .intro h1 { font-size:56px; line-height:1.08; font-weight:700; letter-spacing:-.035em; margin:0 0 16px; }
+  .disciplines {
+    font-family:var(--mono); font-size:15px; color:var(--signal);
+    letter-spacing:.04em; margin:0 0 12px; line-height:1.7;
+  }
+  .craft { font-family:var(--mono); font-size:14px; color:var(--dim); letter-spacing:.03em; margin:0 0 30px; line-height:1.7; }
+  .pitch { margin:0; font-size:20px; line-height:1.75; color:var(--soft); max-width:64ch; }
+  .pitch + .pitch { margin-top:16px; }
+
+  .systems { padding:64px 0 0; }
+  .sec {
+    font-size:13px; font-family:var(--mono); letter-spacing:.18em; text-transform:uppercase;
+    color:var(--dim); font-weight:400; margin:0 0 28px;
+  }
+
+  /* ---- la cadena real del sistema, dentro de la evidencia ---- */
+  .chain { display:grid; grid-template-columns:repeat(7,1fr); gap:10px; margin-top:18px; }
+  .stage {
+    background:var(--panel); border:1px solid var(--hair); border-radius:6px;
+    padding:18px 15px 16px; position:relative; overflow:hidden;
+    display:flex; flex-direction:column;
+    transition:border-color .28s ease, background-color .28s ease;
+  }
+  .stage::after {
+    content:""; position:absolute; left:0; top:0; height:2px; width:100%;
+    background:linear-gradient(90deg, transparent, var(--signal), transparent);
+    transform:translateX(-100%); animation:pulse 7s linear infinite;
+  }
+  .stage:nth-child(2)::after { animation-delay:.5s }
+  .stage:nth-child(3)::after { animation-delay:1s }
+  .stage:nth-child(4)::after { animation-delay:1.5s }
+  .stage:nth-child(5)::after { animation-delay:2s }
+  .stage:nth-child(6)::after { animation-delay:2.5s }
+  .stage:nth-child(7)::after { animation-delay:3s }
+  @keyframes pulse { 0%{transform:translateX(-100%)} 14%{transform:translateX(100%)} 100%{transform:translateX(100%)} }
+  .stage:hover { border-color:#3d5a86; background:#191e25 }
+  .stage .i { font-family:var(--mono); font-size:11px; color:var(--dim); letter-spacing:.1em; }
+  .stage h5 { margin:9px 0 10px; font-size:15px; font-weight:650; letter-spacing:-.01em; line-height:1.35; }
+  .stage p { margin:0 0 14px; font-size:13.5px; line-height:1.65; color:var(--dim); }
+  .stage .fig {
+    font-family:var(--mono); font-size:15px; color:var(--signal);
+    font-variant-numeric:tabular-nums; border-top:1px solid var(--hair); padding-top:11px;
+    margin-top:auto; line-height:1.4;
+  }
+  .stage .fig small { display:block; font-size:11px; color:var(--dim); letter-spacing:.06em; margin-top:3px; }
+
+  /* el siguiente nivel de la plataforma, dentro de la evidencia */
+  .next {
+    margin-top:12px; display:grid; grid-template-columns:150px 1fr; gap:24px;
+    background:var(--panel); border:1px solid var(--hair); border-radius:6px;
+    padding:18px 20px; align-items:start;
+  }
+  .next-tag { font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--dim); padding-top:3px; }
+  .next h5 { margin:0 0 7px; font-size:15px; font-weight:650 }
+  .next .sub { margin:0 0 9px; font-family:var(--mono); font-size:12px; color:var(--signal); letter-spacing:.04em; line-height:1.6 }
+  .next p { margin:0; font-size:14.5px; line-height:1.75; color:var(--soft); max-width:88ch }
+
+  /* ---- tesis ---- */
+  .thesis { padding:88px 0 78px; display:grid; grid-template-columns:1.35fr 1fr; gap:64px; align-items:start; }
+  .claim { font-size:38px; line-height:1.2; font-weight:700; letter-spacing:-.028em; margin:0 0 26px; }
+  .claim span { color:var(--signal); }
+  .thesis p { margin:0 0 18px; color:var(--soft); font-size:19px; line-height:1.75; max-width:56ch; }
+  .pfacts { margin:0; border-left:1px solid var(--hair); padding-left:30px; font-family:var(--mono); font-size:13px; }
+  .pfacts dt { color:var(--dim); font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-top:20px; }
+  .pfacts dt:first-child { margin-top:0 }
+  .pfacts dd { margin:5px 0 0; color:var(--fg); line-height:1.7; }
+  .pfacts dd.on { color:var(--signal); }
+
+  /* ---- core expertise ---- */
+  .expertise { border-top:1px solid var(--hair); padding:56px 0 8px; }
+  .rows .row {
+    display:grid; grid-template-columns:230px 1fr; gap:36px;
+    padding:20px 0; border-top:1px solid var(--hair);
+  }
+  .rows .row:last-child { border-bottom:1px solid var(--hair) }
+  .rows .k { font-family:var(--mono); font-size:13px; color:var(--signal); letter-spacing:.04em; line-height:1.7; }
+  .rows .v { font-size:17.5px; color:var(--soft); line-height:1.75; }
+  .rows .v i { font-style:normal; color:var(--dim); }
+
+  /* ---- background ---- */
+  .prior { border-top:1px solid var(--hair); padding:56px 0 10px; margin-top:56px; }
+  .tl-row {
+    display:grid; grid-template-columns:230px 1fr; gap:36px;
+    padding:24px 0; border-top:1px solid var(--hair);
+  }
+  .tl-when { font-family:var(--mono); font-size:13px; color:var(--dim); letter-spacing:.03em; padding-top:2px; }
+  .tl-what h4 { margin:0 0 7px; font-size:17px; font-weight:650; letter-spacing:-.01em; line-height:1.45; }
+  .tl-what p { margin:0; font-size:16px; color:var(--dim); line-height:1.8; max-width:78ch; }
+  .tl-what a { color:var(--signal); }
+  .earlier {
+    margin:34px 0 0; padding-top:24px; border-top:1px solid var(--hair);
+    font-size:16px; color:var(--dim); line-height:1.8; max-width:88ch;
+  }
+
+  .signature { display:flex; align-items:center; gap:16px; margin:0 0 30px }
+  .signature img {
+    width:62px; height:62px; border-radius:50%; object-fit:cover;
+    object-position:center 15%; border:1px solid var(--hair);
+  }
+  .signature .who { font-family:var(--mono); font-size:13px; line-height:1.7; color:var(--dim) }
+  .signature .who b { display:block; color:var(--fg); font-weight:500; font-size:14px }
+
+  /* ---- gantt de trayectoria. Paleta validada con validate_palette.js
+     (dark, surface #101317): #3987e5 / #b8862f / #2f9d6d -> 5 checks PASS.
+     El WARN de CVD 7.0 en protan obliga codificacion secundaria: etiqueta directa por barra.
+     Clases g-* para no chocar con la cronologia .tl-* de abajo. ---- */
+  .gantt { --s-sys:#3987e5; --s-job:#b8862f; --s-base:#2f9d6d; --s-stu:#8b7bd8; --lab:270px; margin:0 0 40px }
+  .g-legend { display:flex; flex-wrap:wrap; gap:22px; margin:0 0 22px; font-size:14px; color:var(--dim) }
+  .g-legend span { display:flex; align-items:center; gap:9px }
+  .g-legend i { width:11px; height:11px; border-radius:2px; display:block }
+  .g-head { display:grid; grid-template-columns:var(--lab) 1fr; margin-bottom:7px }
+  .g-axis {
+    display:grid; grid-template-columns:repeat(6,1fr); font-family:var(--mono);
+    font-size:11px; color:#6f7887; letter-spacing:.06em;
+  }
+  .g-rows { position:relative; border-top:1px solid var(--hair) }
+  .g-row {
+    display:grid; grid-template-columns:var(--lab) 1fr; align-items:center;
+    height:36px; border-bottom:1px solid var(--hair);
+  }
+  .g-row:nth-child(even) { background:rgba(255,255,255,.014) }
+  .g-row[data-em] .g-lab { color:var(--fg); font-weight:600 }
+  .g-track { position:relative; height:100%; }
+  .g-now { position:absolute; top:0; bottom:0; width:1px; background:#3d4653; z-index:0; }
+  .g-now-lab { position:absolute; font-family:var(--mono); font-size:10px; color:#6f7887; letter-spacing:.08em; top:-1px; }
+  .g-group { display:grid; grid-template-columns:var(--lab) 1fr; align-items:center; padding:14px 0 6px; }
+  .g-group span { font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:#6f7887; }
+  .g-track::before {
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background:repeating-linear-gradient(to right, var(--hair) 0 1px, transparent 1px calc(100%/6));
+  }
+  .g-hit { position:absolute; height:24px; top:calc(50% - 12px); cursor:default; z-index:1 }
+  .g-bar {
+    position:absolute; left:0; right:0; height:12px; border-radius:6px; top:6px;
+    box-shadow:0 0 0 2px var(--bg); transition:filter .18s ease, transform .18s ease;
+  }
+  .g-hit:hover .g-bar { filter:brightness(1.32); transform:scaleY(1.18) }
+  .g-hit[data-em] .g-bar { height:14px; top:5px }
+  .g-bar[data-k="sys"]  { background:var(--s-sys) }
+  .g-bar[data-k="job"]  { background:var(--s-job) }
+  .g-bar[data-k="base"] { background:var(--s-base) }
+  .g-bar[data-k="stu"]  { background:var(--s-stu) }
+  .g-lab { font-size:13px; color:var(--soft); padding-right:16px; line-height:1.35 }
+  .g-tip {
+    position:absolute; z-index:5; background:#1d232b; border:1px solid #303845; border-radius:4px;
+    padding:8px 11px; font-size:13px; color:var(--fg); pointer-events:none; opacity:0;
+    transition:opacity .15s ease; white-space:nowrap; line-height:1.6;
+  }
+  .g-tip b { font-family:var(--mono); color:var(--signal); font-weight:600 }
+  @media (max-width:760px) { .gantt { --lab:132px } .g-lab { font-size:11.5px } .g-row { height:40px } }
+
+  /* ---- cierre ---- */
+  .cta { padding:78px 0 10px; }
+  .cta h2 { font-size:34px; font-weight:700; letter-spacing:-.02em; margin:0 0 16px; line-height:1.2; }
+  .cta p { color:var(--dim); max-width:62ch; margin:0 0 30px; }
+  .cta .btns { margin-top:0; }
+
+  @media (max-width:1000px) {
+    .chain { grid-template-columns:repeat(2,1fr) } .thesis { grid-template-columns:1fr; gap:34px }
+    .intro h1 { font-size:40px } .claim { font-size:29px }
+    .rows .row, .tl-row { grid-template-columns:1fr; gap:8px }
+  }
+  @media (max-width:700px) {
+    .next { grid-template-columns:1fr; gap:10px }
+    .cta h2 { font-size:27px } .intro h1 { font-size:33px } .pitch { font-size:18px }
+    .pfacts { border-left:0; padding-left:0 }
+  }
+
+  /* la identidad sube al cargar; todo se apaga con prefers-reduced-motion */
+  @keyframes rise { from { opacity:0; transform:translateY(14px) } to { opacity:1; transform:none } }
+  .intro > * { animation:rise .62s cubic-bezier(.16,.8,.3,1) both }
+  .intro h1 { animation-delay:.05s }
+  .intro .disciplines { animation-delay:.15s }
+  .intro .craft { animation-delay:.23s }
+  .intro .pitch { animation-delay:.31s }
+  @media (prefers-reduced-motion:reduce) {
+    .intro > *, .stage::after { animation:none }
+    .stage::after { opacity:.25; transform:none }
+    .g-bar, .g-tip { transition:none }
+  }
+
+  /* ---- the four systems: a 2x2 index on top, one project panel below.
+     The tabs exist only with JS; without it every panel stays visible, one after another. ---- */
+  .sys-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; margin:0 0 24px; }
+  .sys-tile {
+    display:flex; flex-direction:column; align-items:flex-start; gap:8px;
+    border:1px solid var(--hair-2); border-radius:14px; background:var(--panel);
+    padding:18px 20px; text-decoration:none; color:inherit;
+    transition:border-color .2s ease, background-color .2s ease;
+  }
+  .sys-tile:hover { border-color:#3d5a86; }
+  .sys-tile[aria-selected="true"] { border-color:var(--signal); background:var(--lit); }
+  .sys-tile .sys-tag { font-size:11px; }
+  .sys-tile .sys-n { width:26px; height:26px; }
+  .sys-tile b { font-size:18px; font-weight:650; letter-spacing:-.01em; line-height:1.35; }
+  .sys-tile .d { font-size:14.5px; color:var(--dim); line-height:1.6; }
+  .sys-tile .badge { margin-top:4px; }
+  .sys[hidden] { display:none; }
+  .sys { scroll-margin-top:16px; }
+  .folds { grid-column:1 / -1; display:grid; gap:12px; }
+  @media (max-width:700px) { .sys-grid { grid-template-columns:1fr; gap:10px } .sys-tile { padding:16px } }
+  @media (prefers-reduced-motion:reduce) { .sys-tile { transition:none } }

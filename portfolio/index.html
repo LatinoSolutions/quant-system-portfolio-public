@@ -3,6 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  // The background and timeline moved to /experience/ (2026-10-20); old links keep working.
+  (function () {
+    var moved = ['background', 'gRows', 'gTip'];
+    function route() {
+      if (moved.indexOf(location.hash.slice(1)) !== -1) location.replace('/experience/#background');
+    }
+    route();
+    window.addEventListener('hashchange', route);
+  })();
+</script>
 
 <!-- El nombre va en el title porque la busqueda que importa es "Bruno Saldivar",
      y hasta 2026-08-01 no aparecia en ningun metadato. -->
@@ -74,200 +85,7 @@
 }
 </script>
 <link rel="stylesheet" href="../site.css">
-<style>
-  /* This page stays dark in both colour schemes: its Gantt palette was validated on #101317.
-     Every variable of site.css is pinned here, so its light block never half-applies. */
-  :root {
-    color-scheme: dark;
-    --bg:#101317; --bg-2:#0d1014; --panel:#171b21; --panel-2:#1b2028;
-    --fg:#e6e9ee; --soft:#c3cad4; --dim:#8994a3; --hair:#242a33; --hair-2:#2f3743;
-    --signal:#5b9dff; --signal-ink:#0b1220; --signal-glow:rgba(91,157,255,.28); --lit:#1d2a3f;
-    --ok:#3fb989; --warn:#e0a84a; --shadow:0 30px 80px rgba(0,0,0,.35);
-  }
-
-  /* ---- identidad: la pagina es sobre la persona, los sistemas son la prueba ---- */
-  .intro { padding:64px 0 8px; }
-  .intro h1 { font-size:56px; line-height:1.08; font-weight:700; letter-spacing:-.035em; margin:0 0 16px; }
-  .disciplines {
-    font-family:var(--mono); font-size:15px; color:var(--signal);
-    letter-spacing:.04em; margin:0 0 12px; line-height:1.7;
-  }
-  .craft { font-family:var(--mono); font-size:14px; color:var(--dim); letter-spacing:.03em; margin:0 0 30px; line-height:1.7; }
-  .pitch { margin:0; font-size:20px; line-height:1.75; color:var(--soft); max-width:64ch; }
-  .pitch + .pitch { margin-top:16px; }
-
-  .systems { padding:64px 0 0; }
-  .sec {
-    font-size:13px; font-family:var(--mono); letter-spacing:.18em; text-transform:uppercase;
-    color:var(--dim); font-weight:400; margin:0 0 28px;
-  }
-
-  /* ---- la cadena real del sistema, dentro de la evidencia ---- */
-  .chain { display:grid; grid-template-columns:repeat(7,1fr); gap:10px; margin-top:18px; }
-  .stage {
-    background:var(--panel); border:1px solid var(--hair); border-radius:6px;
-    padding:18px 15px 16px; position:relative; overflow:hidden;
-    display:flex; flex-direction:column;
-    transition:border-color .28s ease, background-color .28s ease;
-  }
-  .stage::after {
-    content:""; position:absolute; left:0; top:0; height:2px; width:100%;
-    background:linear-gradient(90deg, transparent, var(--signal), transparent);
-    transform:translateX(-100%); animation:pulse 7s linear infinite;
-  }
-  .stage:nth-child(2)::after { animation-delay:.5s }
-  .stage:nth-child(3)::after { animation-delay:1s }
-  .stage:nth-child(4)::after { animation-delay:1.5s }
-  .stage:nth-child(5)::after { animation-delay:2s }
-  .stage:nth-child(6)::after { animation-delay:2.5s }
-  .stage:nth-child(7)::after { animation-delay:3s }
-  @keyframes pulse { 0%{transform:translateX(-100%)} 14%{transform:translateX(100%)} 100%{transform:translateX(100%)} }
-  .stage:hover { border-color:#3d5a86; background:#191e25 }
-  .stage .i { font-family:var(--mono); font-size:11px; color:var(--dim); letter-spacing:.1em; }
-  .stage h5 { margin:9px 0 10px; font-size:15px; font-weight:650; letter-spacing:-.01em; line-height:1.35; }
-  .stage p { margin:0 0 14px; font-size:13.5px; line-height:1.65; color:var(--dim); }
-  .stage .fig {
-    font-family:var(--mono); font-size:15px; color:var(--signal);
-    font-variant-numeric:tabular-nums; border-top:1px solid var(--hair); padding-top:11px;
-    margin-top:auto; line-height:1.4;
-  }
-  .stage .fig small { display:block; font-size:11px; color:var(--dim); letter-spacing:.06em; margin-top:3px; }
-
-  /* el siguiente nivel de la plataforma, dentro de la evidencia */
-  .next {
-    margin-top:12px; display:grid; grid-template-columns:150px 1fr; gap:24px;
-    background:var(--panel); border:1px solid var(--hair); border-radius:6px;
-    padding:18px 20px; align-items:start;
-  }
-  .next-tag { font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--dim); padding-top:3px; }
-  .next h5 { margin:0 0 7px; font-size:15px; font-weight:650 }
-  .next .sub { margin:0 0 9px; font-family:var(--mono); font-size:12px; color:var(--signal); letter-spacing:.04em; line-height:1.6 }
-  .next p { margin:0; font-size:14.5px; line-height:1.75; color:var(--soft); max-width:88ch }
-
-  /* ---- tesis ---- */
-  .thesis { padding:88px 0 78px; display:grid; grid-template-columns:1.35fr 1fr; gap:64px; align-items:start; }
-  .claim { font-size:38px; line-height:1.2; font-weight:700; letter-spacing:-.028em; margin:0 0 26px; }
-  .claim span { color:var(--signal); }
-  .thesis p { margin:0 0 18px; color:var(--soft); font-size:19px; line-height:1.75; max-width:56ch; }
-  .pfacts { margin:0; border-left:1px solid var(--hair); padding-left:30px; font-family:var(--mono); font-size:13px; }
-  .pfacts dt { color:var(--dim); font-size:11px; letter-spacing:.12em; text-transform:uppercase; margin-top:20px; }
-  .pfacts dt:first-child { margin-top:0 }
-  .pfacts dd { margin:5px 0 0; color:var(--fg); line-height:1.7; }
-  .pfacts dd.on { color:var(--signal); }
-
-  /* ---- core expertise ---- */
-  .expertise { border-top:1px solid var(--hair); padding:56px 0 8px; }
-  .rows .row {
-    display:grid; grid-template-columns:230px 1fr; gap:36px;
-    padding:20px 0; border-top:1px solid var(--hair);
-  }
-  .rows .row:last-child { border-bottom:1px solid var(--hair) }
-  .rows .k { font-family:var(--mono); font-size:13px; color:var(--signal); letter-spacing:.04em; line-height:1.7; }
-  .rows .v { font-size:17.5px; color:var(--soft); line-height:1.75; }
-  .rows .v i { font-style:normal; color:var(--dim); }
-
-  /* ---- background ---- */
-  .prior { border-top:1px solid var(--hair); padding:56px 0 10px; margin-top:56px; }
-  .tl-row {
-    display:grid; grid-template-columns:230px 1fr; gap:36px;
-    padding:24px 0; border-top:1px solid var(--hair);
-  }
-  .tl-when { font-family:var(--mono); font-size:13px; color:var(--dim); letter-spacing:.03em; padding-top:2px; }
-  .tl-what h4 { margin:0 0 7px; font-size:17px; font-weight:650; letter-spacing:-.01em; line-height:1.45; }
-  .tl-what p { margin:0; font-size:16px; color:var(--dim); line-height:1.8; max-width:78ch; }
-  .tl-what a { color:var(--signal); }
-  .earlier {
-    margin:34px 0 0; padding-top:24px; border-top:1px solid var(--hair);
-    font-size:16px; color:var(--dim); line-height:1.8; max-width:88ch;
-  }
-
-  .signature { display:flex; align-items:center; gap:16px; margin:0 0 30px }
-  .signature img {
-    width:62px; height:62px; border-radius:50%; object-fit:cover;
-    object-position:center 15%; border:1px solid var(--hair);
-  }
-  .signature .who { font-family:var(--mono); font-size:13px; line-height:1.7; color:var(--dim) }
-  .signature .who b { display:block; color:var(--fg); font-weight:500; font-size:14px }
-
-  /* ---- gantt de trayectoria. Paleta validada con validate_palette.js
-     (dark, surface #101317): #3987e5 / #b8862f / #2f9d6d -> 5 checks PASS.
-     El WARN de CVD 7.0 en protan obliga codificacion secundaria: etiqueta directa por barra.
-     Clases g-* para no chocar con la cronologia .tl-* de abajo. ---- */
-  .gantt { --s-sys:#3987e5; --s-job:#b8862f; --s-base:#2f9d6d; --s-stu:#8b7bd8; --lab:270px; margin:0 0 40px }
-  .g-legend { display:flex; flex-wrap:wrap; gap:22px; margin:0 0 22px; font-size:14px; color:var(--dim) }
-  .g-legend span { display:flex; align-items:center; gap:9px }
-  .g-legend i { width:11px; height:11px; border-radius:2px; display:block }
-  .g-head { display:grid; grid-template-columns:var(--lab) 1fr; margin-bottom:7px }
-  .g-axis {
-    display:grid; grid-template-columns:repeat(6,1fr); font-family:var(--mono);
-    font-size:11px; color:#6f7887; letter-spacing:.06em;
-  }
-  .g-rows { position:relative; border-top:1px solid var(--hair) }
-  .g-row {
-    display:grid; grid-template-columns:var(--lab) 1fr; align-items:center;
-    height:36px; border-bottom:1px solid var(--hair);
-  }
-  .g-row:nth-child(even) { background:rgba(255,255,255,.014) }
-  .g-row[data-em] .g-lab { color:var(--fg); font-weight:600 }
-  .g-track { position:relative; height:100%; }
-  .g-now { position:absolute; top:0; bottom:0; width:1px; background:#3d4653; z-index:0; }
-  .g-now-lab { position:absolute; font-family:var(--mono); font-size:10px; color:#6f7887; letter-spacing:.08em; top:-1px; }
-  .g-group { display:grid; grid-template-columns:var(--lab) 1fr; align-items:center; padding:14px 0 6px; }
-  .g-group span { font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:#6f7887; }
-  .g-track::before {
-    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
-    background:repeating-linear-gradient(to right, var(--hair) 0 1px, transparent 1px calc(100%/6));
-  }
-  .g-hit { position:absolute; height:24px; top:calc(50% - 12px); cursor:default; z-index:1 }
-  .g-bar {
-    position:absolute; left:0; right:0; height:12px; border-radius:6px; top:6px;
-    box-shadow:0 0 0 2px var(--bg); transition:filter .18s ease, transform .18s ease;
-  }
-  .g-hit:hover .g-bar { filter:brightness(1.32); transform:scaleY(1.18) }
-  .g-hit[data-em] .g-bar { height:14px; top:5px }
-  .g-bar[data-k="sys"]  { background:var(--s-sys) }
-  .g-bar[data-k="job"]  { background:var(--s-job) }
-  .g-bar[data-k="base"] { background:var(--s-base) }
-  .g-bar[data-k="stu"]  { background:var(--s-stu) }
-  .g-lab { font-size:13px; color:var(--soft); padding-right:16px; line-height:1.35 }
-  .g-tip {
-    position:absolute; z-index:5; background:#1d232b; border:1px solid #303845; border-radius:4px;
-    padding:8px 11px; font-size:13px; color:var(--fg); pointer-events:none; opacity:0;
-    transition:opacity .15s ease; white-space:nowrap; line-height:1.6;
-  }
-  .g-tip b { font-family:var(--mono); color:var(--signal); font-weight:600 }
-  @media (max-width:760px) { .gantt { --lab:132px } .g-lab { font-size:11.5px } .g-row { height:40px } }
-
-  /* ---- cierre ---- */
-  .cta { padding:78px 0 10px; }
-  .cta h2 { font-size:34px; font-weight:700; letter-spacing:-.02em; margin:0 0 16px; line-height:1.2; }
-  .cta p { color:var(--dim); max-width:62ch; margin:0 0 30px; }
-  .cta .btns { margin-top:0; }
-
-  @media (max-width:1000px) {
-    .chain { grid-template-columns:repeat(2,1fr) } .thesis { grid-template-columns:1fr; gap:34px }
-    .intro h1 { font-size:40px } .claim { font-size:29px }
-    .rows .row, .tl-row { grid-template-columns:1fr; gap:8px }
-  }
-  @media (max-width:700px) {
-    .next { grid-template-columns:1fr; gap:10px }
-    .cta h2 { font-size:27px } .intro h1 { font-size:33px } .pitch { font-size:18px }
-    .pfacts { border-left:0; padding-left:0 }
-  }
-
-  /* la identidad sube al cargar; todo se apaga con prefers-reduced-motion */
-  @keyframes rise { from { opacity:0; transform:translateY(14px) } to { opacity:1; transform:none } }
-  .intro > * { animation:rise .62s cubic-bezier(.16,.8,.3,1) both }
-  .intro h1 { animation-delay:.05s }
-  .intro .disciplines { animation-delay:.15s }
-  .intro .craft { animation-delay:.23s }
-  .intro .pitch { animation-delay:.31s }
-  @media (prefers-reduced-motion:reduce) {
-    .intro > *, .stage::after { animation:none }
-    .stage::after { opacity:.25; transform:none }
-    .g-bar, .g-tip { transition:none }
-  }
-</style>
+<link rel="stylesheet" href="../work.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -283,7 +101,7 @@
     <nav class="site-nav" aria-label="Main">
       <a href="/portfolio/" aria-current="page">Work</a>
       <a href="/services/">Services</a>
-      <a href="#background">Background</a>
+      <a href="/experience/">Experience</a>
       <a href="#contact">Contact</a>
       <a class="status" href="#contact"><span class="dot" aria-hidden="true"></span>Open to remote roles</a>
     </nav>
@@ -299,8 +117,8 @@
     <p class="pitch">
       Independent engineer in Berlin. Since February 2021 I have studied markets and built the
       software to test what I found. Four proprietary systems came out of it, each built end to
-      end: a trading research and execution platform that runs live on MT5, a voice-operated
-      execution copilot, an energy procurement research and backtesting platform, and the AI agent
+      end: a trading research and execution platform that runs live on MT5, a voice execution
+      copilot, an energy procurement research and backtesting platform, and the AI agent
       platform that develops the trading decision engine and the copilot today, and built the
       energy platform.
     </p>
@@ -312,6 +130,12 @@
 
   <section class="systems" aria-labelledby="sys-title">
     <h2 class="sec" id="sys-title">The four systems</h2>
+    <nav class="sys-grid" aria-label="The four systems">
+      <a class="sys-tile" id="tab-trading" href="#trading"><span class="sys-tag"><span class="sys-n">01</span>Proprietary platform · live on MT5</span><b>Private Trading Research &amp; Execution Platform</b><span class="d">Trading · research to live orders on MT5</span><span class="badge">Proprietary · built end to end</span></a>
+      <a class="sys-tile" id="tab-copilot" href="#copilot"><span class="sys-tag"><span class="sys-n">02</span>Proprietary product · voice execution on MT5</span><b>Trading Execution Copilot</b><span class="d">Trading · orders by voice, confirmed before they go out</span><span class="badge">Proprietary · built end to end</span></a>
+      <a class="sys-tile" id="tab-energy" href="#energy"><span class="sys-tag"><span class="sys-n">03</span>Proprietary platform · European power and gas</span><b>Energy Procurement Research &amp; Backtesting Platform</b><span class="d">Energy · evidence for buying power and gas</span><span class="badge">Proprietary · built end to end</span></a>
+      <a class="sys-tile" id="tab-awop" href="#awop"><span class="sys-tag"><span class="sys-n">04</span>Proprietary platform · AI coding agents</span><b>Agentic Workflow Orchestration Platform (AWOP)</b><span class="d">AI agents · parallel coding with test gates and review</span><span class="badge">Proprietary · built end to end</span></a>
+    </nav>
     <div class="syslist">
 
       <article class="sys reveal" id="trading" aria-labelledby="trading-h">
@@ -386,8 +210,10 @@
   </svg>
   <figcaption>Simplified. What live trading shows, expected against actual, goes back into research.</figcaption>
 </figure>
-        <div class="terms">
-          <h4>Key terms, in plain words</h4>
+        <div class="folds">
+        <details class="evidence">
+          <summary>Key terms, in plain words</summary>
+          <div class="ev-body terms">
           <dl>
             <div><dt>Execution-aware backtesting</dt><dd>Replaying past markets to see what a rule would have done, including orders that would not have filled and the broker's costs.</dd></div>
             <div><dt>Monte Carlo stress testing</dt><dd>Thousands of reshuffled histories, to see how bad it can get before any money is at risk.</dd></div>
@@ -396,7 +222,8 @@
             <div><dt>Systematic Trading Decision Engine</dt><dd>The next layer: a candidate decision rule must beat simpler baselines and pass statistical gates, under a safety veto that can always block it, before it can reach capital.</dd></div>
             <div><dt>Silent-failure detection</dt><dd>A channel that is running but no longer writing is caught, instead of being reported as a normal day.</dd></div>
           </dl>
-        </div>
+          </div>
+        </details>
         <details class="evidence">
           <summary>Evidence for technical readers</summary>
           <div class="ev-body">
@@ -466,6 +293,7 @@
             <p>The Private Trading Research &amp; Execution Platform is proprietary. This page describes the scope of the engineering, not the strategy logic.</p>
           </div>
         </details>
+        </div>
       </article>
 
       <article class="sys reveal" id="copilot" aria-labelledby="copilot-h">
@@ -549,8 +377,10 @@
   </svg>
   <figcaption>The trader decides the trade. The copilot makes sure the order that goes out is the one that was meant.</figcaption>
 </figure>
-        <div class="terms">
-          <h4>Key terms, in plain words</h4>
+        <div class="folds">
+        <details class="evidence">
+          <summary>Key terms, in plain words</summary>
+          <div class="ev-body terms">
           <dl>
             <div><dt>Discretionary execution</dt><dd>The trader decides the trade; the copilot handles the order safely.</dd></div>
             <div><dt>Ticket</dt><dd>The spoken order, written down as a structured order that software can check.</dd></div>
@@ -558,7 +388,8 @@
             <div><dt>Read back</dt><dd>The order is repeated back to the trader before anything is sent.</dd></div>
             <div><dt>Broker reconciliation</dt><dd>An order counts as executed only when the broker's own record confirms it.</dd></div>
           </dl>
-        </div>
+          </div>
+        </details>
         <details class="evidence">
           <summary>Evidence for technical readers</summary>
           <div class="ev-body">
@@ -570,6 +401,7 @@
             </ul>
           </div>
         </details>
+        </div>
       </article>
 
       <article class="sys reveal" id="energy" aria-labelledby="energy-h">
@@ -582,7 +414,7 @@
     </dl>
     <p class="badge">Proprietary · built end to end</p>
     <p class="kf"><b>2.5%</b><span>below the buyer&#39;s current practice in 3 of 3 quarters (fees excluded), in its first exploratory backtest.</span></p>
-    <p class="origin">Built in under a month, for monthly and quarterly purchases. First applied on-site in Oxford, UK (Sep - Oct 2026), to a large energy buyer&#39;s procurement.</p>
+    <p class="origin">Built in under a month, for monthly and quarterly purchases. First applied on-site in Oxford, UK (Sep&nbsp;-&nbsp;Oct&nbsp;2026), to a large energy buyer&#39;s procurement.</p>
     <p class="origin">The first 5 buying strategies are ready for validation, and the method is open-ended: new strategies and hypotheses can be added for each buying problem to find the best result. An out-of-sample period stays sealed until a rule is frozen.</p>
     <p class="fine">Data and detailed results stay confidential.</p>
         </div>
@@ -650,8 +482,10 @@
   </svg>
   <figcaption>Simplified. Every hypothesis is compared with both references, never only with itself.</figcaption>
 </figure>
-        <div class="terms">
-          <h4>Key terms, in plain words</h4>
+        <div class="folds">
+        <details class="evidence">
+          <summary>Key terms, in plain words</summary>
+          <div class="ev-body terms">
           <dl>
             <div><dt>Energy procurement</dt><dd>How a company buys the power and gas it needs, here in monthly and quarterly products.</dd></div>
             <div><dt>Hypothesis-driven research</dt><dd>Each idea is written as a testable claim, with its acceptance criteria, before it is measured.</dd></div>
@@ -660,7 +494,8 @@
             <div><dt>Out-of-sample period</dt><dd>Data set aside before any selection, so the result is not tuned to it.</dd></div>
             <div><dt>Market benchmark</dt><dd>A market reference to compare against, so a result means something beyond itself.</dd></div>
           </dl>
-        </div>
+          </div>
+        </details>
         <details class="evidence">
           <summary>Evidence for technical readers</summary>
           <div class="ev-body">
@@ -678,6 +513,7 @@
             </ul>
           </div>
         </details>
+        </div>
       </article>
 
       <article class="sys reveal" id="awop" aria-labelledby="awop-h">
@@ -690,8 +526,8 @@
       <div><dt>What it does</dt><dd>It splits the work across several AI agents in parallel, each on its own branch, and merges a change only after it passes the tests and a review, logging every run.</dd></div>
     </dl>
     <p class="badge">Proprietary · built end to end</p>
-    <p class="kf"><b>272</b><span>tasks merged into my four projects by AI agents, every one through the test gate.</span></p>
-    <p class="origin">It develops my trading decision engine and execution copilot today, and it built my energy platform.</p>
+    <p class="kf"><b>272</b><span>tasks merged across the four projects by AI agents, every one through the test gate.</span></p>
+    <p class="origin">It develops the trading decision engine and execution copilot today, and it built the energy platform.</p>
         </div>
 <figure class="dg-card">
   <div class="dg-top">
@@ -793,8 +629,10 @@
   </svg>
   <figcaption>Simplified. Independent review is mandatory on every autopilot merge; on the other routes a person decides.</figcaption>
 </figure>
-        <div class="terms">
-          <h4>Key terms, in plain words</h4>
+        <div class="folds">
+        <details class="evidence">
+          <summary>Key terms, in plain words</summary>
+          <div class="ev-body terms">
           <dl>
             <div><dt>Multi-agent orchestration</dt><dd>Several AI agents working on the same codebase at once, each on its own task.</dd></div>
             <div><dt>MCP (Model Context Protocol)</dt><dd>A standard connector that lets an outside AI assistant see and operate the platform, through the same interface a person uses.</dd></div>
@@ -806,12 +644,13 @@
             <div><dt>Autopilot merge</dt><dd>On routes agreed in advance, a change merges without a person once it has passed the gate and the independent review.</dd></div>
             <div><dt>First-pass approval and rework rate</dt><dd>How often a change is accepted at once, and how often it goes back to be redone.</dd></div>
           </dl>
-        </div>
+          </div>
+        </details>
         <details class="evidence">
           <summary>Evidence for technical readers</summary>
           <div class="ev-body">
             <ul>
-              <li><b>272</b> tasks merged in 4 codebases (my trading decision engine, the execution copilot, the energy platform and the platform itself), from <b>4,187</b> agent runs; <b>220</b> of them merged by the autopilot without a human merge decision.</li>
+              <li><b>272</b> tasks merged in 4 codebases (the trading decision engine, the execution copilot, the energy platform and the platform itself), from <b>4,187</b> agent runs; <b>220</b> of them merged by the autopilot without a human merge decision.</li>
               <li>AI agents work in parallel across <b>6</b> provider accounts and <b>4</b> model families, under one shared engineering standard.</li>
               <li><b>1,209</b> commits in <b>28</b> days, with <b>3,278</b> tests passing, none failing.</li>
               <li>An MCP server lets an outside AI assistant read the platform's state and operate it through the same API as the user interface.</li>
@@ -822,6 +661,7 @@
             </ul>
           </div>
         </details>
+        </div>
       </article>
 
     </div>
@@ -851,139 +691,7 @@
     </dl>
   </section>
 
-  <section class="expertise reveal">
-    <h2 class="sec">Core expertise</h2>
-    <div class="rows">
-      <div class="row">
-        <div class="k">Strategy design</div>
-        <div class="v">Turning discretionary trading expertise <i>(decisions a trader makes by judgement)</i> into explicit, testable rules, with hypotheses and acceptance criteria defined before measurement.</div>
-      </div>
-      <div class="row">
-        <div class="k">Research design</div>
-        <div class="v">Deterministic strategy rules, experiment identity, parameter exploration, reproducible comparisons.</div>
-      </div>
-      <div class="row">
-        <div class="k">Simulation and risk</div>
-        <div class="v">Execution-aware backtesting, Monte Carlo stress analysis <i>(thousands of reshuffled histories to see how bad it can get)</i>, sizing, exposure and drawdown controls.</div>
-      </div>
-      <div class="row">
-        <div class="k">Decision systems</div>
-        <div class="v">Offline policy learning, off-policy evaluation <i>(learning and judging a decision rule on recorded history before it risks money)</i>, champion-challenger governance <i>(a new version must beat the one in use)</i>, statistical promotion gates, hard safety veto; reinforcement learning among the candidate model families.</div>
-      </div>
-      <div class="row">
-        <div class="k">Evaluation</div>
-        <div class="v">Expected-versus-actual analysis, signal-to-fill diagnostics <i>(tracing each signal to the order and the fill it produced)</i>, golden cases, regression testing.</div>
-      </div>
-      <div class="row">
-        <div class="k">Agentic engineering</div>
-        <div class="v">Multi-agent orchestration across accounts and model families, parallel work, independent review, test-regression merge gates <i>(nothing merges if the tests get worse than main)</i>, one shared engineering standard.</div>
-      </div>
-      <div class="row">
-        <div class="k">Engineering</div>
-        <div class="v">Market-data pipelines, MT5 execution workflows, REST services, backend and frontend research tooling.</div>
-      </div>
-    </div>
-  </section>
 
-  <section class="prior reveal" id="background">
-    <h2 class="sec">Background</h2>
-    <div class="gantt">
-      <div class="g-legend">
-        <span><i style="background:#2f9d6d"></i>Independent practice</span>
-        <span><i style="background:#8b7bd8"></i>Strategy study</span>
-        <span><i style="background:#b8862f"></i>Employment &amp; training</span>
-        <span><i style="background:#3987e5"></i>Systems built</span>
-      </div>
-      <div class="g-head"><span></span><div class="g-axis" style="position:relative"><span class="g-now-lab" style="left:97.22%">NOW</span><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div></div>
-      <div class="g-rows" id="gRows">
-        <div class="g-row"><span class="g-lab">Independent quantitative research</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:1.39%;width:95.83%" data-t="Independent quantitative research" data-d="Feb 2021 - present"><div class="g-bar" data-k="base"></div></div></div></div>
-        <div class="g-group"><span>Strategy study</span><div></div></div>
-        <div class="g-row"><span class="g-lab">Technical indicators</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:1.39%;width:30.56%" data-t="Technical indicators" data-d="2021 - 2022"><div class="g-bar" data-k="stu"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Discretionary market analysis</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:16.67%;width:33.33%" data-t="Discretionary market analysis" data-d="2022 - 2023"><div class="g-bar" data-k="stu"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Advanced discretionary methods</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:33.33%;width:50.0%" data-t="Advanced discretionary methods" data-d="2023 - 2025"><div class="g-bar" data-k="stu"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Systematic &amp; algorithmic execution</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:50.0%;width:41.67%" data-t="Systematic and algorithmic execution" data-d="2024 - present"><div class="g-bar" data-k="stu"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">SPICED Academy · bootcamp</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:18.06%;width:4.17%" data-t="SPICED Academy · Data Science bootcamp" data-d="Feb - May 2022 · 480+ hours"><div class="g-bar" data-k="job"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Rabot Crypto · quant research</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:27.78%;width:31.94%" data-t="Rabot Crypto · quant research" data-d="Sep 2022 - Aug 2024"><div class="g-bar" data-k="job"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Energy research platform</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:94.44%;width:2.78%" data-t="Energy Procurement Research &amp; Backtesting Platform" data-d="Sep 2026 - present · proprietary platform"><div class="g-bar" data-k="sys"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Agentic AI platform (AWOP)</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:94.44%;width:2.78%" data-t="Agentic Workflow Orchestration Platform (AWOP)" data-d="Sep 2026 - present · proprietary platform"><div class="g-bar" data-k="sys"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Trading Execution Copilot</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:95.83%;width:1.39%" data-t="Trading Execution Copilot · voice-operated execution on MT5" data-d="Oct 2026 - present · proprietary product"><div class="g-bar" data-k="sys"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Indicator scripting · Pine Script / MQL5</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:50.0%;width:23.61%" data-t="Indicator scripting in Pine Script and MQL5" data-d="2024 - mid 2025 · TradingView scripts ported to MQL5"><div class="g-bar" data-k="sys"></div></div></div></div>
-        <div class="g-group"><span>The four trading systems</span><div></div></div>
-        <div class="g-row"><span class="g-lab">First · multi-timeframe research</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:73.61%;width:1.39%" data-t="Multi-timeframe strategy research" data-d="Jun 2025 · first system"><div class="g-bar" data-k="sys"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Second · Python / Streamlit</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:76.39%;width:1.39%" data-t="Python / Streamlit application" data-d="Aug - Sep 2025 · second system"><div class="g-bar" data-k="sys"></div></div></div></div>
-        <div class="g-row"><span class="g-lab">Third · React / TypeScript</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" style="left:79.17%;width:1.39%" data-t="React / TypeScript platform" data-d="Oct - Nov 2025 · third system"><div class="g-bar" data-k="sys"></div></div></div></div>
-        <div class="g-row" data-em=""><span class="g-lab">Fourth · Research &amp; Execution Platform</span><div class="g-track"><div class="g-now" style="left:97.22%"></div><div class="g-hit" data-em="" style="left:80.56%;width:16.67%" data-t="Private Trading Research &amp; Execution Platform" data-d="Nov 2025 - present · in production"><div class="g-bar" data-k="sys"></div></div></div></div>
-        <div class="g-tip" id="gTip"></div>
-      </div>
-    </div>
-
-    <div class="tl">
-      <div class="tl-row">
-        <div class="tl-when">Sep 2026 to now</div>
-        <div class="tl-what">
-          <h4>Energy Procurement Research &amp; Backtesting Platform · proprietary platform</h4>
-          <p>A research and backtesting platform for power and gas procurement in European markets, built for monthly and quarterly purchases. Built in under a month. In its first exploratory backtest, the quarterly power buying rule came in 2.5% below the buyer&#39;s current practice in 3 of 3 delivery quarters (fees excluded), inside the 1 to 5% range McKinsey cites for strong energy procurement. The first 5 buying strategies are ready for validation, and the method is open-ended: new strategies and hypotheses can be added for each buying problem to find the best result. An out-of-sample period stays sealed until a rule is frozen. <a href="#energy">How it works and the evidence</a>.</p>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-when">Sep 2026 to now</div>
-        <div class="tl-what">
-          <h4>Agentic Workflow Orchestration Platform (AWOP) · proprietary platform</h4>
-          <p>Berlin, remote. A platform for AI coding agents. It develops the trading decision engine and the execution copilot today, and built the energy research platform. Several AI agents work in parallel under one shared engineering standard, with a test-regression gate on every merge and independent review on every autopilot merge. <a href="#awop">How it works and the evidence</a>.</p>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-when">Oct 2026 to now</div>
-        <div class="tl-what">
-          <h4>Trading Execution Copilot · voice execution on MT5 · proprietary product</h4>
-          <p>A voice-operated execution copilot for discretionary trading on MT5, built through the same agentic platform. Every order is validated, risk-sized and read back; nothing is sent without explicit confirmation, and every execution is reconciled with the broker. <a href="#copilot">How it works and the evidence</a>.</p>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-when">Feb 2021 to now</div>
-        <div class="tl-what">
-          <h4>Independent quantitative research and trading-systems development</h4>
-          <p>Berlin. Intensive self-directed market study and applied research, through four successive trading systems. Self-funded throughout.</p>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-when">2021 to now</div>
-        <div class="tl-what">
-          <h4>Trading-strategy training</h4>
-          <p>Seven successive private mentorship programmes in discretionary trading. 564 archived sessions, and
-            15,000+ of those hours in chart study. Those rules were then formalised into deterministic, testable
-            logic, and the ones that did not survive measurement were dropped.</p>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-when">Sep 2022 to Aug 2024</div>
-        <div class="tl-what">
-          <h4>Quant research and algorithm optimisation · Rabot Crypto</h4>
-          <p>Data-driven research for crypto markets. Python dashboards with pandas, NumPy, Dash and Plotly for market behaviour, volatility regimes, volume and open interest. Translated research ideas into testable workflows with developers and traders.</p>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-when">Feb to May 2022</div>
-        <div class="tl-what">
-          <h4>Data Science and Machine Learning bootcamp · SPICED Academy</h4>
-          <p>Berlin. 480+ curriculum hours: Python, pandas, NumPy, scikit-learn, SQL and NoSQL fundamentals, dashboards, deployment concepts.</p>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-when">2012 to 2020</div>
-        <div class="tl-what">
-          <h4>Music producer, educator and founder</h4>
-          <p>Berlin and international. Built a creative practice and an online education business: production, teaching, mentoring and independent ownership. It is where the discipline of structure, timing and iteration comes from.</p>
-        </div>
-      </div>
-    </div>
-    <p class="earlier">
-      The three systems before this platform: a configurable multi-timeframe BTC research system in
-      June 2025, a Python and Streamlit application for rule-based signal research in
-      September, and a React and TypeScript platform with engine comparison and golden-case
-      validation in November.
-    </p>
-  </section>
 
   <section class="cta reveal" id="contact">
     <h2>Looking for someone who has already built the whole thing?</h2>
@@ -999,6 +707,7 @@
       <a class="btn solid" href="mailto:bru.daytrader@gmail.com">bru.daytrader@gmail.com</a>
       <a class="btn" href="https://www.linkedin.com/in/bru-algo-trader/">LinkedIn</a>
       <a class="btn" href="https://calendly.com/bru-lets-talk/30min">Book a 30-min intro</a>
+      <a class="btn" href="/experience/">Full background</a>
     </div>
   </section>
 
@@ -1010,6 +719,7 @@
     <span>Every figure traceable to a run manifest or the git history</span>
     <nav aria-label="Footer">
       <a href="/">Home</a>
+      <a href="/experience/">Experience</a>
       <a href="/services/">Services</a>
       <a href="https://www.linkedin.com/in/bru-algo-trader/">LinkedIn</a>
     </nav>
@@ -1018,25 +728,71 @@
 
 <script src="../site.js" defer></script>
 <script>
-  // tooltip por marca: el spec de interaccion lo pide por defecto en barras
+  // The four systems as tabs (WAI-ARIA tabs pattern, automatic activation).
+  // Without JS the tiles stay plain links and every panel stays visible.
   (() => {
-    const rows = document.getElementById('gRows'); if (!rows) return;
-    const tip = document.getElementById('gTip');
-    rows.querySelectorAll('.g-hit').forEach((bar) => {
-      bar.addEventListener('mouseenter', () => {
-        tip.innerHTML = bar.dataset.t + '<br><b>' + bar.dataset.d + '</b>';
-        tip.style.opacity = 1;
-      });
-      bar.addEventListener('mousemove', (e) => {
-        const r = rows.getBoundingClientRect();
-        const w = tip.offsetWidth;                 // medir, no adivinar el ancho
-        let x = e.clientX - r.left + 14;
-        if (x + w > r.width) x = e.clientX - r.left - w - 14;   // no cabe a la derecha: al otro lado
-        tip.style.left = Math.max(0, x) + 'px';
-        tip.style.top = (e.clientY - r.top + 16) + 'px';
-      });
-      bar.addEventListener('mouseleave', () => { tip.style.opacity = 0; });
+    const list = document.querySelector('.sys-grid');
+    if (!list) return;
+    const tabs = [...list.querySelectorAll('.sys-tile')];
+    const panels = tabs.map((tab) => document.getElementById(tab.hash.slice(1)));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    list.setAttribute('role', 'tablist');
+    list.setAttribute('aria-orientation', 'horizontal');
+    tabs.forEach((tab, i) => {
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-controls', panels[i].id);
+      panels[i].setAttribute('role', 'tabpanel');
+      panels[i].setAttribute('aria-labelledby', tab.id);
+      // A panel shown by a tab must not wait for the scroll fade-in.
+      panels[i].classList.add('seen');
     });
+
+    function select(index) {
+      tabs.forEach((tab, i) => {
+        const on = i === index;
+        tab.setAttribute('aria-selected', String(on));
+        tab.tabIndex = on ? 0 : -1;
+        panels[i].hidden = !on;
+      });
+    }
+
+    // On a phone the tiles fill the screen: bring the panel into view when it starts below the fold.
+    function reveal(index, always) {
+      const top = panels[index].getBoundingClientRect().top;
+      if (!always && top < window.innerHeight * 0.6) return;
+      panels[index].scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    }
+
+    function open(index, focus) {
+      select(index);
+      history.replaceState(null, '', '#' + panels[index].id);
+      if (focus) tabs[index].focus();
+      reveal(index, false);
+    }
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', (event) => { event.preventDefault(); open(i, false); });
+      tab.addEventListener('keydown', (event) => {
+        const last = tabs.length - 1;
+        const target = { ArrowRight: i + 1, ArrowDown: i + 1, ArrowLeft: i - 1, ArrowUp: i - 1, Home: 0, End: last }[event.key];
+        if (target === undefined) return;
+        event.preventDefault();
+        open((target + tabs.length) % tabs.length, true);
+      });
+    });
+
+    const fromHash = () => panels.findIndex((panel) => '#' + panel.id === location.hash);
+    window.addEventListener('hashchange', () => {
+      const index = fromHash();
+      if (index === -1) return;
+      select(index);
+      reveal(index, true);
+    });
+
+    const start = fromHash();
+    select(start === -1 ? 0 : start);
+    if (start !== -1) window.addEventListener('load', () => reveal(start, true));
   })();
 </script>
 </body>

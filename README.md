@@ -1,4 +1,4 @@
-# Bruno Saldivar · Quantitative Researcher & Trading Systems Developer
+# Bruno Saldivar · Quantitative Developer · Agentic AI Engineer
 
 Personal portfolio site: **https://ibuildsystems.work/**
 

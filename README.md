@@ -2,6 +2,12 @@
 
 Personal portfolio site: **https://ibuildsystems.work/**
 
+## Explore the published work
+
+- [AI coding-agent workflow consulting](https://ibuildsystems.work/services/) — isolated tasks, CI test gates, independent reviews and scoped implementation on client-owned tools.
+- [Engineering portfolio and case studies](https://ibuildsystems.work/portfolio/) — MT5 trading systems, quantitative backtesting, energy procurement research and multi-agent orchestration.
+- [Experience and background](https://ibuildsystems.work/experience/) — quantitative research, software engineering and AI-agent workflows.
+
 Market research systems, trading-system architecture, automation workflows, governance, traceability and AI-assisted decision infrastructure.
 
 ## Stack
@@ -30,8 +36,9 @@ http://localhost:8000
   --screenshot=og-card.png og-card.source.html
 ```
 
-Do not delete `googled78529fbde631cbd.html`: it is the Google Search Console
-ownership verification file. Removing it loses the verified property.
+Do not delete `googled78529fbde631cbd.html` or `google3b675c3a549ec9a5.html`:
+they are Google Search Console ownership-verification files. Keep both in place.
+Keep `2f060cceac71813e008180ed32cac141.txt` for IndexNow key verification.
 
 ## Contact
 

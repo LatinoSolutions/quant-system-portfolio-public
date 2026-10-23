@@ -26,7 +26,7 @@
 <meta name="theme-color" content="#101317">
 
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Bruno Saldivar">
+<meta property="og:site_name" content="iBuildSystems">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://ibuildsystems.work/portfolio/">
 <meta property="og:title" content="Trading Systems, Energy Research &amp; Agentic AI | Portfolio">
@@ -44,43 +44,68 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Bruno Saldivar",
-  "url": "https://ibuildsystems.work/",
-  "image": "https://ibuildsystems.work/og-card.png",
-  "jobTitle": "Quantitative Developer & Trading Systems Engineer | Agentic AI Engineer | Energy Trading",
-  "email": "mailto:bru.daytrader@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Berlin",
-    "addressCountry": "DE"
-  },
-  "sameAs": ["https://www.linkedin.com/in/bru-algo-trader/"],
-  "alumniOf": {
-    "@type": "EducationalOrganization",
-    "name": "SPICED Academy"
-  },
-  "knowsAbout": [
-    "Quantitative research",
-    "Algorithmic trading",
-    "Systematic trading",
-    "Trading systems development",
-    "Offline policy learning",
-    "Off-policy evaluation",
-    "Energy and power procurement",
-    "Agentic AI systems",
-    "Multi-agent orchestration",
-    "Backtesting",
-    "Monte Carlo simulation",
-    "Market data pipelines",
-    "MetaTrader 5",
-    "JavaScript",
-    "TypeScript",
-    "Python",
-    "Node.js",
-    "Express.js",
-    "React",
-    "MQL5"
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Bruno Saldivar",
+      "url": "https://ibuildsystems.work/",
+      "image": "https://ibuildsystems.work/portrait.jpg",
+      "jobTitle": "Quantitative Developer & Trading Systems Engineer | Agentic AI Engineer | Energy Trading",
+      "email": "mailto:bru.daytrader@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/bru-algo-trader/"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "SPICED Academy"
+      },
+      "knowsAbout": [
+        "Quantitative research",
+        "Algorithmic trading",
+        "Systematic trading",
+        "Trading systems development",
+        "Offline policy learning",
+        "Off-policy evaluation",
+        "Energy and power procurement",
+        "Agentic AI systems",
+        "Multi-agent orchestration",
+        "Backtesting",
+        "Monte Carlo simulation",
+        "Market data pipelines",
+        "MetaTrader 5",
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Node.js",
+        "Express.js",
+        "React",
+        "MQL5",
+        "Multi-agent coordination",
+        "Agent evaluation",
+        "Augmented intelligence",
+        "Workflow recovery",
+        "Model Context Protocol"
+      ],
+      "@id": "https://ibuildsystems.work/#person"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://ibuildsystems.work/portfolio/#webpage",
+      "url": "https://ibuildsystems.work/portfolio/",
+      "name": "Trading Systems, Energy Research & Agentic AI | Portfolio",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://ibuildsystems.work/#website"
+      },
+      "about": {
+        "@id": "https://ibuildsystems.work/#person"
+      }
+    }
   ]
 }
 </script>
@@ -520,14 +545,14 @@
         <div class="sys-text">
     <p class="sys-tag"><span class="sys-n">04</span>Proprietary platform · AI coding agents</p>
     <h3 id="awop-h">Agentic Workflow Orchestration Platform (AWOP)</h3>
-    <p class="sys-sub">Multi-agent orchestration <i>(several AI agents working at once)</i> with MCP <i>(a standard connector that lets an outside AI assistant operate it)</i>, evals <i>(every agent run measured by model and role)</i> and model routing with failover <i>(each job goes to a chosen model, and moves to another account when one runs out of quota)</i>.</p>
+    <p class="sys-sub">Multi-agent orchestration and coordination: agents share task ownership, handoffs and review rules. MCP <i>(Model Context Protocol)</i> connects assistants to the workflow; evals measure runs by model and role. Self-healing mechanisms handle stalled work and failed handoffs within explicit limits.</p>
     <dl class="pw">
       <div><dt>The problem</dt><dd>AI coding agents write code fast, but without structure nobody can say what changed, whether it was tested or who checked it.</dd></div>
-      <div><dt>What it does</dt><dd>It splits the work across several AI agents in parallel, each on its own branch, and merges a change only after it passes the tests and a review, logging every run.</dd></div>
+      <div><dt>What it does</dt><dd>It coordinates several AI agents in parallel, each on its own branch, with test gates on every merge and independent review on every autopilot merge. Human decisions and run records stay part of the workflow.</dd></div>
     </dl>
     <p class="badge">Proprietary · built end to end</p>
     <p class="kf"><b>272</b><span>tasks merged across the four projects by AI agents, every one through the test gate.</span></p>
-    <p class="origin">It develops the trading decision engine and execution copilot today, and it built the energy platform.</p>
+    <p class="origin">It develops the trading decision engine and execution copilot today, and it built the energy platform. The direction is an Augmented Intelligence Workspace: AI extends human judgement through coordinated reasoning and action.</p>
         </div>
 <figure class="dg-card">
   <div class="dg-top">
@@ -635,6 +660,9 @@
           <div class="ev-body terms">
           <dl>
             <div><dt>Multi-agent orchestration</dt><dd>Several AI agents working on the same codebase at once, each on its own task.</dd></div>
+            <div><dt>Multi-agent coordination</dt><dd>Shared task ownership, handoffs, evidence and review responsibilities across agents and model families.</dd></div>
+            <div><dt>Augmented intelligence</dt><dd>AI supports human judgement. The direction is a workspace for coordinated reasoning and action, with the person retaining authority over goals, risk and approvals.</dd></div>
+            <div><dt>Self-healing workflows</dt><dd>Recovery mechanisms detect stalled work, stop repeated ineffective corrections and route the next action. Recovery does not waive budgets, human decisions or independent verification, and does not guarantee that every failure resolves without intervention.</dd></div>
             <div><dt>MCP (Model Context Protocol)</dt><dd>A standard connector that lets an outside AI assistant see and operate the platform, through the same interface a person uses.</dd></div>
             <div><dt>Evals</dt><dd>Every agent run is measured by model and role, so the choice of model rests on numbers, not impressions.</dd></div>
             <div><dt>Model routing and failover</dt><dd>Each kind of job goes to a chosen account and model; when an account runs low on quota, the work moves to another one.</dd></div>
@@ -650,11 +678,13 @@
           <summary>Evidence for technical readers</summary>
           <div class="ev-body">
             <ul>
+              <li>Measurement snapshot for the task, run, commit and test figures below: <time datetime="2026-10-20">20 October 2026</time>. They are historical engineering evidence, not a live counter or a customer outcome.</li>
               <li><b>272</b> tasks merged in 4 codebases (the trading decision engine, the execution copilot, the energy platform and the platform itself), from <b>4,187</b> agent runs; <b>220</b> of them merged by the autopilot without a human merge decision.</li>
               <li>AI agents work in parallel across <b>6</b> provider accounts and <b>4</b> model families, under one shared engineering standard.</li>
               <li><b>1,209</b> commits in <b>28</b> days, with <b>3,278</b> tests passing, none failing.</li>
               <li>An MCP server lets an outside AI assistant read the platform's state and operate it through the same API as the user interface.</li>
               <li>Model routing by role and account, with a quota reserve per account and a handoff to another account when one runs low.</li>
+              <li>Bounded self-healing: repeated failed corrections trigger reclassification rather than an endless retry loop. Recovery keeps unresolved findings, budget limits and independent review in place. Targeted regression tests cover these paths; that is not a claim that all production failures recover automatically.</li>
               <li>Every run is measured by model and role: first-pass approval, rework rate, review rounds to acceptance and tokens per accepted task, each rate with its sample size.</li>
               <li>Limits, stated up front: agents work in isolated branches and working copies, which is not a security sandbox; independent review is mandatory on autopilot merges, not on every merge.</li>
               <li>Private: it is not licensed or installed for clients. What I offer is the method, built on the client's own tools (<a href="/services/">AI coding-agent workflow consulting</a>).</li>
@@ -700,7 +730,7 @@
       Ask me for any of them.
     </p>
     <div class="signature">
-      <img src="../portrait.jpg" alt="Bruno Saldivar">
+      <img src="../portrait.jpg" alt="Bruno Saldivar" width="62" height="62" loading="lazy" decoding="async">
       <div class="who"><b>Bruno Saldivar</b>Berlin, Germany</div>
     </div>
     <div class="btns">
@@ -715,7 +745,7 @@
 
 <div class="wrap">
   <footer class="site-foot">
-    <span>Bruno Saldivar · Quantitative Developer · Agentic AI Engineer · Berlin</span>
+    <span>iBuildSystems · Bruno Saldivar · Quantitative Developer · Agentic AI Engineer · Berlin</span>
     <span>Every figure traceable to a run manifest or the git history</span>
     <nav aria-label="Footer">
       <a href="/">Home</a>

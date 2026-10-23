@@ -13,7 +13,7 @@
 <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
 
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Bruno Saldivar">
+<meta property="og:site_name" content="iBuildSystems">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://ibuildsystems.work/services/">
 <meta property="og:title" content="AI Coding Agent Orchestration Consulting | iBuildSystems">
@@ -30,19 +30,91 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "AI coding agents with guardrails",
-  "serviceType": "Agentic engineering: AI coding agent workflow design and implementation",
-  "url": "https://ibuildsystems.work/services/",
-  "areaServed": "Worldwide",
-  "availableLanguage": ["English", "Spanish"],
-  "provider": {
-    "@type": "Person",
-    "name": "Bruno Saldivar",
-    "jobTitle": "Quantitative Developer & Trading Systems Engineer | Agentic AI Engineer | Energy Trading",
-    "url": "https://ibuildsystems.work/",
-    "email": "mailto:bru.daytrader@gmail.com"
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Bruno Saldivar",
+      "url": "https://ibuildsystems.work/",
+      "image": "https://ibuildsystems.work/portrait.jpg",
+      "jobTitle": "Quantitative Developer & Trading Systems Engineer | Agentic AI Engineer | Energy Trading",
+      "email": "mailto:bru.daytrader@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/bru-algo-trader/"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "SPICED Academy"
+      },
+      "knowsAbout": [
+        "Quantitative research",
+        "Algorithmic trading",
+        "Systematic trading",
+        "Trading systems development",
+        "Offline policy learning",
+        "Off-policy evaluation",
+        "Energy and power procurement",
+        "Agentic AI systems",
+        "Multi-agent orchestration",
+        "Backtesting",
+        "Monte Carlo simulation",
+        "Market data pipelines",
+        "MetaTrader 5",
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Node.js",
+        "Express.js",
+        "React",
+        "MQL5",
+        "Multi-agent coordination",
+        "Agent evaluation",
+        "Augmented intelligence",
+        "Workflow recovery",
+        "Model Context Protocol"
+      ],
+      "@id": "https://ibuildsystems.work/#person"
+    },
+    {
+      "@type": "Service",
+      "name": "AI coding agents with guardrails",
+      "serviceType": "Agentic engineering: AI coding agent workflow design and implementation",
+      "url": "https://ibuildsystems.work/services/",
+      "areaServed": "Worldwide",
+      "provider": {
+        "@id": "https://ibuildsystems.work/#person"
+      },
+      "@id": "https://ibuildsystems.work/services/#service",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://ibuildsystems.work/services/",
+        "availableLanguage": [
+          "en",
+          "es"
+        ]
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://ibuildsystems.work/services/#webpage",
+      "url": "https://ibuildsystems.work/services/",
+      "name": "AI Coding Agent Orchestration Consulting | iBuildSystems",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://ibuildsystems.work/#website"
+      },
+      "about": {
+        "@id": "https://ibuildsystems.work/#person"
+      },
+      "mainEntity": {
+        "@id": "https://ibuildsystems.work/services/#service"
+      }
+    }
+  ]
 }
 </script>
 <link rel="stylesheet" href="../site.css">
@@ -205,11 +277,11 @@
         <p class="kicker">Case study · proprietary platform</p>
         <h3 id="case-title">AWOP · Agentic Workflow Orchestration Platform</h3>
         <p class="desc">Proprietary platform · built end to end · since September 2026</p>
-        <p class="sys-sub">Multi-agent orchestration <i>(several AI agents working at once)</i> with MCP <i>(a standard connector that lets an outside AI assistant operate it)</i>, evals <i>(every agent run measured by model and role)</i> and model routing with failover <i>(each job goes to a chosen model, and moves to another account when one runs out of quota)</i>.</p>
+        <p class="sys-sub">Multi-agent orchestration and coordination: agents share task ownership, handoffs and review rules. MCP <i>(Model Context Protocol)</i> connects assistants to the workflow; evals measure runs by model and role. Self-healing mechanisms handle stalled work and failed handoffs within explicit limits.</p>
         <p>
           Several AI agents work in parallel under
           one shared engineering standard. It is where the method I offer was built and where it is
-          applied: the trading decision engine and the execution copilot are developed with it, and the energy research platform was.
+          applied: the trading decision engine and the execution copilot are developed with it, and the energy research platform was. Its direction is augmented intelligence: human judgement supported by coordinated agents, rather than unbounded automation.
         </p>
         <p>
           <b>Its limits, stated up front:</b> agents work in isolated branches and working copies,
@@ -220,8 +292,8 @@
       </div>
       <div>
         <p class="kf"><b>272</b><span>tasks merged across the four projects by AI agents, every one through the test gate.</span></p>
-        <p class="scope">A test-regression gate on every merge: nothing merges if the tests get worse than main. Measured per run: first-pass approval, rework rate, review rounds to acceptance, tokens per accepted task.</p>
-        <p><a class="more" href="/portfolio/#awop">How it works, with every figure and its method →</a></p>
+        <p class="scope">A test-regression gate on every merge: nothing merges if the tests get worse than main. Measured per run: first-pass approval, rework rate, review rounds to acceptance, tokens per accepted task. Task count measured on 20 October 2026.</p>
+        <p><a class="more" href="/portfolio/#awop">Multi-agent coordination, self-healing and measured evidence →</a></p>
       </div>
     </div>
   </section>
@@ -260,7 +332,7 @@
 
 <div class="wrap">
   <footer class="site-foot">
-    <span>Bruno Saldivar · Quantitative Developer · Agentic AI Engineer · Berlin</span>
+    <span>iBuildSystems · Bruno Saldivar · Quantitative Developer · Agentic AI Engineer · Berlin</span>
     <nav aria-label="Footer">
       <a href="/">Home</a>
       <a href="/portfolio/">Portfolio</a>

@@ -4,9 +4,11 @@ Personal portfolio site: **https://ibuildsystems.work/**
 
 ## Explore the published work
 
-- [AI coding-agent workflow consulting](https://ibuildsystems.work/services/) — isolated tasks, CI test gates, independent reviews and scoped implementation on client-owned tools.
+- [AI coding-agent workflow consulting](https://ibuildsystems.work/services/) — agentic workflow orchestration, multi-agent coordination, MCP integration, agent evaluations, bounded self-healing, CI test gates and independent review. Implementation on client-owned tools; AWOP is not a licensed product.
 - [Engineering portfolio and case studies](https://ibuildsystems.work/portfolio/) — MT5 trading systems, quantitative backtesting, energy procurement research and multi-agent orchestration.
 - [Experience and background](https://ibuildsystems.work/experience/) — quantitative research, software engineering and AI-agent workflows.
+
+**Available for remote engineering roles and scoped consulting projects.** The public product direction is an **Augmented Intelligence Workspace**: coordinated reasoning and action that extends human judgement, with explicit approvals and limits.
 
 Market research systems, trading-system architecture, automation workflows, governance, traceability and AI-assisted decision infrastructure.
 
@@ -43,6 +45,7 @@ Keep `2f060cceac71813e008180ed32cac141.txt` for IndexNow key verification.
 ## Contact
 
 - Site: https://ibuildsystems.work/
+- Schedule a 30-minute introduction: https://calendly.com/bru-lets-talk/30min?utm_source=github&utm_medium=repository&utm_campaign=inbound_intro&utm_content=readme
 - Email: bru.daytrader@gmail.com
 - LinkedIn: https://www.linkedin.com/in/bru-algo-trader/
 

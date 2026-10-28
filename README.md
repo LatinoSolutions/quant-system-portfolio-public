@@ -8,7 +8,7 @@ Personal portfolio site: **https://ibuildsystems.work/**
 - [Engineering portfolio and case studies](https://ibuildsystems.work/portfolio/) — MT5 trading systems, quantitative backtesting, energy procurement research and multi-agent orchestration.
 - [Experience and background](https://ibuildsystems.work/experience/) — quantitative research, software engineering and AI-agent workflows.
 
-**Available for remote engineering roles and scoped consulting projects.** The public product direction is an **Augmented Intelligence Workspace**: coordinated reasoning and action that extends human judgement, with explicit approvals and limits.
+**Available for remote engineering roles and scoped consulting projects.** **Agentic workflow orchestration** for engineering (AI agents ship code, independent agents review it, tests decide what merges), and **augmented intelligence for trading** (the trader decides, the copilot scores and executes).
 
 Market research systems, trading-system architecture, automation workflows, governance, traceability and AI-assisted decision infrastructure.
 

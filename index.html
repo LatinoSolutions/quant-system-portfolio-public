@@ -122,6 +122,26 @@
 }
 </script>
 <link rel="stylesheet" href="site.css">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body, h1, h2, h3, .line { font-family: Geist, system-ui, sans-serif; }
+  .one-cta { display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-top:32px; }
+  .cta-main { font-size:16px; line-height:24px; font-weight:600; padding:12px 16px; border-radius:8px; background: var(--signal); color: var(--signal-ink); text-decoration:none; transition: transform 300ms cubic-bezier(0.22,1,0.36,1); }
+  .cta-main:hover { transform: translateY(-1px); } .cta-main:active { transform: scale(0.98); } .cta-main:focus-visible { outline:2px solid #fff; outline-offset:4px; }
+  .cta-note { font-size:14px; line-height:20px; color: var(--dim); }
+  .cta-link { display:inline-block; margin-top:16px; font-size:14px; line-height:20px; color: var(--soft); }
+  .hero-index .p { grid-column: 2 / -1; display:block; margin-top:4px; font-size:14px; line-height:20px; color: var(--soft); }
+  .hero-index .p b { font-family: ui-monospace, Menlo, monospace; color: #fff; font-size:16px; }
+  .thesis { padding: 96px 24px; }
+  .thesis p { max-width: 960px; margin:0 auto; font-family: Geist, system-ui, sans-serif; font-size:48px; line-height:1.1; font-weight:600; letter-spacing:-0.02em; text-wrap:balance; }
+  .thesis .w { color: rgba(255,255,255,.3); transition: color 600ms cubic-bezier(0.22,1,0.36,1); } .thesis .w.on { color:#fff; }
+  .funnel { margin: 16px 0; padding: 16px; border-radius:12px; background:#181818; border:1px solid #272727; }
+  .funnel figcaption { margin-top:4px; font-size:14px; line-height:20px; color: var(--soft); }
+  @media (max-width: 900px) { .thesis p { font-size:30px; line-height:36px; } }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{const p=document.getElementById('thesis'); if(!p) return; p.innerHTML=p.textContent.split(' ').map(w=>`<span class="w">${w}</span>`).join(' '); const ws=[...p.querySelectorAll('.w')]; const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){ws.forEach((w,i)=>setTimeout(()=>w.classList.add('on'),i*90)); io.disconnect();}}),{threshold:.6}); io.observe(p);});
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -148,32 +168,30 @@
 
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div>
-      <div class="who-chip">
-        <img src="portrait.jpg" alt="Portrait of Bruno Saldivar" width="56" height="56">
-        <div class="who"><b>Bruno Saldivar</b>Independent engineer · Berlin · Remote</div>
-      </div>
+      
       <p class="eyebrow">Quantitative Developer · Agentic AI Engineer</p>
-      <h1 id="hero-title">I build trading systems, energy research platforms and AI agent platforms, <em>and measure whether they work.</em></h1>
-      <p class="line">
-        Four proprietary systems, each built end to end. Below, each one says
-        what problem it solves and shows how it works.
-      </p>
-      <nav class="doors" aria-label="Where to go next">
-        <a class="door" href="#systems"><b>See the systems</b><span>What each one solves, and how.</span></a>
-        <a class="door primary" href="/services/"><b>Build with me</b><span>AI coding agents on your repo, with guardrails.</span></a>
-        <a class="door" href="#hire"><b>Hire me</b><span>Open to remote roles worldwide.</span></a>
-      </nav>
+      <h1 id="hero-title">I build trading systems, energy research platforms and AI agent platforms, <em>and measure whether they&nbsp;work.</em></h1>
+      <p class="line">A trader who builds the systems. Four proprietary platforms, each built end to end and measured in production.</p>
+      <div class="one-cta">
+        <a class="cta-main" href="https://calendly.com/bru-lets-talk/30min?utm_source=ibuildsystems.work&amp;utm_medium=website&amp;utm_campaign=inbound_intro&amp;utm_content=home_hero">Book a 30-minute intro call</a>
+        <span class="cta-note">No preparation needed. Live demo of the running systems.</span>
+      </div>
+      <a class="cta-link" href="#systems">Or see how each system works ↓</a>
     </div>
 
     <nav class="hero-index" aria-label="The four systems">
       <p class="kicker">Four proprietary systems</p>
       <ol>
-        <li><a href="#trading"><span class="i" style="--i:0">01</span><b>Private Trading Research &amp; Execution Platform</b><span class="d">Main trading system · reinforcement learning decision engine, live on MT5</span></a></li>
-        <li><a href="#copilot"><span class="i" style="--i:1">02</span><b>Trading Copilot</b><span class="d">Augmented intelligence · intraday predictor, macro news outlook, orders by voice</span></a></li>
-        <li><a href="#energy"><span class="i" style="--i:2">03</span><b>Energy Procurement Research &amp; Backtesting Platform</b><span class="d">Energy · Research &amp; Development, Oxford, UK</span></a></li>
-        <li><a href="#awop"><span class="i" style="--i:3">04</span><b>Agentic Workflow Orchestration Platform (AWOP)</b><span class="d">AI agents ship code, independent agents review it, tests decide what merges</span></a></li>
+        <li><a href="#trading"><span class="i" style="--i:0">01</span><b>Private Trading Research &amp; Execution Platform</b><span class="d">Main trading system · reinforcement learning decision engine, live on MT5</span><span class="p"><b>2,204</b> orders sent by the live decision engine since 4 Nov 2026</span></a></li>
+        <li><a href="#copilot"><span class="i" style="--i:1">02</span><b>Trading Copilot</b><span class="d">Separate system · augmented intelligence: intraday predictor, macro news outlook, orders by voice</span><span class="p"><b>10,241</b> replay checkpoints with zero look-ahead; nothing reaches MT5 without the trader's explicit yes</span></a></li>
+        <li><a href="#energy"><span class="i" style="--i:2">03</span><b>Energy Procurement Research &amp; Backtesting Platform</b><span class="d">Energy · Research &amp; Development, Oxford, UK</span><span class="p"><b>2.5%</b> below the buyer's practice in 3 of 3 quarters, fees excluded</span></a></li>
+        <li><a href="#awop"><span class="i" style="--i:3">04</span><b>Agentic Workflow Orchestration Platform (AWOP)</b><span class="d">AI agents ship code, independent agents review it, tests decide what merges</span><span class="p"><b>341</b> tasks merged by AI agents, each after tests and an independent review</span></a></li>
       </ol>
     </nav>
+  </section>
+
+  <section class="thesis" aria-label="Thesis">
+    <p id="thesis">Most people who can trade cannot build this. Most people who can build it have never traded.</p>
   </section>
 
   <section class="section" id="systems" aria-labelledby="sys-title">
@@ -281,7 +299,7 @@
     <button class="dg-pp" type="button" aria-label="Pause the animation" hidden>Pause</button>
   </div>
   <svg class="dg" viewBox="0 0 400 466" role="img" aria-labelledby="dg-co-t dg-co-d" style="--n:7">
-    <title id="dg-co-t">How the trading copilot works, in seven steps</title>
+    <title id="dg-co-t">How the Trading Copilot works, in seven steps</title>
     <desc id="dg-co-d">Top to bottom. One, voice order: the trader dictates the order and it becomes a ticket. Two, validation: the ticket is checked first. Three, risk sizing: the position size is set from the risk limit. Four, read back: the order is repeated back to the trader. Five, explicit confirmation: nothing moves without a clear yes; without it, nothing is sent. Six, the order is sent to MT5. Seven, broker reconciliation: the order counts as done once the broker confirms it.</desc>
     <defs>
       <marker id="ah-co" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/></marker>
@@ -439,7 +457,8 @@
     </dl>
     <p class="badge">Proprietary · built end to end</p>
     <p class="kf"><b>341</b><span>tasks merged across the four projects by AI agents, every one through the test gate.</span></p>
-    <p class="origin">It develops the trading decision engine and trading copilot today, and it built the energy platform.</p>
+    <figure class="funnel"><svg viewBox="0 0 520 244" width="100%" role="img" aria-label="Layered agent review: from approval to main"><text x="0" y="18" font-size="15" font-weight="600" fill="#e8e8e8">Layered review, measured on AWOP run records</text><text x="220" y="56" font-size="14" text-anchor="end" fill="#e8e8e8">Approvals, normal review</text><rect x="230" y="42" width="240" height="20" rx="4" fill="#2a2a2a"/><rect x="230" y="42" width="240.0" height="20" rx="4" fill="#5b9cf5"/><text x="478.0" y="57" font-size="14" font-family="ui-monospace,Menlo,monospace" font-weight="600" fill="#e8e8e8">719</text><text x="220" y="96" font-size="14" text-anchor="end" fill="#e8e8e8">Re-audited, same commit</text><rect x="230" y="82" width="240" height="20" rx="4" fill="#2a2a2a"/><rect x="230" y="82" width="59.1" height="20" rx="4" fill="#5b9cf5"/><text x="297.1" y="97" font-size="14" font-family="ui-monospace,Menlo,monospace" font-weight="600" fill="#e8e8e8">177</text><text x="220" y="136" font-size="14" text-anchor="end" fill="#e8e8e8">Conclusive re-audits</text><rect x="230" y="122" width="240" height="20" rx="4" fill="#2a2a2a"/><rect x="230" y="122" width="46.7" height="20" rx="4" fill="#5b9cf5"/><text x="284.7" y="137" font-size="14" font-family="ui-monospace,Menlo,monospace" font-weight="600" fill="#e8e8e8">140</text><text x="220" y="176" font-size="14" text-anchor="end" fill="#e8e8e8">Concrete issues found</text><rect x="230" y="162" width="240" height="20" rx="4" fill="#2a2a2a"/><rect x="230" y="162" width="19.7" height="20" rx="4" fill="#5b9cf5"/><text x="257.7" y="177" font-size="14" font-family="ui-monospace,Menlo,monospace" font-weight="600" fill="#e8e8e8">59</text><text x="220" y="216" font-size="14" text-anchor="end" fill="#e8e8e8">Merged with an open finding</text><rect x="230" y="202" width="240" height="20" rx="4" fill="#2a2a2a"/><text x="238.0" y="217" font-size="14" font-family="ui-monospace,Menlo,monospace" font-weight="600" fill="#e8e8e8">0</text></svg><figcaption>None of the audited cases merged with a finding still open.</figcaption></figure>
+    <p class="origin">It develops the trading decision engine and Trading Copilot today, and it built the energy platform.</p>
           <a class="more" href="/portfolio/#awop">AWOP coordination, recovery and evidence →</a>
         </div>
 <figure class="dg-card">

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study: AI agents that ship code behind tests and independent review | I Build Systems</title>
+<meta name="description" content="How the Agentic Workflow Orchestration Platform (AWOP) lets AI coding agents ship code: 341 tasks merged, problems caught in 319 of 402 agent changes, 1,581 findings, none merged until fixed.">
+<link rel="canonical" href="https://ibuildsystems.work/cases/awop/">
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="iBuildSystems">
+<meta property="og:url" content="https://ibuildsystems.work/cases/awop/">
+<meta property="og:title" content="Case study: AI agents that ship code behind tests and independent review">
+<meta property="og:description" content="Built for code that moves money: 341 tasks merged by AI agents, 319 of 402 agent changes held back by the review until every finding was fixed.">
+<meta property="og:image" content="https://ibuildsystems.work/cases/awop/awop-pipeline.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/site.css">
+<style>
+  .study { max-width: 880px; margin: 0 auto; padding: 48px 0 96px; }
+  .study .eyebrow { font-family: var(--mono); font-size: 12px; line-height: 16px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin: 0 0 16px; }
+  .study h1 { font-size: 48px; line-height: 1; letter-spacing: -0.02em; font-weight: 600; margin: 0 0 24px; max-width: 760px; text-wrap: balance; }
+  .study .sub { font-size: 18px; line-height: 28px; color: var(--soft); max-width: 680px; margin: 0 0 40px; text-wrap: pretty; }
+  .study h2 { font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.01em; margin: 80px 0 16px; text-wrap: balance; }
+  .study p, .study li { font-size: 16px; line-height: 24px; color: var(--soft); text-wrap: pretty; }
+  .study ol, .study ul { padding-left: 24px; }
+  .study li { margin: 0 0 8px; }
+  .study b { color: var(--fg); }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .kpi { background: var(--panel); border: 1px solid var(--hair); border-radius: 12px; padding: 16px; }
+  .kpi b { display: block; font-family: var(--mono); font-weight: 500; font-size: 30px; line-height: 36px; color: var(--fg); }
+  .kpi span { display: block; margin-top: 8px; font-size: 14px; line-height: 20px; color: var(--dim); }
+  figure { margin: 24px 0 0; }
+  figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--hair); display: block; }
+  figcaption { font-size: 14px; line-height: 20px; color: var(--dim); margin-top: 12px; }
+  .chart { background: var(--panel); border: 1px solid var(--hair); border-radius: 12px; padding: 24px; }
+  .chart h3 { margin: 0 0 4px; font-size: 16px; line-height: 24px; font-weight: 600; color: var(--fg); }
+  .chart .note { margin: 0 0 16px; font-size: 14px; line-height: 20px; color: var(--dim); }
+  .chart svg { width: 100%; height: auto; display: block; }
+  .chart svg text { font-family: var(--sans); fill: var(--soft); font-size: 13px; }
+  .chart svg .lab { fill: var(--fg); font-weight: 600; }
+  .chart svg .ax { fill: var(--dim); font-size: 12px; }
+  .chart .mark:hover { opacity: .85; }
+  .formulas { display: grid; gap: 16px; margin-top: 24px; }
+  .formula { background: var(--panel); border: 1px solid var(--hair); border-radius: 12px; padding: 16px 24px; }
+  .formula math { font-size: 20px; color: var(--fg); }
+  .formula p { margin: 8px 0 0; font-size: 14px; line-height: 20px; color: var(--dim); }
+  .private { background: var(--panel); border: 1px solid var(--hair); border-radius: 12px; padding: 24px; }
+  .cta { margin-top: 80px; background: var(--panel-2); border: 1px solid var(--hair-2); border-radius: 16px; padding: 32px; }
+  .cta h2 { margin-top: 0; }
+  .cta .btn { display: inline-block; margin-top: 16px; padding: 8px 12px; border-radius: 8px; background: var(--signal); color: var(--signal-ink); font-weight: 600; font-size: 16px; line-height: 24px; text-decoration: none; transition: transform 300ms cubic-bezier(0.22,1,0.36,1); }
+  .cta .btn:hover { transform: translateY(-1px); }
+  .cta .btn:active { transform: scale(0.98); }
+  .cta .btn:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; }
+  .cta .alt { margin-left: 16px; color: var(--soft); }
+  .src { font-size: 14px; line-height: 20px; color: var(--dim); }
+  @media (max-width: 760px) {
+    .study h1 { font-size: 36px; line-height: 40px; }
+    .kpis { grid-template-columns: repeat(2, 1fr); }
+    .study h2 { font-size: 24px; line-height: 32px; margin-top: 64px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/" aria-label="Bruno Saldivar, home">
+      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+        <path d="M16 2 L16 8"/><rect x="11" y="8" width="10" height="16" rx="1"/><path d="M16 24 L16 30"/>
+      </svg>
+      Bruno Saldivar
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/portfolio/" aria-current="page">Work</a>
+      <a href="/services/">Services</a>
+      <a href="/experience/">Experience</a>
+      <a href="/#hire">Contact</a>
+      <a class="status" href="/#hire"><span class="dot" aria-hidden="true"></span>Open to remote roles</a>
+    </nav>
+  </header>
+</div>
+
+<main id="main" class="wrap">
+<article class="study">
+
+  <p class="eyebrow">Case study · Agentic Workflow Orchestration Platform (AWOP)</p>
+  <h1>AI agents write the code.<br>Tests and an independent review decide what&nbsp;merges.</h1>
+  <p class="sub">Built for code that moves money. Several AI coding agents work in parallel; every change is tested against main, reviewed by a separate agent, and held back until every finding is fixed.</p>
+
+  <div class="kpis" role="list">
+    <div class="kpi" role="listitem"><b>341</b><span>tasks merged by AI agents, each after tests and an independent review</span></div>
+    <div class="kpi" role="listitem"><b>319 / 402</b><span>agent changes held back by the review until every finding was fixed</span></div>
+    <div class="kpi" role="listitem"><b>1,581</b><span>technical findings raised by the review</span></div>
+    <div class="kpi" role="listitem"><b>0</b><span>audited cases merged with an open finding</span></div>
+  </div>
+
+  <h2>The problem</h2>
+  <p>AI coding agents write code fast. Without structure, nobody can say what changed, whether it was tested or who checked it. A first draft that looks right is not the same as a change that is safe to merge.</p>
+
+  <h2>How a change reaches main</h2>
+  <ol>
+    <li><b>Task spec.</b> Each task starts with a scope and a definition of done.</li>
+    <li><b>Implementation agent.</b> One agent works on its own branch, isolated from the others.</li>
+    <li><b>Tests against main.</b> The change must not make the test suite worse than main.</li>
+    <li><b>Independent review.</b> A separate agent, on another account or as an isolated actor, reviews the change and returns a verdict with findings.</li>
+    <li><b>Correction loop.</b> Every finding goes back for a fix, and the fixed change goes through the tests and the review again.</li>
+    <li><b>Second check.</b> A senior review re-audits approvals on the same commit.</li>
+    <li><b>Merge.</b> Only a clean review of the exact commit merges. Every run is recorded, so the numbers below are recomputed from records, not from memory.</li>
+  </ol>
+  <figure>
+    <img src="awop-pipeline.jpg" width="2320" height="910" loading="lazy" alt="Block diagram: task spec, implementation agent, tests and regression check, independent review, correction round back to tests, senior re-review on the same commit, merge to main; every review verdict feeds the run lineage, which feeds the quality metrics.">
+    <figcaption>The review loop. Green arrows are the path a change takes when it is clean.</figcaption>
+  </figure>
+
+  <h2>What was measured</h2>
+  <div class="chart">
+    <h3>How strict the gate is: agent changes held back until fixed</h3>
+    <p class="note">402 agent changes with a review verdict. Bar: observed share. Whisker: 95% Wilson interval.</p>
+    <svg viewBox="0 0 720 120" role="img" aria-labelledby="ch-t ch-d">
+      <title id="ch-t">Review catch rate</title>
+      <desc id="ch-d">319 of 402 agent changes, 79.4 percent, with a 95 percent interval from 75.1 to 83.0 percent.</desc>
+      <rect x="40" y="36" width="640" height="28" rx="4" fill="#2f3743"><title>All 402 reviewed agent changes</title></rect>
+      <rect class="mark" x="40" y="36" width="507.8" height="28" rx="4" fill="#5b9dff"><title>319 of 402 changes: 79.4%</title></rect>
+      <line x1="520.8" y1="26" x2="571.3" y2="26" stroke="#e6e9ee" stroke-width="2"/>
+      <line x1="520.8" y1="20" x2="520.8" y2="32" stroke="#e6e9ee" stroke-width="2"/>
+      <line x1="571.3" y1="20" x2="571.3" y2="32" stroke="#e6e9ee" stroke-width="2"/>
+      <circle cx="547.8" cy="26" r="4" fill="#e6e9ee"><title>79.4% (95% interval 75.1% to 83.0%)</title></circle>
+      <text class="lab" x="52" y="55">319 held back until fixed</text>
+      <text x="547.8" y="14" text-anchor="middle">79.4%  ·  75.1% to 83.0%</text>
+      <line x1="40" y1="76" x2="680" y2="76" stroke="#242a33"/>
+      <text class="ax" x="40" y="96" text-anchor="middle">0%</text>
+      <text class="ax" x="200" y="96" text-anchor="middle">25%</text>
+      <text class="ax" x="360" y="96" text-anchor="middle">50%</text>
+      <text class="ax" x="520" y="96" text-anchor="middle">75%</text>
+      <text class="ax" x="680" y="96" text-anchor="middle">100%</text>
+    </svg>
+  </div>
+
+  <div class="formulas">
+    <div class="formula">
+      <math display="block"><mi>r</mi><mo>=</mo><mfrac><mi>k</mi><mi>n</mi></mfrac><mo>=</mo><mfrac><mn>319</mn><mn>402</mn></mfrac><mo>=</mo><mn>79.4</mn><mo>%</mo></math>
+      <p>Hold-back rate: changes the review held back until fixed (k) over changes with a review verdict (n).</p>
+    </div>
+    <div class="formula">
+      <math display="block"><mfrac><mrow><mi>r</mi><mo>+</mo><mfrac><msup><mi>z</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>n</mi></mrow></mfrac><mo>±</mo><mi>z</mi><msqrt><mrow><mfrac><mrow><mi>r</mi><mo>(</mo><mn>1</mn><mo>−</mo><mi>r</mi><mo>)</mo></mrow><mi>n</mi></mfrac><mo>+</mo><mfrac><msup><mi>z</mi><mn>2</mn></msup><mrow><mn>4</mn><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac></mrow></msqrt></mrow><mrow><mn>1</mn><mo>+</mo><mfrac><msup><mi>z</mi><mn>2</mn></msup><mi>n</mi></mfrac></mrow></mfrac><mo>=</mo><mo>[</mo><mn>75.1</mn><mo>%</mo><mo>,</mo><mn>83.0</mn><mo>%</mo><mo>]</mo></math>
+      <p>95% Wilson interval with z = 1.96. With n = 402, the rate is not a lucky streak: the plausible range stays between 75.1% and 83.0%.</p>
+    </div>
+    <div class="formula">
+      <math display="block"><mover><mi>f</mi><mo>¯</mo></mover><mo>=</mo><mfrac><mi>F</mi><mi>n</mi></mfrac><mo>=</mo><mfrac><mn>1,581</mn><mn>402</mn></mfrac><mo>=</mo><mn>3.9</mn></math>
+      <p>Average technical findings per reviewed change. Each one had to be fixed before the change could merge.</p>
+    </div>
+  </div>
+
+  <h2>Strict by design</h2>
+  <p>In a financial system, &ldquo;probably fine&rdquo; is not a reason to merge. This platform builds the code behind a live trading decision engine, so the bar is set where a trading desk would set it: nothing reaches main until the review has nothing left to object to.</p>
+  <p>That is why 79.4% of agent changes were held back on review. Each one went back with its findings, was fixed, and passed the tests and the review again. The agents keep their speed; the gate keeps its standard. Of the approvals re-audited on the same commit, <b>none merged with an open finding</b>.</p>
+  <p>A gate that rarely says no is not checking much. This one says no until the work is right.</p>
+
+  <h2>How it was measured</h2>
+  <ul>
+    <li>Snapshot taken on 11 Nov 2026 from the platform's run lineage: 5,691 eligible agent runs and 1,623 structured reviews.</li>
+    <li>Every rate is recomputed from the recorded runs and reviews, and is shown with its sample size.</li>
+    <li>The unit is one agent change with a review verdict, not one run or one task.</li>
+  </ul>
+  <p class="src"><b>Stated limit.</b> Control is measured up to the merge. It does not prove zero defects in production.</p>
+
+  <h2>What stays private</h2>
+  <div class="private">
+    <p>The platform itself, its code, its prompts, its routing rules and its shared engineering standard stay private. This page shows the problem, how it was measured and the result.</p>
+  </div>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <h2 id="cta-title">Want this on your own repository?</h2>
+    <p>AWOP is available as a custom implementation on a team's own repository, CI and AI accounts. I am also open to remote roles in agentic AI engineering and quantitative development.</p>
+    <a class="btn" href="https://calendly.com/bru-lets-talk/30min?utm_source=ibuildsystems.work&amp;utm_medium=website&amp;utm_campaign=inbound_intro&amp;utm_content=case_awop">Book a 30-minute intro call</a>
+    <a class="alt" href="/services/">See the services</a>
+  </section>
+
+</article>
+</main>
+
+<div class="wrap">
+  <footer class="site-foot">
+    <span>iBuildSystems · Bruno Saldivar · Quantitative Developer · Agentic AI Engineer · Berlin</span>
+    <nav aria-label="Footer">
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/experience/">Experience</a>
+      <a href="/services/">Services</a>
+      <a href="https://www.linkedin.com/in/bru-algo-trader/">LinkedIn</a>
+    </nav>
+  </footer>
+</div>
+
+<script src="/site.js" defer></script>
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "364377fd8b194d08bdee4b9dc2653172"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>

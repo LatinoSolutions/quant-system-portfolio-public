@@ -168,8 +168,8 @@
     <nav class="hero-index" aria-label="The four systems">
       <p class="kicker">Four proprietary systems</p>
       <ol>
-        <li><a href="#trading"><span class="i" style="--i:0">01</span><b>Private Trading Research &amp; Execution Platform</b><span class="d">Trading · research to live orders on MT5</span></a></li>
-        <li><a href="#copilot"><span class="i" style="--i:1">02</span><b>Trading Execution Copilot</b><span class="d">Trading · orders by voice, confirmed before they go out</span></a></li>
+        <li><a href="#trading"><span class="i" style="--i:0">01</span><b>Private Trading Research &amp; Execution Platform</b><span class="d">Main trading system · reinforcement learning decision engine, live on MT5</span></a></li>
+        <li><a href="#copilot"><span class="i" style="--i:1">02</span><b>Trading Copilot</b><span class="d">Augmented intelligence · intraday predictor, macro news outlook, orders by voice</span></a></li>
         <li><a href="#energy"><span class="i" style="--i:2">03</span><b>Energy Procurement Research &amp; Backtesting Platform</b><span class="d">Energy · Research &amp; Development, Oxford, UK</span></a></li>
         <li><a href="#awop"><span class="i" style="--i:3">04</span><b>Agentic Workflow Orchestration Platform (AWOP)</b><span class="d">AI agents ship code, independent agents review it, tests decide what merges</span></a></li>
       </ol>
@@ -193,7 +193,6 @@
     </dl>
     <p class="badge">Proprietary · built end to end</p>
     <p class="kf"><b>2,204</b><span>orders sent by the autonomous decision engine since 4 Nov 2026, with 1,076 trade closures reconciled with the broker.</span></p>
-    <p class="kf"><b>10,241</b><span>replay checkpoints across 77 sessions with zero look-ahead, for the intraday scenario tracker in active research.</span></p>
     <p class="kf"><b>1,217</b><span>order records from live execution on MT5, with profit and loss reconciled against the broker to the cent.</span></p>
     <p class="kf"><b>1,021,061,653</b><span>simulated trade outcomes across 3 strategies, before any rule touches real money.</span></p>
     <p class="fine">This describes the engineering, never the strategy.</p>
@@ -263,14 +262,16 @@
 
       <article class="sys reveal" id="copilot" aria-labelledby="copilot-h">
         <div class="sys-text">
-    <p class="sys-tag"><span class="sys-n">02</span>Proprietary product · voice execution on MT5</p>
-    <h3 id="copilot-h">Trading Execution Copilot</h3>
+    <p class="sys-tag"><span class="sys-n">02</span>Proprietary product · intraday predictor, news outlook, voice execution on MT5</p>
+    <h3 id="copilot-h">Trading Copilot</h3>
     <p class="sys-sub"><b>Augmented intelligence for trading:</b> the trader decides, the copilot scores and executes.</p>
     <dl class="pw">
       <div><dt>The problem</dt><dd>When a trader places orders by hand under time pressure, one wrong size or price can cost real money.</dd></div>
-      <div><dt>What it does</dt><dd>The trader says the order out loud. The copilot turns it into a ticket, scores the setup on executed trade history, checks it, sizes the risk, reads it back and sends it to MT5 only after an explicit yes, then reconciles it with the broker. The human stays in the loop for every order.</dd></div>
+      <div><dt>What it does</dt><dd>An intraday predictor reads the session as it unfolds, and a macro news outlook frames swing decisions. The trader says the order out loud. The copilot turns it into a ticket, scores the setup on executed trade history, checks it, sizes the risk, reads it back and sends it to MT5 only after an explicit yes, then reconciles it with the broker. The human stays in the loop for every order.</dd></div>
     </dl>
     <p class="badge">Proprietary · built end to end</p>
+    <p class="kf"><b>10,241</b><span>replay checkpoints across 77 sessions with zero look-ahead, for the intraday predictor in active research.</span></p>
+    <p class="kf"><b>Macro</b><span>news outlook for swing decisions: the consensus is recorded before each release and compared with the actual print after it.</span></p>
     <p class="kf kf-words"><span>Nothing reaches MT5 without the trader&#39;s explicit yes, and every order is read back first.</span></p>
           <a class="more" href="/portfolio/#copilot">Details and evidence →</a>
         </div>
@@ -280,7 +281,7 @@
     <button class="dg-pp" type="button" aria-label="Pause the animation" hidden>Pause</button>
   </div>
   <svg class="dg" viewBox="0 0 400 466" role="img" aria-labelledby="dg-co-t dg-co-d" style="--n:7">
-    <title id="dg-co-t">How the trading execution copilot works, in seven steps</title>
+    <title id="dg-co-t">How the trading copilot works, in seven steps</title>
     <desc id="dg-co-d">Top to bottom. One, voice order: the trader dictates the order and it becomes a ticket. Two, validation: the ticket is checked first. Three, risk sizing: the position size is set from the risk limit. Four, read back: the order is repeated back to the trader. Five, explicit confirmation: nothing moves without a clear yes; without it, nothing is sent. Six, the order is sent to MT5. Seven, broker reconciliation: the order counts as done once the broker confirms it.</desc>
     <defs>
       <marker id="ah-co" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/></marker>
@@ -438,7 +439,7 @@
     </dl>
     <p class="badge">Proprietary · built end to end</p>
     <p class="kf"><b>341</b><span>tasks merged across the four projects by AI agents, every one through the test gate.</span></p>
-    <p class="origin">It develops the trading decision engine and execution copilot today, and it built the energy platform.</p>
+    <p class="origin">It develops the trading decision engine and trading copilot today, and it built the energy platform.</p>
           <a class="more" href="/portfolio/#awop">AWOP coordination, recovery and evidence →</a>
         </div>
 <figure class="dg-card">

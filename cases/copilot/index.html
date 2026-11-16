@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study: an intraday forecasting co-pilot that executes only inside the trader's limits | I Build Systems</title>
+<meta name="description" content="How the Intraday Forecasting &amp; Trading Co-pilot forecasts the trading day and sends orders to MetaTrader 5 only inside limits the trader sets: 59 orders, 36 confirmed by the trader, 23 by a bounded autopilot.">
+<link rel="canonical" href="https://ibuildsystems.work/cases/copilot/">
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="iBuildSystems">
+<meta property="og:url" content="https://ibuildsystems.work/cases/copilot/">
+<meta property="og:title" content="Case study: an intraday forecasting co-pilot that executes only inside the trader's limits">
+<meta property="og:description" content="Bounded autonomy for trading: 59 orders to MetaTrader 5 since 3 Nov 2026, 36 confirmed by the trader and 23 sent by an autopilot inside limits the trader arms per symbol.">
+<meta property="og:image" content="https://ibuildsystems.work/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/site.css">
+<style>
+  .study { max-width: 880px; margin: 0 auto; padding: 48px 0 96px; }
+  .study .eyebrow { font-family: var(--mono); font-size: 12px; line-height: 16px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin: 0 0 16px; }
+  .study h1 { font-size: 48px; line-height: 1; letter-spacing: -0.02em; font-weight: 600; margin: 0 0 24px; max-width: 760px; text-wrap: balance; }
+  .study .sub { font-size: 18px; line-height: 28px; color: var(--soft); max-width: 680px; margin: 0 0 40px; text-wrap: pretty; }
+  .study h2 { font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.01em; margin: 80px 0 16px; text-wrap: balance; }
+  .study p, .study li { font-size: 16px; line-height: 24px; color: var(--soft); text-wrap: pretty; }
+  .study ol, .study ul { padding-left: 24px; }
+  .study li { margin: 0 0 8px; }
+  .study b { color: var(--fg); }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .kpi { background: var(--panel); border: 1px solid var(--hair); border-radius: 12px; padding: 16px; }
+  .kpi b { display: block; font-family: var(--mono); font-weight: 500; font-size: 30px; line-height: 36px; color: var(--fg); }
+  .kpi span { display: block; margin-top: 8px; font-size: 14px; line-height: 20px; color: var(--dim); }
+  .chart { background: var(--panel); border: 1px solid var(--hair); border-radius: 12px; padding: 24px; }
+  .chart h3 { margin: 0 0 4px; font-size: 16px; line-height: 24px; font-weight: 600; color: var(--fg); }
+  .chart .note { margin: 0 0 16px; font-size: 14px; line-height: 20px; color: var(--dim); }
+  .chart svg { width: 100%; height: auto; display: block; }
+  .chart svg text { font-family: var(--sans); fill: var(--soft); font-size: 13px; }
+  .chart svg .lab { fill: var(--fg); font-weight: 600; }
+  .chart svg .ax { fill: var(--dim); font-size: 12px; }
+  .chart .mark:hover { opacity: .85; }
+  .private { background: var(--panel); border: 1px solid var(--hair); border-radius: 12px; padding: 24px; }
+  .cta { margin-top: 80px; background: var(--panel-2); border: 1px solid var(--hair-2); border-radius: 16px; padding: 32px; }
+  .cta h2 { margin-top: 0; }
+  .cta .btn { display: inline-block; margin-top: 16px; padding: 8px 12px; border-radius: 8px; background: var(--signal); color: var(--signal-ink); font-weight: 600; font-size: 16px; line-height: 24px; text-decoration: none; transition: transform 300ms cubic-bezier(0.22,1,0.36,1); }
+  .cta .btn:hover { transform: translateY(-1px); }
+  .cta .btn:active { transform: scale(0.98); }
+  .cta .btn:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; }
+  .cta .alt { margin-left: 16px; color: var(--soft); }
+  .src { font-size: 14px; line-height: 20px; color: var(--dim); }
+  @media (max-width: 760px) {
+    .study h1 { font-size: 36px; line-height: 40px; }
+    .kpis { grid-template-columns: repeat(2, 1fr); }
+    .study h2 { font-size: 24px; line-height: 32px; margin-top: 64px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/" aria-label="Bruno Saldivar, home">
+      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+        <path d="M16 2 L16 8"/><rect x="11" y="8" width="10" height="16" rx="1"/><path d="M16 24 L16 30"/>
+      </svg>
+      Bruno Saldivar
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/portfolio/" aria-current="page">Work</a>
+      <a href="/services/">Services</a>
+      <a href="/experience/">Experience</a>
+      <a href="/#hire">Contact</a>
+      <a class="status" href="/#hire"><span class="dot" aria-hidden="true"></span>Open to remote roles</a>
+    </nav>
+  </header>
+</div>
+
+<main id="main" class="wrap">
+<article class="study">
+
+  <p class="eyebrow">Case study · Intraday Forecasting &amp; Trading Co-pilot</p>
+  <h1>The trader sets the limits.<br>The co-pilot forecasts the day and executes inside&nbsp;them.</h1>
+  <p class="sub">Bounded autonomy for intraday trading. The co-pilot forecasts how the trading day is unfolding, proposes the trade and sends it to MetaTrader 5, either with the trader's confirmation or through an autopilot that can only act inside limits the trader arms.</p>
+
+  <div class="kpis" role="list">
+    <div class="kpi" role="listitem"><b>59</b><span>orders published to MetaTrader 5 since 3 Nov 2026</span></div>
+    <div class="kpi" role="listitem"><b>36</b><span>confirmed by the trader</span></div>
+    <div class="kpi" role="listitem"><b>23</b><span>sent by the bounded autopilot, inside the trader's limits</span></div>
+    <div class="kpi" role="listitem"><b>54,763</b><span>records in a hash-chained journal</span></div>
+  </div>
+
+  <h2>The problem</h2>
+  <p>Intraday, a trader has to read how the day is unfolding and act fast. One wrong size or price in a manual order can cost real money, and a fully automatic system that nobody can switch off is a risk no trading desk accepts.</p>
+
+  <h2>What it does</h2>
+  <p>An intraday forecasting engine tracks the state of the trading day, updates the next price targets and classifies how the day is likely to end. It is <b>recalibrated every night from 6,726 historical sessions</b>. A macro news outlook frames swing decisions. When a trade fits, the co-pilot proposes it, and the order reaches MetaTrader 5 in one of two ways:</p>
+  <ol>
+    <li><b>Trader confirmation.</b> The trader reviews the proposal and confirms it.</li>
+    <li><b>Bounded autopilot.</b> The trader arms a permission per symbol: risk, reward-to-risk, a stop time and a maximum number of attempts. The autopilot only sends orders inside that permission, and switches off at the stop time.</li>
+  </ol>
+  <p>A separate execution layer validates, sizes and publishes every order, whichever path it came from.</p>
+
+  <h2>What was measured</h2>
+  <div class="chart">
+    <h3>Who sent each order</h3>
+    <p class="note">59 orders published to MetaTrader 5, 3 Nov to 16 Nov 2026, counted from the co-pilot's journal.</p>
+    <svg viewBox="0 0 720 120" role="img" aria-labelledby="ch-t ch-d">
+      <title id="ch-t">Orders by origin</title>
+      <desc id="ch-d">Of 59 orders, 36 were confirmed by the trader, 61 percent, and 23 were sent by the bounded autopilot, 39 percent.</desc>
+      <rect class="mark" x="40" y="36" width="390.5" height="28" rx="4" fill="#5b9dff"><title>36 of 59 orders confirmed by the trader: 61%</title></rect>
+      <rect class="mark" x="430.5" y="36" width="249.5" height="28" rx="4" fill="#e0a458"><title>23 of 59 orders sent by the bounded autopilot: 39%</title></rect>
+      <text class="lab" x="52" y="55">36 confirmed by the trader</text>
+      <text class="lab" x="442" y="55">23 bounded autopilot</text>
+      <line x1="40" y1="76" x2="680" y2="76" stroke="#242a33"/>
+      <text class="ax" x="40" y="96" text-anchor="middle">0</text>
+      <text class="ax" x="680" y="96" text-anchor="middle">59</text>
+    </svg>
+  </div>
+
+  <h2>Built for failure</h2>
+  <ul>
+    <li><b>Hash-chained journal.</b> Every event is recorded with the hash of the one before it: 54,763 records so far, so the history cannot change silently.</li>
+    <li><b>No blind retries.</b> When a broker submission is uncertain, it goes to reconciliation against the broker's state instead of being sent again.</li>
+    <li><b>Autonomy with an off switch.</b> The autopilot only runs while the trader's permission is armed, and stops at the trader's stop time.</li>
+    <li><b>Checked position controls.</b> Close all, close and break-even are validated against a fresh read of the trading terminal and logged before anything is sent.</li>
+  </ul>
+
+  <h2>How it was measured</h2>
+  <ul>
+    <li>Snapshot taken on 16 Nov 2026 from the co-pilot's journal, read only.</li>
+    <li>An order counts once it is published to MetaTrader 5. Its origin, trader or autopilot, is read from the journal record.</li>
+    <li>The 6,726 sessions are the historical day records the forecasts are recalibrated from, across the instruments the co-pilot follows.</li>
+  </ul>
+  <p class="src"><b>Stated limit.</b> A published order is an order sent, not a fill or a profit. The forecasting engine is in active research: this page claims no accuracy figure and no trading result.</p>
+
+  <h2>What stays private</h2>
+  <div class="private">
+    <p>The forecasting method, its inputs, the trading rules and the instruments stay private. This page shows the problem, how the co-pilot is bounded, how it was measured and the result.</p>
+  </div>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <h2 id="cta-title">Building trading systems with bounded autonomy?</h2>
+    <p>I am open to remote roles in agentic AI engineering, quantitative development and trading systems engineering.</p>
+    <a class="btn" href="https://calendly.com/bru-lets-talk/30min?utm_source=ibuildsystems.work&amp;utm_medium=website&amp;utm_campaign=inbound_intro&amp;utm_content=case_copilot">Book a 30-minute intro call</a>
+    <a class="alt" href="/portfolio/#copilot">See the four systems</a>
+  </section>
+
+</article>
+</main>
+
+<div class="wrap">
+  <footer class="site-foot">
+    <span>iBuildSystems · Bruno Saldivar · Quantitative Developer · Agentic AI Engineer · Berlin</span>
+    <nav aria-label="Footer">
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/experience/">Experience</a>
+      <a href="/services/">Services</a>
+      <a href="https://www.linkedin.com/in/bru-algo-trader/">LinkedIn</a>
+    </nav>
+  </footer>
+</div>
+
+<script src="/site.js" defer></script>
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "364377fd8b194d08bdee4b9dc2653172"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>

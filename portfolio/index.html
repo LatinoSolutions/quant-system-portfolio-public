@@ -347,7 +347,7 @@
   </div>
   <svg class="dg" viewBox="0 0 400 466" role="img" aria-labelledby="dg-co-t dg-co-d" style="--n:7">
     <title id="dg-co-t">How the Intraday Forecasting &amp; Trading Co-pilot works, in seven steps</title>
-    <desc id="dg-co-d">Top to bottom. One, day state: the live feed shows the last level the market reached. Two, forecast: the next price targets and how the day is likely to end. Three, trade proposal: entry, stop and target. Four, the trader sets the limits: risk, reward-to-risk, stop time and maximum attempts. Five, the trader confirms, or the bounded autopilot sends inside those limits; outside them, nothing is sent. Six, the order is validated, sized and sent to MT5. Seven, broker reconciliation: an uncertain submission is reconciled, never retried blindly.</desc>
+    <desc id="dg-co-d">Top to bottom. One, day state: the live market feed updates the state of the trading day. Two, forecast: the next price targets and how the day is likely to end. Three, trade proposal: entry, stop and target. Four, the trader sets the limits: risk, reward-to-risk, stop time and maximum attempts. Five, the trader confirms, or the bounded autopilot sends inside those limits; outside them, nothing is sent. Six, the order is validated, sized and sent to MT5. Seven, broker reconciliation: an uncertain submission is reconciled, never retried blindly.</desc>
     <defs>
       <marker id="ah-co" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/></marker>
       <marker id="ah-co-w" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--warn)"/></marker>
@@ -365,7 +365,7 @@
       <rect class="bx" x="36" y="10" width="250" height="48" rx="10"/>
       <circle class="k" cx="36" cy="34" r="12"/><text class="kn" x="36" y="38">1</text>
       <text class="t" x="161" y="31">Day state</text>
-      <text class="s" x="161" y="48">live feed, last level reached</text>
+      <text class="s" x="161" y="48">live market feed, day state</text>
     </g>
     <g class="st" style="--i:1">
       <rect class="bx" x="36" y="76" width="250" height="48" rx="10"/>
@@ -426,7 +426,7 @@
           <summary>Evidence for technical readers</summary>
           <div class="ev-body">
             <ul>
-              <li>The forecasts are recalculated every night after the session closes, from per-symbol statistics by Berlin hour and range type.</li>
+              <li>The forecasts are recalculated every night after the session closes, from per-symbol statistics.</li>
               <li>The autopilot only runs while the trader&#39;s permission is armed, with a stop time; position controls (close all, close, break-even) are validated against a fresh read of the trading terminal and logged.</li>
               <li>Uncertain broker submissions go to reconciliation instead of a blind retry.</li>
             </ul>

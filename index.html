@@ -88,7 +88,7 @@
         "Multi-agent coordination",
         "Agent evaluation",
         "Agentic workflow orchestration",
-        "Augmented intelligence",
+        "Intraday forecasting",
         "Human-in-the-loop AI",
         "Workflow recovery",
         "Model Context Protocol"
@@ -182,8 +182,8 @@ document.addEventListener('DOMContentLoaded',()=>{const p=document.getElementByI
     <nav class="hero-index" aria-label="The four systems">
       <p class="kicker">Four proprietary systems</p>
       <ol>
-        <li><a href="#trading"><span class="i" style="--i:0">01</span><b>Private Trading Research &amp; Execution Platform</b><span class="d">Main trading system · reinforcement learning decision engine, live on MT5</span><span class="p"><b>2,204</b> orders sent by the live decision engine since 4 Nov 2026</span></a></li>
-        <li><a href="#copilot"><span class="i" style="--i:1">02</span><b>Trading Copilot</b><span class="d">Separate system · augmented intelligence: intraday predictor, macro news outlook, orders by voice</span><span class="p"><b>10,241</b> replay checkpoints with zero look-ahead; nothing reaches MT5 without the trader's explicit yes</span></a></li>
+        <li><a href="#trading"><span class="i" style="--i:0">01</span><b>Private Trading Research &amp; Execution Platform</b><span class="d">Main trading system · reinforcement learning decision engine, live on MT5</span><span class="p"><b>3,517</b> orders sent by the live decision engine since 4 Nov 2026</span></a></li>
+        <li><a href="#copilot"><span class="i" style="--i:1">02</span><b>Intraday Forecasting &amp; Trading Co-pilot</b><span class="d">Separate system · intraday forecasting, macro news outlook, orders to MT5 inside the trader&#39;s limits</span><span class="p"><b>59</b> orders published to MT5 since 3 Nov 2026, 36 confirmed by the trader and 23 by a bounded autopilot</span></a></li>
         <li><a href="#energy"><span class="i" style="--i:2">03</span><b>Energy Procurement Research &amp; Backtesting Platform</b><span class="d">Energy · Research &amp; Development, Oxford, UK</span><span class="p"><b>2.5%</b> below the buyer's practice in 3 of 3 quarters, fees excluded</span></a></li>
         <li><a href="#awop"><span class="i" style="--i:3">04</span><b>Agentic Workflow Orchestration Platform (AWOP)</b><span class="d">AI agents ship code, independent agents review it, tests decide what merges</span><span class="p"><b>341</b> tasks merged by AI agents, each after tests and an independent review</span></a></li>
       </ol>
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded',()=>{const p=document.getElementByI
       <div><dt>What it does</dt><dd>It takes a market idea from data to research, backtesting, risk checks and live orders on MT5, then checks the results against the broker's records.</dd></div>
     </dl>
     <p class="badge">Proprietary · built end to end</p>
-    <p class="kf"><b>2,204</b><span>orders sent by the autonomous decision engine since 4 Nov 2026, with 1,076 trade closures reconciled with the broker.</span></p>
+    <p class="kf"><b>3,517</b><span>orders sent by the autonomous decision engine since 4 Nov 2026, with 1,076 trade closures reconciled with the broker.</span></p>
     <p class="kf"><b>1,217</b><span>order records from live execution on MT5, with profit and loss reconciled against the broker to the cent.</span></p>
     <p class="kf"><b>1,021,061,653</b><span>simulated trade outcomes across 3 strategies, before any rule touches real money.</span></p>
     <p class="fine">This describes the engineering, never the strategy.</p>
@@ -280,17 +280,17 @@ document.addEventListener('DOMContentLoaded',()=>{const p=document.getElementByI
 
       <article class="sys reveal" id="copilot" aria-labelledby="copilot-h">
         <div class="sys-text">
-    <p class="sys-tag"><span class="sys-n">02</span>Proprietary product · intraday predictor, news outlook, voice execution on MT5</p>
-    <h3 id="copilot-h">Trading Copilot</h3>
-    <p class="sys-sub"><b>Augmented intelligence for trading:</b> the trader decides, the copilot scores and executes.</p>
+    <p class="sys-tag"><span class="sys-n">02</span>Proprietary product · intraday forecasting, live on MT5</p>
+    <h3 id="copilot-h">Intraday Forecasting &amp; Trading Co-pilot</h3>
+    <p class="sys-sub"><b>Intraday forecasting for trading:</b> the trader sets the limits; the co-pilot forecasts the day, proposes the trade and executes inside them.</p>
     <dl class="pw">
-      <div><dt>The problem</dt><dd>When a trader places orders by hand under time pressure, one wrong size or price can cost real money.</dd></div>
-      <div><dt>What it does</dt><dd>An intraday predictor reads the session as it unfolds, and a macro news outlook frames swing decisions. The trader says the order out loud. The copilot turns it into a ticket, scores the setup on executed trade history, checks it, sizes the risk, reads it back and sends it to MT5 only after an explicit yes, then reconciles it with the broker. The human stays in the loop for every order.</dd></div>
+      <div><dt>The problem</dt><dd>Intraday, a trader has to read how the day is unfolding and act fast; one wrong size or price in a manual order can cost real money.</dd></div>
+      <div><dt>What it does</dt><dd>An intraday forecasting engine tracks the state of the trading day, updates the next price targets and classifies how the day is likely to end, recalibrated nightly from 6,726 historical sessions. A macro news outlook frames swing decisions. Orders go to MetaTrader 5 with trader confirmation or through a bounded autopilot inside limits the trader sets.</dd></div>
     </dl>
     <p class="badge">Proprietary · built end to end</p>
-    <p class="kf"><b>10,241</b><span>replay checkpoints across 77 sessions with zero look-ahead, for the intraday predictor in active research.</span></p>
-    <p class="kf"><b>Macro</b><span>news outlook for swing decisions: the consensus is recorded before each release and compared with the actual print after it.</span></p>
-    <p class="kf kf-words"><span>Nothing reaches MT5 without the trader&#39;s explicit yes, and every order is read back first.</span></p>
+    <p class="kf"><b>59</b><span>orders published to MetaTrader 5 since 3 Nov 2026: 36 confirmed by the trader and 23 sent by a bounded autopilot inside limits the trader arms per symbol (risk, reward-to-risk, stop time, max attempts).</span></p>
+    <p class="kf"><b>54,763</b><span>records in a hash-chained journal; uncertain broker submissions go to reconciliation instead of being retried blindly.</span></p>
+    <p class="kf"><b>6,726</b><span>historical sessions recalibrate the forecasts every night.</span></p>
           <a class="more" href="/portfolio/#copilot">Details and evidence →</a>
         </div>
 <figure class="dg-card">
@@ -299,8 +299,8 @@ document.addEventListener('DOMContentLoaded',()=>{const p=document.getElementByI
     <button class="dg-pp" type="button" aria-label="Pause the animation" hidden>Pause</button>
   </div>
   <svg class="dg" viewBox="0 0 400 466" role="img" aria-labelledby="dg-co-t dg-co-d" style="--n:7">
-    <title id="dg-co-t">How the Trading Copilot works, in seven steps</title>
-    <desc id="dg-co-d">Top to bottom. One, voice order: the trader dictates the order and it becomes a ticket. Two, validation: the ticket is checked first. Three, risk sizing: the position size is set from the risk limit. Four, read back: the order is repeated back to the trader. Five, explicit confirmation: nothing moves without a clear yes; without it, nothing is sent. Six, the order is sent to MT5. Seven, broker reconciliation: the order counts as done once the broker confirms it.</desc>
+    <title id="dg-co-t">How the Intraday Forecasting &amp; Trading Co-pilot works, in seven steps</title>
+    <desc id="dg-co-d">Top to bottom. One, day state: the live feed shows the last level the market reached. Two, forecast: the next price targets and how the day is likely to end. Three, trade proposal: entry, stop and target. Four, the trader sets the limits: risk, reward-to-risk, stop time and maximum attempts. Five, the trader confirms, or the bounded autopilot sends inside those limits; outside them, nothing is sent. Six, the order is validated, sized and sent to MT5. Seven, broker reconciliation: an uncertain submission is reconciled, never retried blindly.</desc>
     <defs>
       <marker id="ah-co" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--signal)"/></marker>
       <marker id="ah-co-w" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--warn)"/></marker>
@@ -317,51 +317,51 @@ document.addEventListener('DOMContentLoaded',()=>{const p=document.getElementByI
     <g class="st" style="--i:0">
       <rect class="bx" x="36" y="10" width="250" height="48" rx="10"/>
       <circle class="k" cx="36" cy="34" r="12"/><text class="kn" x="36" y="38">1</text>
-      <text class="t" x="161" y="31">Voice order</text>
-      <text class="s" x="161" y="48">dictated, turned into a ticket</text>
+      <text class="t" x="161" y="31">Day state</text>
+      <text class="s" x="161" y="48">live feed, last level reached</text>
     </g>
     <g class="st" style="--i:1">
       <rect class="bx" x="36" y="76" width="250" height="48" rx="10"/>
       <circle class="k" cx="36" cy="100" r="12"/><text class="kn" x="36" y="104">2</text>
-      <text class="t" x="161" y="97">Validation</text>
-      <text class="s" x="161" y="114">the ticket is checked first</text>
+      <text class="t" x="161" y="97">Forecast</text>
+      <text class="s" x="161" y="114">next targets, likely end of day</text>
     </g>
     <g class="st" style="--i:2">
       <rect class="bx" x="36" y="142" width="250" height="48" rx="10"/>
       <circle class="k" cx="36" cy="166" r="12"/><text class="kn" x="36" y="170">3</text>
-      <text class="t" x="161" y="163">Risk sizing</text>
-      <text class="s" x="161" y="180">size set from the risk limit</text>
+      <text class="t" x="161" y="163">Trade proposal</text>
+      <text class="s" x="161" y="180">entry, stop and target</text>
     </g>
     <g class="st" style="--i:3">
       <rect class="bx" x="36" y="208" width="250" height="48" rx="10"/>
       <circle class="k" cx="36" cy="232" r="12"/><text class="kn" x="36" y="236">4</text>
-      <text class="t" x="161" y="229">Read back</text>
-      <text class="s" x="161" y="246">repeated back to the trader</text>
+      <text class="t" x="161" y="229">Trader's limits</text>
+      <text class="s" x="161" y="246">risk, R:R, stop time, attempts</text>
     </g>
     <g class="st" style="--i:4">
       <rect class="bx hu" x="36" y="274" width="250" height="48" rx="10"/>
       <circle class="k" cx="36" cy="298" r="12"/><text class="kn" x="36" y="302">5</text>
-      <text class="t" x="161" y="295">Explicit confirmation</text>
-      <text class="s" x="161" y="312">nothing moves without a clear yes</text>
+      <text class="t" x="161" y="295">Confirm or autopilot</text>
+      <text class="s" x="161" y="312">trader yes, or inside the limits</text>
     </g>
     <g class="st" style="--i:4">
       <rect class="gate re" x="304" y="284" width="92" height="28" rx="14"/>
-      <text class="gl re" x="350" y="302" style="font-size:10px">no → not sent</text>
+      <text class="gl re" x="350" y="302" style="font-size:10px">out → not sent</text>
     </g>
     <g class="st" style="--i:5">
       <rect class="bx" x="36" y="340" width="250" height="48" rx="10"/>
       <circle class="k" cx="36" cy="364" r="12"/><text class="kn" x="36" y="368">6</text>
       <text class="t" x="161" y="361">Sent to MT5</text>
-      <text class="s" x="161" y="378">only after the yes</text>
+      <text class="s" x="161" y="378">validated and sized first</text>
     </g>
     <g class="st" style="--i:6">
       <rect class="bx end" x="36" y="406" width="250" height="48" rx="10"/>
       <circle class="k" cx="36" cy="430" r="12"/><text class="kn" x="36" y="434">7</text>
       <text class="t" x="161" y="427">Broker reconciliation</text>
-      <text class="s" x="161" y="444">done once the broker confirms</text>
+      <text class="s" x="161" y="444">uncertain → reconcile, no retry</text>
     </g>
   </svg>
-  <figcaption>The trader decides the trade. The copilot makes sure the order that goes out is the one that was meant.</figcaption>
+  <figcaption>The trader sets the limits. The co-pilot forecasts the day and only sends what fits inside them.</figcaption>
 </figure>
       </article>
 
@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded',()=>{const p=document.getElementByI
     <p class="badge">Proprietary · built end to end</p>
     <p class="kf"><b>341</b><span>tasks merged across the four projects by AI agents, every one through the test gate.</span></p>
     <figure class="funnel"><svg viewBox="0 0 520 244" width="100%" role="img" aria-label="Layered agent review: from approval to main"><text x="0" y="18" font-size="15" font-weight="600" fill="#e8e8e8">Layered review, measured on AWOP run records</text><text x="220" y="56" font-size="14" text-anchor="end" fill="#e8e8e8">Approvals, normal review</text><rect x="230" y="42" width="240" height="20" rx="4" fill="#2a2a2a"/><rect x="230" y="42" width="240.0" height="20" rx="4" fill="#5b9cf5"/><text x="478.0" y="57" font-size="14" font-family="ui-monospace,Menlo,monospace" font-weight="600" fill="#e8e8e8">719</text><text x="220" y="96" font-size="14" text-anchor="end" fill="#e8e8e8">Re-audited, same commit</text><rect x="230" y="82" width="240" height="20" rx="4" fill="#2a2a2a"/><rect x="230" y="82" width="59.1" height="20" rx="4" fill="#5b9cf5"/><text x="297.1" y="97" font-size="14" font-family="ui-monospace,Menlo,monospace" font-weight="600" fill="#e8e8e8">177</text><text x="220" y="136" font-size="14" text-anchor="end" fill="#e8e8e8">Conclusive re-audits</text><rect x="230" y="122" width="240" height="20" rx="4" fill="#2a2a2a"/><rect x="230" y="122" width="46.7" height="20" rx="4" fill="#5b9cf5"/><text x="284.7" y="137" font-size="14" font-family="ui-monospace,Menlo,monospace" font-weight="600" fill="#e8e8e8">140</text><text x="220" y="176" font-size="14" text-anchor="end" fill="#e8e8e8">Caught by second check</text><rect x="230" y="162" width="240" height="20" rx="4" fill="#2a2a2a"/><rect x="230" y="162" width="19.7" height="20" rx="4" fill="#5b9cf5"/><text x="257.7" y="177" font-size="14" font-family="ui-monospace,Menlo,monospace" font-weight="600" fill="#e8e8e8">59</text><text x="220" y="216" font-size="14" text-anchor="end" fill="#e8e8e8">Merged with an open finding</text><rect x="230" y="202" width="240" height="20" rx="4" fill="#2a2a2a"/><text x="238.0" y="217" font-size="14" font-family="ui-monospace,Menlo,monospace" font-weight="600" fill="#e8e8e8">0</text></svg><figcaption>Defense in depth: a second check re-audits approvals on the same commit, and none of the audited cases merged with a finding still open.</figcaption></figure>
-    <p class="origin">It develops the trading decision engine and Trading Copilot today, and it built the energy platform.</p>
+    <p class="origin">It develops the trading decision engine and the trading co-pilot today, and it built the energy platform.</p>
           <a class="more" href="/cases/awop/">Read the AWOP case study →</a><br>
           <a class="more" href="/portfolio/#awop">AWOP coordination, recovery and evidence →</a>
         </div>

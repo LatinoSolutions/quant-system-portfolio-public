@@ -176,7 +176,6 @@ document.addEventListener('DOMContentLoaded',()=>{const p=document.getElementByI
         <a class="cta-main" href="https://calendly.com/bru-lets-talk/30min?utm_source=ibuildsystems.work&amp;utm_medium=website&amp;utm_campaign=inbound_intro&amp;utm_content=home_hero">Book a 30-minute intro call</a>
         <span class="cta-note">No preparation needed.</span>
       </div>
-      <a class="cta-link" href="#intro">Or watch the 6-minute intro ↓</a>
     </div>
 
     <nav class="hero-index" aria-label="The four systems">
@@ -194,40 +193,6 @@ document.addEventListener('DOMContentLoaded',()=>{const p=document.getElementByI
     <p id="thesis">Most people who can trade cannot build this. Most people who can build it have never traded.</p>
   </section>
 
-  <section class="section reveal intro-video" id="intro" aria-labelledby="intro-title">
-    <div class="section-head">
-      <p class="kicker">Intro video · 6 min</p>
-      <h2 class="h2" id="intro-title">Who I am, what I build, and how I work.</h2>
-    </div>
-    <div class="iv-grid">
-      <video id="iv" controls preload="metadata" poster="intro-poster.jpg" playsinline>
-        <source src="intro.mp4" type="video/mp4">
-      </video>
-      <ol class="iv-chapters" aria-label="Chapters">
-        <li><button type="button" data-t="0"><span class="ts">0:00</span>Who I am</button></li>
-        <li><button type="button" data-t="20"><span class="ts">0:20</span>Background</button></li>
-        <li><button type="button" data-t="52"><span class="ts">0:52</span>Trading research &amp; execution platform</button></li>
-        <li><button type="button" data-t="128"><span class="ts">2:08</span>Intraday forecasting &amp; trading co-pilot</button></li>
-        <li><button type="button" data-t="184"><span class="ts">3:04</span>Agentic workflow orchestration (AWOP)</button></li>
-        <li><button type="button" data-t="247"><span class="ts">4:07</span>Energy procurement research</button></li>
-        <li><button type="button" data-t="273"><span class="ts">4:33</span>How I work</button></li>
-        <li><button type="button" data-t="342"><span class="ts">5:42</span>Closing</button></li>
-      </ol>
-    </div>
-  </section>
-<style>
-.intro-video .iv-grid{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1fr);gap:24px;align-items:start}
-.intro-video video{width:100%;border-radius:12px;border:1px solid var(--hair);background:#000;box-shadow:var(--shadow)}
-.iv-chapters{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair)}
-.iv-chapters li{border-bottom:1px solid var(--hair)}
-.iv-chapters button{all:unset;cursor:pointer;display:flex;gap:14px;width:100%;padding:12px 4px;color:var(--soft);font-size:15px;line-height:1.35}
-.iv-chapters button:hover,.iv-chapters button:focus-visible{color:var(--fg)}
-.iv-chapters .ts{font-family:var(--mono);color:var(--signal);min-width:3.2em}
-@media (max-width:820px){.intro-video .iv-grid{grid-template-columns:1fr}}
-</style>
-<script>
-document.querySelectorAll('.iv-chapters button').forEach(b=>b.addEventListener('click',()=>{const v=document.getElementById('iv');v.currentTime=+b.dataset.t;v.play();}));
-</script>
 
   <section class="section" id="systems" aria-labelledby="sys-title">
     <div class="section-head reveal">

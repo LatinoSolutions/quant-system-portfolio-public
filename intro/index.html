@@ -2,26 +2,99 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow,noarchive">
-<title>Bruno Saldivar · Intro</title>
-<link rel="icon" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Bruno Saldivar · Intro video</title>
+<meta name="description" content="A 6-minute intro: who I am, the four systems I build, and how I work.">
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<meta name="theme-color" content="#101317" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#0b0c0e;color:#e8e8e8;font:16px/1.5 system-ui,-apple-system,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center}
-main{width:min(1100px,94vw);padding:24px 0}
-h1{font-size:20px;font-weight:600;margin:0 0 14px}
-video{width:100%;border-radius:12px;background:#000}
-p{color:#9a9ca3;font-size:14px;margin:12px 0 0}
-a{color:#e8e8e8}
+body{font-family:"Geist",var(--sans);background:var(--bg);color:var(--fg);margin:0}
+.wrap{width:min(var(--max),100% - 2*var(--gut));margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+.top a{color:var(--soft);text-decoration:none;font-size:14px;line-height:20px;font-weight:600}
+.top a:hover,.top a:focus-visible{color:var(--fg)}
+.head{padding:48px 0 32px;max-width:680px}
+.eyebrow{font-family:var(--mono);font-size:12px;line-height:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);margin:0 0 16px}
+h1{font-size:48px;line-height:1.05;font-weight:600;letter-spacing:-.02em;margin:0;text-wrap:balance;
+  background:linear-gradient(90deg,var(--fg),var(--dim));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:18px;line-height:28px;color:var(--soft);margin:16px 0 0;text-wrap:pretty}
+.player{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1fr);gap:32px;align-items:start;padding-bottom:64px}
+video{display:block;width:100%;border-radius:16px;border:1px solid var(--hair);background:#000;box-shadow:var(--shadow)}
+.chapters-title{font-family:var(--mono);font-size:12px;line-height:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:0 0 12px}
+.chapters{list-style:none;margin:0;padding:8px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
+.chapters button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;gap:12px;align-items:baseline;width:100%;padding:12px;border-radius:8px;
+  color:var(--soft);font-size:16px;line-height:24px;transition:background-color .3s cubic-bezier(.22,1,.36,1),color .3s cubic-bezier(.22,1,.36,1)}
+.chapters button:hover{background:var(--panel-2);color:var(--fg)}
+.chapters button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+.chapters button:active{transform:scale(.98)}
+.chapters button[aria-current="true"]{background:var(--lit);color:var(--fg)}
+.chapters .ts{font-family:var(--mono);font-size:14px;line-height:20px;color:var(--signal);min-width:3.2em}
+.cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:24px}
+.cta a{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--signal);color:var(--signal-ink);font-weight:600;font-size:16px;line-height:24px;text-decoration:none;
+  transition:opacity .3s cubic-bezier(.22,1,.36,1)}
+.cta a:hover{opacity:.88}
+.cta a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+.cta span{color:var(--dim);font-size:14px;line-height:20px}
+footer{border-top:1px solid var(--hair);padding:24px 0 40px;color:var(--dim);font-size:14px;line-height:20px}
+footer a{color:var(--soft)}
+@media (max-width:860px){.player{grid-template-columns:1fr}h1{font-size:36px;line-height:40px}.head{padding:32px 0 24px}}
 </style>
 </head>
 <body>
-<main>
-<h1>Bruno Saldivar · Intro (6 min)</h1>
-<video controls preload="metadata" poster="poster.jpg" playsinline>
-<source src="intro.mp4" type="video/mp4">
-</video>
-<p><a href="https://ibuildsystems.work/">ibuildsystems.work</a></p>
-</main>
+<div class="wrap">
+  <header class="top">
+    <a href="/">Bruno Saldivar</a>
+    <a href="/">ibuildsystems.work ↗</a>
+  </header>
+
+  <main>
+    <section class="head" aria-labelledby="title">
+      <p class="eyebrow">Intro video · 6 min</p>
+      <h1 id="title">Who I am, what I build,<br>and how I work.</h1>
+      <p class="sub">Quantitative developer and agentic AI engineer in Berlin. A walk through the four systems I built end to end, and the way I work.</p>
+    </section>
+
+    <section class="player" aria-label="Video and chapters">
+      <video id="iv" controls preload="metadata" poster="poster.jpg" playsinline>
+        <source src="intro.mp4" type="video/mp4">
+      </video>
+      <aside>
+        <p class="chapters-title">Chapters</p>
+        <ol class="chapters">
+          <li><button type="button" data-t="0"><span class="ts">0:00</span>Who I am</button></li>
+          <li><button type="button" data-t="20"><span class="ts">0:20</span>Background</button></li>
+          <li><button type="button" data-t="52"><span class="ts">0:52</span>Trading research &amp; execution platform</button></li>
+          <li><button type="button" data-t="128"><span class="ts">2:08</span>Intraday forecasting &amp; trading co-pilot</button></li>
+          <li><button type="button" data-t="184"><span class="ts">3:04</span>Agentic workflow orchestration (AWOP)</button></li>
+          <li><button type="button" data-t="247"><span class="ts">4:07</span>Energy procurement research</button></li>
+          <li><button type="button" data-t="273"><span class="ts">4:33</span>How I work</button></li>
+          <li><button type="button" data-t="342"><span class="ts">5:42</span>Closing</button></li>
+        </ol>
+        <div class="cta">
+          <a href="https://calendly.com/bru-lets-talk/30min?utm_source=ibuildsystems.work&amp;utm_medium=website&amp;utm_campaign=inbound_intro&amp;utm_content=intro_video">Book a 30-minute intro call</a>
+          <span>No preparation needed.</span>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <a href="/">ibuildsystems.work</a> · Berlin
+  </footer>
+</div>
+<script>
+const video = document.getElementById('iv');
+const buttons = [...document.querySelectorAll('.chapters button')];
+buttons.forEach(b => b.addEventListener('click', () => { video.currentTime = +b.dataset.t; video.play(); }));
+video.addEventListener('timeupdate', () => {
+  let current = buttons[0];
+  for (const b of buttons) if (video.currentTime >= +b.dataset.t) current = b;
+  buttons.forEach(b => b.setAttribute('aria-current', b === current ? 'true' : 'false'));
+});
+</script>
 </body>
 </html>

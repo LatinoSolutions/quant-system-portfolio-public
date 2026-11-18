@@ -12,36 +12,27 @@
 <link rel="stylesheet" href="/site.css">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body{font-family:"Geist",var(--sans);background:var(--bg);color:var(--fg);margin:0}
-.wrap{width:min(var(--max),100% - 2*var(--gut));margin:0 auto}
-.top{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
-.top a{color:var(--soft);text-decoration:none;font-size:14px;line-height:20px;font-weight:600}
-.top a:hover,.top a:focus-visible{color:var(--fg)}
-.head{padding:48px 0 32px;max-width:680px}
-.eyebrow{font-family:var(--mono);font-size:12px;line-height:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);margin:0 0 16px}
-h1{font-size:48px;line-height:1.05;font-weight:600;letter-spacing:-.02em;margin:0;text-wrap:balance;
-  background:linear-gradient(90deg,var(--fg),var(--dim));-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{font-size:18px;line-height:28px;color:var(--soft);margin:16px 0 0;text-wrap:pretty}
-.player{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1fr);gap:32px;align-items:start;padding-bottom:64px}
-video{display:block;width:100%;border-radius:16px;border:1px solid var(--hair);background:#000;box-shadow:var(--shadow)}
-.chapters-title{font-family:var(--mono);font-size:12px;line-height:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:0 0 12px}
-.chapters{list-style:none;margin:0;padding:8px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
-.chapters button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;gap:12px;align-items:baseline;width:100%;padding:12px;border-radius:8px;
-  color:var(--soft);font-size:16px;line-height:24px;transition:background-color .3s cubic-bezier(.22,1,.36,1),color .3s cubic-bezier(.22,1,.36,1)}
-.chapters button:hover{background:var(--panel-2);color:var(--fg)}
-.chapters button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
-.chapters button:active{transform:scale(.98)}
-.chapters button[aria-current="true"]{background:var(--lit);color:var(--fg)}
-.chapters .ts{font-family:var(--mono);font-size:14px;line-height:20px;color:var(--signal);min-width:3.2em}
-.cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:24px}
-.cta a{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--signal);color:var(--signal-ink);font-weight:600;font-size:16px;line-height:24px;text-decoration:none;
-  transition:opacity .3s cubic-bezier(.22,1,.36,1)}
-.cta a:hover{opacity:.88}
-.cta a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
-.cta span{color:var(--dim);font-size:14px;line-height:20px}
-footer{border-top:1px solid var(--hair);padding:24px 0 40px;color:var(--dim);font-size:14px;line-height:20px}
-footer a{color:var(--soft)}
-@media (max-width:860px){.player{grid-template-columns:1fr}h1{font-size:36px;line-height:40px}.head{padding:32px 0 24px}}
+  body, h1, h2, h3, .line { font-family: Geist, system-ui, sans-serif; }
+  .wrap { width: min(var(--max), 100% - 2 * var(--gut)); margin: 0 auto; }
+  .top { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+  .top a { color: var(--soft); text-decoration: none; font-size: 14px; line-height: 20px; font-weight: 600; }
+  .top a:hover, .top a:focus-visible { color: var(--fg); }
+  .hero { display: block; padding: clamp(40px, 6vw, 84px) 0 40px; }
+  .player { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); gap: clamp(32px, 5vw, 72px); align-items: start; padding-bottom: 64px; }
+  video { display: block; width: 100%; border-radius: 16px; border: 1px solid var(--hair); background: #000; box-shadow: var(--shadow); }
+  .hero-index { border: 1px solid var(--hair); border-radius: 16px; background: var(--panel); padding: 20px 20px 8px; }
+  .hero-index button { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 10px; width: 100%; padding: 12px 4px; border-radius: 8px; }
+  .hero-index button .i { animation: none; }
+  .hero-index button:hover b, .hero-index button[aria-current="true"] b { color: var(--signal); }
+  .hero-index button[aria-current="true"] .i { color: var(--signal); }
+  .hero-index button:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+  .one-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .cta-main { font-size:16px; line-height:24px; font-weight:600; padding:12px 16px; border-radius:8px; background: var(--signal); color: var(--signal-ink); text-decoration:none; transition: transform 300ms cubic-bezier(0.22,1,0.36,1); }
+  .cta-main:hover { transform: translateY(-1px); } .cta-main:active { transform: scale(0.98); } .cta-main:focus-visible { outline:2px solid #fff; outline-offset:4px; }
+  .cta-note { font-size:14px; line-height:20px; color: var(--dim); }
+  footer { border-top: 1px solid var(--hair); padding: 24px 0 40px; color: var(--dim); font-size: 14px; line-height: 20px; }
+  footer a { color: var(--soft); }
+  @media (max-width: 900px) { .player { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -52,10 +43,10 @@ footer a{color:var(--soft)}
   </header>
 
   <main>
-    <section class="head" aria-labelledby="title">
+    <section class="hero" aria-labelledby="title">
       <p class="eyebrow">Intro video · 6 min</p>
       <h1 id="title">Who I am, what I build,<br>and how I work.</h1>
-      <p class="sub">Quantitative developer and agentic AI engineer in Berlin. A walk through the four systems I built end to end, and the way I work.</p>
+      <p class="line">Quantitative developer and agentic AI engineer in Berlin. A walk through the four systems I built end to end, and the way I work.</p>
     </section>
 
     <section class="player" aria-label="Video and chapters">
@@ -63,20 +54,22 @@ footer a{color:var(--soft)}
         <source src="intro.mp4" type="video/mp4">
       </video>
       <aside>
-        <p class="chapters-title">Chapters</p>
-        <ol class="chapters">
-          <li><button type="button" data-t="0"><span class="ts">0:00</span>Who I am</button></li>
-          <li><button type="button" data-t="20"><span class="ts">0:20</span>Background</button></li>
-          <li><button type="button" data-t="52"><span class="ts">0:52</span>Trading research &amp; execution platform</button></li>
-          <li><button type="button" data-t="128"><span class="ts">2:08</span>Intraday forecasting &amp; trading co-pilot</button></li>
-          <li><button type="button" data-t="184"><span class="ts">3:04</span>Agentic workflow orchestration (AWOP)</button></li>
-          <li><button type="button" data-t="247"><span class="ts">4:07</span>Energy procurement research</button></li>
-          <li><button type="button" data-t="273"><span class="ts">4:33</span>How I work</button></li>
-          <li><button type="button" data-t="342"><span class="ts">5:42</span>Closing</button></li>
+        <nav class="hero-index" aria-label="Chapters">
+        <p class="kicker">Chapters</p>
+        <ol>
+          <li><button type="button" data-t="0"><span class="i">0:00</span><b>Who I am</b></button></li>
+          <li><button type="button" data-t="20"><span class="i">0:20</span><b>Background</b></button></li>
+          <li><button type="button" data-t="52"><span class="i">0:52</span><b>Trading research &amp; execution platform</b></button></li>
+          <li><button type="button" data-t="128"><span class="i">2:08</span><b>Intraday forecasting &amp; trading co-pilot</b></button></li>
+          <li><button type="button" data-t="184"><span class="i">3:04</span><b>Agentic workflow orchestration (AWOP)</b></button></li>
+          <li><button type="button" data-t="247"><span class="i">4:07</span><b>Energy procurement research</b></button></li>
+          <li><button type="button" data-t="273"><span class="i">4:33</span><b>How I work</b></button></li>
+          <li><button type="button" data-t="342"><span class="i">5:42</span><b>Closing</b></button></li>
         </ol>
-        <div class="cta">
-          <a href="https://calendly.com/bru-lets-talk/30min?utm_source=ibuildsystems.work&amp;utm_medium=website&amp;utm_campaign=inbound_intro&amp;utm_content=intro_video">Book a 30-minute intro call</a>
-          <span>No preparation needed.</span>
+        </nav>
+        <div class="one-cta">
+          <a class="cta-main" href="https://calendly.com/bru-lets-talk/30min?utm_source=ibuildsystems.work&amp;utm_medium=website&amp;utm_campaign=inbound_intro&amp;utm_content=intro_video">Book a 30-minute intro call</a>
+          <span class="cta-note">No preparation needed.</span>
         </div>
       </aside>
     </section>
@@ -88,7 +81,7 @@ footer a{color:var(--soft)}
 </div>
 <script>
 const video = document.getElementById('iv');
-const buttons = [...document.querySelectorAll('.chapters button')];
+const buttons = [...document.querySelectorAll('.hero-index button')];
 buttons.forEach(b => b.addEventListener('click', () => { video.currentTime = +b.dataset.t; video.play(); }));
 video.addEventListener('timeupdate', () => {
   let current = buttons[0];
